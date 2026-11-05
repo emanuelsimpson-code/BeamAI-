@@ -1,0 +1,80 @@
+{
+  "_generated": "by scripts/export.py from agents/*/raw/nodes/*.json; credentials are {{SECRET:...}} placeholders",
+  "actionsUsed": {
+    "CustomApiTool_CompleteTask": {
+      "httpMethod": "patch",
+      "toolName": "Complete Task",
+      "url": "https://betterment--bmsandbox.sandbox.my.salesforce.com/services/data/v59.0/sobjects/Task/{{task_id}}"
+    },
+    "CustomApiTool_FindOpenCase": {
+      "httpMethod": "get",
+      "toolName": "Find Open Case",
+      "url": "https://betterment--bmsandbox.sandbox.my.salesforce.com/services/data/v59.0/query"
+    },
+    "CustomApiTool_Findthenexttask": {
+      "httpMethod": "get",
+      "toolName": "Find the next task",
+      "url": "https://betterment--bmsandbox.sandbox.my.salesforce.com/services/data/v59.0/query"
+    },
+    "CustomApiTool_ReopenTask": {
+      "httpMethod": "patch",
+      "toolName": "Reopen Task",
+      "url": "https://betterment--bmsandbox.sandbox.my.salesforce.com/services/data/v59.0/sobjects/Task/{{task_id}}"
+    },
+    "CustomApiTool_Updatecasetoworking": {
+      "httpMethod": "patch",
+      "toolName": "Update case to working",
+      "url": "https://betterment--bmsandbox.sandbox.my.salesforce.com/services/data/v59.0/sobjects/Case/{{case_id}}"
+    }
+  },
+  "definition": {
+    "allowWaiting": false,
+    "attributes": null,
+    "authType": "oauth",
+    "authenticationMeta": {
+      "accessTokenUrl": "https://betterment--bmsandbox.sandbox.my.salesforce.com/services/oauth2/token",
+      "apiKeyType": "bearer",
+      "authorizationUrl": "https://test.salesforce.com/services/oauth2/authorize",
+      "clientAuthentication": "body",
+      "clientId": "537ee011cdba5fbcc69fa8b96d01776aadaca9355c2ac287ed07f93c2660448774cd37fc9163e4a858bdf2f190e85106f8e95cfd2ec2aa5693508819296ef48b2f6ede79b847056ac7b8ce1275541820de8b3906fadded78335172bb70d4ae01",
+      "clientSecret": "{{SECRET:custom_client_secret}}",
+      "grantType": "client_credentials",
+      "parameter": "",
+      "scopes": []
+    },
+    "category": null,
+    "customAuthParameters": null,
+    "customHeaders": [],
+    "description": "Salesforce Custom",
+    "iconSrc": "https://cdn.enterprise.beamstudio.ai/73eeb755-f66f-48b5-81ea-0ed2bcc77089_salesforce_icon.png",
+    "id": "5d377131-61d1-4077-a0fa-6ecba422bee7",
+    "integrationCategoryId": "503199fe-06d5-420d-87e0-b007a635dabd",
+    "isPublished": null,
+    "longDescription": null,
+    "name": "Salesforce Custom",
+    "privacyPolicyUrl": null,
+    "provider": {
+      "connectionName": "SalesforceCustom-connection-3JXd",
+      "credentialId": "bc90c3e8-1bdf-414c-bd47-95fa13118fb8",
+      "credentials": null,
+      "id": "a3c72c43-3861-4447-96a9-5b840559bc9a",
+      "integration": "customOAuth",
+      "integrationId": "5d377131-61d1-4077-a0fa-6ecba422bee7",
+      "isDefault": false,
+      "isOAuth2": false,
+      "provider": "custom",
+      "status": "active",
+      "tokenExpiresIn": null,
+      "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+      "workspace": "{{SECRET:beam_workspace_id}}"
+    },
+    "shortDescription": null,
+    "status": null,
+    "syncModels": null,
+    "systemIntegrationIdentifier": "customOAuth",
+    "systemIntegrationProvider": "CUSTOM",
+    "type": "custom_integration",
+    "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+    "workspaceId": "{{SECRET:beam_workspace_id}}"
+  }
+}

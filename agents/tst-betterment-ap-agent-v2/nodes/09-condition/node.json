@@ -1,0 +1,111 @@
+{
+  "_export": {
+    "executionOrder": 9,
+    "folder": "09-condition",
+    "rawDetail": "../../raw/nodes/069f99cc-30aa-4ac8-862c-88fa5db1e981.json",
+    "rawGraph": "../../raw/graph.json"
+  },
+  "agentGraphId": "0832d275-3287-49fd-9a90-faed1ba0b298",
+  "agentToolConfigurationId": null,
+  "autoRetryCountWhenFailure": 1,
+  "autoRetryDescription": null,
+  "autoRetryLimitWhenAccuracyIsLow": 1,
+  "autoRetryWaitTimeWhenFailureInMs": 1000,
+  "autoRetryWhenAccuracyLessThan": 80,
+  "childEdges": [
+    {
+      "condition": "po_count from the Fetch the open POs step is 0. The vendor has no open PO.",
+      "conditionGroups": [
+        {
+          "agentGraphEdgeId": "724a0aaa-5969-4f33-9c58-51e2071173ec",
+          "agentGraphEdgeId__readable": "09-condition -> 10-collect-the-non-po-context",
+          "id": "acf0ccaf-de3f-4ff4-b673-6a901131069a",
+          "nextGroupOperator": null,
+          "rules": []
+        }
+      ],
+      "id": "724a0aaa-5969-4f33-9c58-51e2071173ec",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "069f99cc-30aa-4ac8-862c-88fa5db1e981",
+      "sourceAgentGraphNodeId__readable": "09-condition",
+      "targetAgentGraphNodeId": "fee10208-4ecb-4f1a-b17e-1e6e131f6353",
+      "targetAgentGraphNodeId__readable": "10-collect-the-non-po-context"
+    },
+    {
+      "condition": "po_count from the Fetch the open POs step is exactly 1. The vendor has one open PO.",
+      "conditionGroups": [
+        {
+          "agentGraphEdgeId": "554b4b15-7af1-4deb-b049-f3ebb2c7a712",
+          "agentGraphEdgeId__readable": "09-condition -> 11-code-executor",
+          "id": "4be1fdde-042d-408f-8551-bd71cf25a32a",
+          "nextGroupOperator": null,
+          "rules": []
+        }
+      ],
+      "id": "554b4b15-7af1-4deb-b049-f3ebb2c7a712",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "069f99cc-30aa-4ac8-862c-88fa5db1e981",
+      "sourceAgentGraphNodeId__readable": "09-condition",
+      "targetAgentGraphNodeId": "11459201-41fe-4634-9d82-e4884922abf7",
+      "targetAgentGraphNodeId__readable": "11-code-executor"
+    },
+    {
+      "condition": "po_count from the Fetch the open POs step is 2 or more. The vendor has several open POs.",
+      "conditionGroups": [
+        {
+          "agentGraphEdgeId": "b9ab11ab-3ac0-49c5-bca3-1b7520360787",
+          "agentGraphEdgeId__readable": "09-condition -> 12-score-the-open-pos",
+          "id": "fa9192b4-8ced-474e-a323-fab740aa5b94",
+          "nextGroupOperator": null,
+          "rules": []
+        }
+      ],
+      "id": "b9ab11ab-3ac0-49c5-bca3-1b7520360787",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "069f99cc-30aa-4ac8-862c-88fa5db1e981",
+      "sourceAgentGraphNodeId__readable": "09-condition",
+      "targetAgentGraphNodeId": "980d9ae7-b8fe-44c5-a707-24f10571da79",
+      "targetAgentGraphNodeId__readable": "12-score-the-open-pos"
+    }
+  ],
+  "customId": "555aa682-383d-4f40-8616-5ed404b93a29",
+  "customId__readable": "09-condition",
+  "enableAutoRetryDescription": false,
+  "enableAutoRetryWhenAccuracyIsLow": false,
+  "enableAutoRetryWhenFailure": false,
+  "evaluationCriteria": [],
+  "evaluationLlmModel": null,
+  "evaluationLlmThinkingLevels": null,
+  "id": "069f99cc-30aa-4ac8-862c-88fa5db1e981",
+  "isActiveNodeVersion": false,
+  "isAttachmentDataPulledIn": true,
+  "isEdited": true,
+  "isEntryNode": false,
+  "isEvaluationEnabled": false,
+  "isExitNode": false,
+  "markTaskAsFailedIfAccuracyLow": false,
+  "nodeConfigurations": {
+    "conditionType": "llm_based",
+    "fallbackModels": null,
+    "llmModel": "GEMINI_3_FLASH"
+  },
+  "nodeType": "conditionNode",
+  "objective": "PO-backed or non-PO?",
+  "onError": "STOP",
+  "parentEdges": [
+    {
+      "condition": "",
+      "conditionGroups": [],
+      "id": "6d098bac-eec5-4de5-858a-61982b1f2d59",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "232e5b4c-376e-438a-8f3c-78dd8b9d8e36",
+      "sourceAgentGraphNodeId__readable": "08-read-the-vendor-rules",
+      "targetAgentGraphNodeId": "069f99cc-30aa-4ac8-862c-88fa5db1e981",
+      "targetAgentGraphNodeId__readable": "09-condition"
+    }
+  ],
+  "parentNodeId": null,
+  "saveAsVersion": false,
+  "toolConfiguration": {},
+  "userId": null
+}

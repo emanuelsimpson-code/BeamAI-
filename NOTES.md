@@ -38,6 +38,20 @@
 - **Validation:** `scripts/validate.py agents/<folder>` checks node and edge counts, code and prompt presence, and linked inputs against `raw/`, offline.
 - **Trigger configuration:** not available from the API. Copy it from the Beam UI into this file (the trigger type, Stripe event and filters for the outbound agent).
 
+## Phase 3 decisions (2026-11-05)
+
+- **All 5 agents are exported** with `scripts/export.py --all`. The pilot folder came out unchanged.
+- **Beam rate-limits node-detail requests** (HTTP 429) when exporting many agents in a row. `BeamClient` retries with backoff (1, 2, 4 and 8 s), and every request succeeded.
+- **The personal-data check skips long digit runs in an ID parameter's `staticValue`** when the value is only digits and the parameter name ends in `id`. This is the 14-digit Zendesk `ticket.ticket_form_id` on TST_Betterment AR Agent's Create Ticket node. Emails and Stripe IDs are still checked in those values.
+- **New shared integrations:** `stripe-sandbox.json` (used by the AR Inbound agents' Fetch Invoice node: `GET https://api.stripe.com/v1/invoices/{{invoice_id}}`), `salesforce-custom.json` and `zendesk-custom.json` (used by the TST agents).
+- **Your decision: keep the encrypted credential fields as is.** Beam stores `provider.credentials.user` and `authenticationMeta.clientId` as long encrypted hex strings:
+  - Zendesk `user`: 96 hex characters.
+  - Salesforce `clientId`: 192 hex characters.
+  - Stripe Sandbox `user`: 224 hex characters. With Stripe's basic auth this is most likely the encrypted API key.
+
+  They aren't readable without Beam's encryption key and stay in the repo unredacted. The paired `password` and `clientSecret` remain placeholders. This replaces the earlier description of these fields as "an email/username" and "a consumer key".
+- **Loop nodes:** `nodeConfigurations.linkedVariableId` is the list the loop iterates over (for example `02-extract-invoice-context.output.invoice_ids`), and `alias` is the loop's label. The README node table says what each loop iterates over.
+
 ## Resolved
 
 - ~~401 "Invalid API key"~~: caused by calling the wrong host (see above).

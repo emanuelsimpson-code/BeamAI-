@@ -1,0 +1,65 @@
+{
+  "agentId": "f2bd02dc-6f1a-4f46-8f6e-7193ccadad4d",
+  "agentName": "TST_Betterment_AP_Agent_v2",
+  "edgeCount": 20,
+  "folder": "tst-betterment-ap-agent-v2",
+  "graphId": "0832d275-3287-49fd-9a90-faed1ba0b298",
+  "integrations": {
+    "beam-tools.json": [
+      "04-code-executor",
+      "05-code-executor",
+      "11-code-executor",
+      "14-code-executor",
+      "15-code-executor",
+      "16-code-executor",
+      "18-code-executor"
+    ],
+    "slack-bot.json": [
+      "06-send-message",
+      "07-send-message",
+      "13-send-message",
+      "19-send-message",
+      "20-send-message"
+    ]
+  },
+  "lastExported": "2026-11-05",
+  "nodeCount": 20,
+  "rawSha256": "1839c09e917ee33949f3a1cdfe1debd9bb10fa46ae03039f9bf74d61fbbf44c5",
+  "secrets": {
+    "beam_workspace_id": [
+      "raw/nodes/069f99cc-30aa-4ac8-862c-88fa5db1e981.json (09-condition)",
+      "raw/nodes/0ddd8da3-fd70-41ab-bc74-9622699a0f7b.json (03-condition)",
+      "raw/nodes/0e046c76-2406-4bd0-bf7c-8a490cfd6011.json (14-code-executor)",
+      "raw/nodes/11459201-41fe-4634-9d82-e4884922abf7.json (11-code-executor)",
+      "raw/nodes/12149f76-17f2-4e34-a05d-402225de6e11.json (02-classify-the-document)",
+      "raw/nodes/19d24cf7-3476-418b-9440-a22ee6391733.json (05-code-executor)",
+      "raw/nodes/232e5b4c-376e-438a-8f3c-78dd8b9d8e36.json (08-read-the-vendor-rules)",
+      "raw/nodes/267a8aee-78dc-489d-8935-366a395189fa.json (15-code-executor)",
+      "raw/nodes/4252fc1f-8c0e-4340-a38f-d2ad57372436.json (01-trigger)",
+      "raw/nodes/51e5c19a-a45e-4762-a3c5-d55ff945fab0.json (13-send-message)",
+      "raw/nodes/648dbaf6-f72d-4ec3-a50d-241a780a9c5e.json (07-send-message)",
+      "raw/nodes/6a3810d2-165c-4ec3-a377-108f67a6ee40.json (06-send-message)",
+      "raw/nodes/7f0528bb-b2fc-4427-9cf6-35613e091465.json (18-code-executor)",
+      "raw/nodes/980d9ae7-b8fe-44c5-a707-24f10571da79.json (12-score-the-open-pos)",
+      "raw/nodes/c91e872f-b7ff-4db6-b7b5-8f41c86e55d1.json (04-code-executor)",
+      "raw/nodes/daca5aa6-cceb-4fde-8666-d28a03e6cee0.json (16-code-executor)",
+      "raw/nodes/dc5cff47-8c5d-45ae-9461-85dfcb12f089.json (17-condition)",
+      "raw/nodes/e1ea87f0-fff7-4eae-a1ea-c37e1bc875ce.json (19-send-message)",
+      "raw/nodes/e7bd607e-183b-4c36-9f09-87b4520b8de5.json (20-send-message)",
+      "raw/nodes/fee10208-4ecb-4f1a-b17e-1e6e131f6353.json (10-collect-the-non-po-context)"
+    ],
+    "pipedream_bot_token": [
+      "raw/graph.json (06-send-message)",
+      "raw/graph.json (07-send-message)",
+      "raw/graph.json (13-send-message)",
+      "raw/graph.json (19-send-message)",
+      "raw/graph.json (20-send-message)",
+      "raw/nodes/51e5c19a-a45e-4762-a3c5-d55ff945fab0.json (13-send-message)",
+      "raw/nodes/648dbaf6-f72d-4ec3-a50d-241a780a9c5e.json (07-send-message)",
+      "raw/nodes/6a3810d2-165c-4ec3-a377-108f67a6ee40.json (06-send-message)",
+      "raw/nodes/e1ea87f0-fff7-4eae-a1ea-c37e1bc875ce.json (19-send-message)",
+      "raw/nodes/e7bd607e-183b-4c36-9f09-87b4520b8de5.json (20-send-message)"
+    ]
+  },
+  "status": "draft"
+}

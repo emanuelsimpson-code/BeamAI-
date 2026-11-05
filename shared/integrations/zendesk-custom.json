@@ -1,0 +1,76 @@
+{
+  "_generated": "by scripts/export.py from agents/*/raw/nodes/*.json; credentials are {{SECRET:...}} placeholders",
+  "actionsUsed": {
+    "CustomApiTool_AddInternalNote": {
+      "httpMethod": "put",
+      "toolName": "Add Internal Note",
+      "url": "https://betterment1768446222.zendesk.com/api/v2/tickets/{{ticket_id}}"
+    },
+    "CustomApiTool_CreateTicket_ACs6qYoR": {
+      "httpMethod": "post",
+      "toolName": "Create Ticket",
+      "url": "https://betterment1768446222.zendesk.com/api/v2/tickets"
+    },
+    "CustomApiTool_ReplyonTicket": {
+      "httpMethod": "put",
+      "toolName": "Reply on Ticket",
+      "url": "https://betterment1768446222.zendesk.com/api/v2/tickets/{{ticket_id}}"
+    },
+    "CustomApiTool_SolveTicket": {
+      "httpMethod": "put",
+      "toolName": "Solve Ticket",
+      "url": "https://betterment1768446222.zendesk.com/api/v2/tickets/{{ticket_id}}"
+    },
+    "CustomApiTool_UpdateTicket": {
+      "httpMethod": "put",
+      "toolName": "Update Ticket",
+      "url": "https://betterment1768446222.zendesk.com/api/v2/tickets/{{ticket_id}}"
+    }
+  },
+  "definition": {
+    "allowWaiting": false,
+    "attributes": null,
+    "authType": "basic",
+    "authenticationMeta": {
+      "apiKeyType": "default",
+      "parameter": ""
+    },
+    "category": null,
+    "customAuthParameters": null,
+    "customHeaders": [],
+    "description": "Zendesk Custom",
+    "iconSrc": "https://cdn.enterprise.beamstudio.ai/7d370fc4-2a6c-4caa-984a-26bb7972113e_zendesk-logo.png",
+    "id": "e1d9ea8f-6f87-4b47-9346-370f75c48677",
+    "integrationCategoryId": "503199fe-06d5-420d-87e0-b007a635dabd",
+    "isPublished": null,
+    "longDescription": null,
+    "name": "Zendesk Custom",
+    "privacyPolicyUrl": null,
+    "provider": {
+      "connectionName": "ZendeskCustom-connection-sandbox-1",
+      "credentialId": "58559d58-9b65-42ee-a16d-3635dcddb0b4",
+      "credentials": {
+        "password": "{{SECRET:custom_password}}",
+        "user": "90a3a3366b9669bed88883f16d1c243e6ef0a615c1a0834e3dd6742dc07673ac9310cc5a88eb61dc58f689fada7993a6"
+      },
+      "id": "59aa0101-ff2f-4f17-978c-9630afef27b7",
+      "integration": "httpBasicAuth",
+      "integrationId": "e1d9ea8f-6f87-4b47-9346-370f75c48677",
+      "isDefault": false,
+      "isOAuth2": false,
+      "provider": "custom",
+      "status": "active",
+      "tokenExpiresIn": null,
+      "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+      "workspace": "{{SECRET:beam_workspace_id}}"
+    },
+    "shortDescription": null,
+    "status": null,
+    "syncModels": null,
+    "systemIntegrationIdentifier": "httpBasicAuth",
+    "systemIntegrationProvider": "CUSTOM",
+    "type": "custom_integration",
+    "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+    "workspaceId": "{{SECRET:beam_workspace_id}}"
+  }
+}

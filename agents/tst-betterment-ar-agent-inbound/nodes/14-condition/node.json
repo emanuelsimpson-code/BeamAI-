@@ -1,0 +1,76 @@
+{
+  "_export": {
+    "executionOrder": 14,
+    "folder": "14-condition",
+    "rawDetail": "../../raw/nodes/8cd09fcd-2847-40a6-a58e-5f12d7405a68.json",
+    "rawGraph": "../../raw/graph.json"
+  },
+  "agentGraphId": "05a27cb0-a5d3-4f43-8c75-30c1dddaab09",
+  "agentToolConfigurationId": null,
+  "autoRetryCountWhenFailure": 1,
+  "autoRetryDescription": null,
+  "autoRetryLimitWhenAccuracyIsLow": 1,
+  "autoRetryWaitTimeWhenFailureInMs": 1000,
+  "autoRetryWhenAccuracyLessThan": 80,
+  "childEdges": [
+    {
+      "condition": "If the verification_status is nothing_paid",
+      "conditionGroups": [],
+      "id": "0f48d725-ae21-4d2d-b7bc-d3521440e488",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "8cd09fcd-2847-40a6-a58e-5f12d7405a68",
+      "sourceAgentGraphNodeId__readable": "14-condition",
+      "targetAgentGraphNodeId": "fa2eeebc-c6cc-4915-844d-956d1d323ff2",
+      "targetAgentGraphNodeId__readable": "18-note-msg-nothing-paid"
+    },
+    {
+      "condition": "if the verification_status is partial_verified",
+      "conditionGroups": [],
+      "id": "88c606c4-bc2c-4e06-bc7f-6396b69f5aa3",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "8cd09fcd-2847-40a6-a58e-5f12d7405a68",
+      "sourceAgentGraphNodeId__readable": "14-condition",
+      "targetAgentGraphNodeId": "a655960d-1058-49e4-bc12-1777ec0a8613",
+      "targetAgentGraphNodeId__readable": "19-partial-payment-email-generator"
+    }
+  ],
+  "customId": "2908ca06-fdae-4a18-aff1-8e11313cc052",
+  "customId__readable": "14-condition",
+  "enableAutoRetryDescription": false,
+  "enableAutoRetryWhenAccuracyIsLow": false,
+  "enableAutoRetryWhenFailure": false,
+  "evaluationCriteria": [],
+  "evaluationLlmModel": null,
+  "evaluationLlmThinkingLevels": null,
+  "id": "8cd09fcd-2847-40a6-a58e-5f12d7405a68",
+  "isActiveNodeVersion": false,
+  "isAttachmentDataPulledIn": true,
+  "isEdited": false,
+  "isEntryNode": false,
+  "isEvaluationEnabled": false,
+  "isExitNode": false,
+  "markTaskAsFailedIfAccuracyLow": false,
+  "nodeConfigurations": {
+    "conditionType": "llm_based",
+    "llmModel": "GEMINI_3_FLASH"
+  },
+  "nodeType": "conditionNode",
+  "objective": "",
+  "onError": "STOP",
+  "parentEdges": [
+    {
+      "condition": null,
+      "conditionGroups": [],
+      "id": "6b35f74e-dcd3-428c-b173-848fd7ec7df7",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "efbb9e14-0e62-400d-bee0-b2da558c7861",
+      "sourceAgentGraphNodeId__readable": "10-verify-partial-payment",
+      "targetAgentGraphNodeId": "8cd09fcd-2847-40a6-a58e-5f12d7405a68",
+      "targetAgentGraphNodeId__readable": "14-condition"
+    }
+  ],
+  "parentNodeId": null,
+  "saveAsVersion": false,
+  "toolConfiguration": {},
+  "userId": null
+}

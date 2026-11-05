@@ -1,0 +1,334 @@
+{
+  "_export": {
+    "executionOrder": 3,
+    "folder": "03-intent-classifier",
+    "rawDetail": "../../raw/nodes/15e52e9d-d1a7-4040-a9a0-34597e7be8c0.json",
+    "rawGraph": "../../raw/graph.json"
+  },
+  "agentGraphId": "73aecd7e-318f-4b0b-8a3b-139c373df0cb",
+  "agentToolConfigurationId": "05a4a24f-cc44-4033-b67e-e426bf0230fa",
+  "agentToolConfigurationId__readable": "03-intent-classifier.tool",
+  "autoRetryCountWhenFailure": 1,
+  "autoRetryDescription": null,
+  "autoRetryLimitWhenAccuracyIsLow": 1,
+  "autoRetryWaitTimeWhenFailureInMs": 1000,
+  "autoRetryWhenAccuracyLessThan": 80,
+  "childEdges": [
+    {
+      "condition": null,
+      "conditionGroups": [],
+      "id": "58465f4f-1a4a-4a9e-b4c3-4dff6fea56f5",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "15e52e9d-d1a7-4040-a9a0-34597e7be8c0",
+      "sourceAgentGraphNodeId__readable": "03-intent-classifier",
+      "targetAgentGraphNodeId": "b91aeddb-52cf-4da8-8572-48e71d90a025",
+      "targetAgentGraphNodeId__readable": "04-condition"
+    }
+  ],
+  "customId": "8b799226-0e84-4496-8337-4649cf87018b",
+  "customId__readable": "03-intent-classifier",
+  "enableAutoRetryDescription": false,
+  "enableAutoRetryWhenAccuracyIsLow": false,
+  "enableAutoRetryWhenFailure": false,
+  "evaluationCriteria": [],
+  "evaluationLlmModel": null,
+  "evaluationLlmThinkingLevels": null,
+  "id": "15e52e9d-d1a7-4040-a9a0-34597e7be8c0",
+  "isActiveNodeVersion": false,
+  "isAttachmentDataPulledIn": true,
+  "isEdited": true,
+  "isEntryNode": false,
+  "isEvaluationEnabled": false,
+  "isExitNode": false,
+  "markTaskAsFailedIfAccuracyLow": false,
+  "nodeConfigurations": {},
+  "nodeType": "executionNode",
+  "objective": "Classify the intent of the email",
+  "onError": "STOP",
+  "parentEdges": [
+    {
+      "condition": "",
+      "conditionGroups": [],
+      "id": "7be63f43-8a84-41b9-b2a3-4941fe2b8a1a",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "f797e381-f62f-40a8-87c9-ba0fa862dc7c",
+      "sourceAgentGraphNodeId__readable": "02-extract-invoice-context",
+      "targetAgentGraphNodeId": "15e52e9d-d1a7-4040-a9a0-34597e7be8c0",
+      "targetAgentGraphNodeId__readable": "03-intent-classifier"
+    }
+  ],
+  "parentNodeId": null,
+  "saveAsVersion": false,
+  "toolConfiguration": {
+    "accuracyScore": null,
+    "agentId": "56180518-a836-4998-b63b-fefc179cd0b6",
+    "code": "",
+    "codeLanguage": "",
+    "description": "",
+    "dynamicPropsId": "",
+    "fallbackModels": "GEMINI_3_1_PRO,GPT4_1,CLAUDE_4_SONNET",
+    "iconSrc": "",
+    "id": "05a4a24f-cc44-4033-b67e-e426bf0230fa",
+    "inputParams": [
+      {
+        "agentToolConfigurationId": "05a4a24f-cc44-4033-b67e-e426bf0230fa",
+        "agentToolConfigurationId__readable": "03-intent-classifier.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "d2a751cc-1839-4dfa-a624-2607c5a37f28",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "cf4ecd5c-42c8-464e-ae69-ad937c974fd9",
+          "agentToolConfigurationId__readable": "02-extract-invoice-context.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "e2edd3c2-6437-4ca3-aa38-a3d06241e90b",
+          "isArray": false,
+          "outputExample": null,
+          "paramDescription": "The invoice amount extracted from the email",
+          "paramName": "invoice_amount",
+          "paramPath": null,
+          "parentId": null,
+          "position": 0,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "f797e381-f62f-40a8-87c9-ba0fa862dc7c"
+              }
+            ],
+            "id": "cf4ecd5c-42c8-464e-ae69-ad937c974fd9"
+          },
+          "typeOptions": {
+            "enumValues": null
+          }
+        },
+        "linkParamOutputId": "e2edd3c2-6437-4ca3-aa38-a3d06241e90b",
+        "linkParamOutputId__readable": "02-extract-invoice-context.output.invoice_amount",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "",
+        "paramName": "invoice_amount",
+        "paramTip": null,
+        "position": 0,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "05a4a24f-cc44-4033-b67e-e426bf0230fa",
+        "agentToolConfigurationId__readable": "03-intent-classifier.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "6e344d23-ff2b-4f79-9e8d-1e88358924c2",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "fa11e2a8-f38f-4a6f-ad08-9219a159c91c",
+          "agentToolConfigurationId__readable": "01-trigger.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "19daded6-c834-41ea-9963-4997dcd3e2ac",
+          "isArray": false,
+          "outputExample": "<string>",
+          "paramDescription": "-",
+          "paramName": "all_comments",
+          "paramPath": "all_comments",
+          "parentId": null,
+          "position": 0,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "59b60a34-90b9-4368-af49-1ee13b0e21fe"
+              }
+            ],
+            "id": "fa11e2a8-f38f-4a6f-ad08-9219a159c91c"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "19daded6-c834-41ea-9963-4997dcd3e2ac",
+        "linkParamOutputId__readable": "01-trigger.output.all_comments",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "the entire email body received from the trigger",
+        "paramName": "email_body",
+        "paramTip": null,
+        "position": 1,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      }
+    ],
+    "inputParamsData": null,
+    "integrationProviderId": null,
+    "isBackgroundTool": false,
+    "isBatchExecutionEnabled": false,
+    "isMemoryTool": false,
+    "llmThinkingLevels": null,
+    "memoryLookupInstruction": "",
+    "originalTool": {
+      "agentId": "ca09ff3c-4dc0-488d-9415-3b4666301e94",
+      "allowWaiting": false,
+      "apiKeyType": null,
+      "bodyParams": null,
+      "description": "",
+      "httpMethod": null,
+      "iconSrc": "",
+      "id": "06ac7ae3-e2f2-42f1-bb34-0304f4d2120e",
+      "inputParams": [
+        {
+          "dataType": "string",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "e2edd3c2-6437-4ca3-aa38-a3d06241e90b",
+          "linkParamOutputId__readable": "02-extract-invoice-context.output.invoice_amount",
+          "options": null,
+          "paramDescription": "",
+          "paramName": "invoice_amount",
+          "paramTip": null,
+          "position": 0,
+          "reloadProps": false,
+          "remoteOptions": false,
+          "required": true,
+          "staticValue": null
+        },
+        {
+          "dataType": "string",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "19daded6-c834-41ea-9963-4997dcd3e2ac",
+          "linkParamOutputId__readable": "01-trigger.output.all_comments",
+          "options": null,
+          "paramDescription": "the entire email body received from the trigger",
+          "paramName": "email_body",
+          "paramTip": null,
+          "position": 1,
+          "reloadProps": false,
+          "remoteOptions": false,
+          "required": true,
+          "staticValue": null
+        }
+      ],
+      "integration": null,
+      "integrationId": null,
+      "isActive": true,
+      "isAvailableToWorkspace": false,
+      "isBackgroundTool": false,
+      "isBatchExecutionEnabled": null,
+      "isIntegrationConnected": false,
+      "isIntegrationRequired": false,
+      "isMemoryTool": false,
+      "isSharable": false,
+      "isVisibleOnUi": true,
+      "memoryLookupInstruction": "",
+      "meta": {
+        "content": "",
+        "description": "",
+        "function_name": "GPTAction_Custom_IntentClassifier_wVjn",
+        "preferred_model": "GPT4_1_MINI",
+        "prompt": "You are classifying the intent of a customer's reply to a Betterment AR collections email.\nThe customer's reply is at the TOP of the email thread (above the quoted original email).\nRead ONLY the customer's reply text — ignore the quoted section below it.\nInvoice amount on file: ```{invoice_amount}``` \nCustomer reply thread: ```{email_body}``` \n---\nReturn EXACTLY one of these values as reply_intent:\npayment_confirmed  — customer states they paid in full, references a payment matching\n                     or exceeding the invoice amount, or attaches proof of payment\npartial_payment    — customer paid less than the full amount, mentions a partial\n                     amount, or requests a payment plan\ndispute            — customer disagrees with the invoice, says they don't owe it,\n                     or requests investigation\nbankruptcy         — customer mentions bankruptcy, insolvency, chapter 7, chapter 11,\n                     receivership, or legal proceedings\nwrong_contact      — customer says wrong person, wrong email, or asks to update\n                     the billing contact\ngeneral_inquiry    — question, invoice copy request, or anything else\n---\nDecision order (check top to bottom, first match wins):\n1. BANKRUPTCY — keywords: \"bankruptcy\", \"bankrupt\", \"chapter 7\", \"chapter 11\",\n   \"insolvent\", \"receivership\", \"automatic stay\"\n2. DISPUTE — keywords: \"do not owe\", \"don't owe\", \"dispute\", \"billing error\",\n   \"incorrect invoice\", \"wrong amount\", \"we have no record\", \"please investigate\"\n3. WRONG CONTACT — keywords: \"wrong person\", \"wrong email\", \"not the right contact\",\n   \"no longer handle billing\", \"please update\", \"forward to\"\n4. PAYMENT — extract any dollar amount mentioned in the customer's reply:\n   IF stated amount >= invoice_amount → payment_confirmed\n   IF stated amount < invoice_amount  → partial_payment\n   IF no amount but says \"paid\", \"payment sent\", \"please find attached\" → payment_confirmed\n   IF says \"partial\", \"payment plan\", \"can only pay\" → partial_payment\n5. FALLBACK → general_inquiry\n---\nRules:\n- ALWAYS check bankruptcy first — it overrides everything else\n- Read only the customer's reply, not the quoted original email below\n- Never return empty or null\n- Only return one of the 6 exact values listed above",
+        "tool_name": "Intent Classifier",
+        "type": "custom_gpt_tool"
+      },
+      "outputId": null,
+      "outputParams": [
+        {
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "7d2c43a3-977e-4168-8b58-2b7d90e4165b",
+          "isArray": false,
+          "paramDescription": "intent from one of payment_confirmed, partial_payment, dispute, bankruptcy, wrong_contact, general_inquiry",
+          "paramName": "reply_intent",
+          "position": 0,
+          "structure": null,
+          "typeOptions": {
+            "enumValues": null
+          }
+        },
+        {
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "28c3a642-0df7-40b3-9f0a-bb0c58ad434a",
+          "isArray": false,
+          "paramDescription": "also describe your reasoning behind the decision clearly step by step",
+          "paramName": "reasoning",
+          "position": 1,
+          "structure": null,
+          "typeOptions": {
+            "enumValues": null
+          }
+        }
+      ],
+      "parameter": null,
+      "preferredModel": "GPT4_1_MINI",
+      "prompt": "You are classifying the intent of a customer's reply to a Betterment AR collections email.\nThe customer's reply is at the TOP of the email thread (above the quoted original email).\nRead ONLY the customer's reply text — ignore the quoted section below it.\nInvoice amount on file: ```{invoice_amount}``` \nCustomer reply thread: ```{email_body}``` \n---\nReturn EXACTLY one of these values as reply_intent:\npayment_confirmed  — customer states they paid in full, references a payment matching\n                     or exceeding the invoice amount, or attaches proof of payment\npartial_payment    — customer paid less than the full amount, mentions a partial\n                     amount, or requests a payment plan\ndispute            — customer disagrees with the invoice, says they don't owe it,\n                     or requests investigation\nbankruptcy         — customer mentions bankruptcy, insolvency, chapter 7, chapter 11,\n                     receivership, or legal proceedings\nwrong_contact      — customer says wrong person, wrong email, or asks to update\n                     the billing contact\ngeneral_inquiry    — question, invoice copy request, or anything else\n---\nDecision order (check top to bottom, first match wins):\n1. BANKRUPTCY — keywords: \"bankruptcy\", \"bankrupt\", \"chapter 7\", \"chapter 11\",\n   \"insolvent\", \"receivership\", \"automatic stay\"\n2. DISPUTE — keywords: \"do not owe\", \"don't owe\", \"dispute\", \"billing error\",\n   \"incorrect invoice\", \"wrong amount\", \"we have no record\", \"please investigate\"\n3. WRONG CONTACT — keywords: \"wrong person\", \"wrong email\", \"not the right contact\",\n   \"no longer handle billing\", \"please update\", \"forward to\"\n4. PAYMENT — extract any dollar amount mentioned in the customer's reply:\n   IF stated amount >= invoice_amount → payment_confirmed\n   IF stated amount < invoice_amount  → partial_payment\n   IF no amount but says \"paid\", \"payment sent\", \"please find attached\" → payment_confirmed\n   IF says \"partial\", \"payment plan\", \"can only pay\" → partial_payment\n5. FALLBACK → general_inquiry\n---\nRules:\n- ALWAYS check bankruptcy first — it overrides everything else\n- Read only the customer's reply, not the quoted original email below\n- Never return empty or null\n- Only return one of the 6 exact values listed above",
+      "queryParams": null,
+      "requiresConsent": false,
+      "shortDescription": "",
+      "systemIntegrationIdentifier": null,
+      "toolFunctionName": "GPTAction_Custom_IntentClassifier_wVjn",
+      "toolName": "Intent Classifier",
+      "type": "custom_gpt_tool",
+      "url": null,
+      "urlParams": null,
+      "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+      "workspaceId": "{{SECRET:beam_workspace_id}}"
+    },
+    "outputParams": [
+      {
+        "agentToolConfigurationId": "05a4a24f-cc44-4033-b67e-e426bf0230fa",
+        "agentToolConfigurationId__readable": "03-intent-classifier.tool",
+        "dataType": "string",
+        "definedStructure": false,
+        "id": "7d2c43a3-977e-4168-8b58-2b7d90e4165b",
+        "isArray": false,
+        "outputExample": null,
+        "paramDescription": "intent from one of payment_confirmed, partial_payment, dispute, bankruptcy, wrong_contact, general_inquiry",
+        "paramName": "reply_intent",
+        "paramPath": null,
+        "parentId": null,
+        "position": 0,
+        "structure": null,
+        "typeOptions": {
+          "enumValues": null
+        }
+      },
+      {
+        "agentToolConfigurationId": "05a4a24f-cc44-4033-b67e-e426bf0230fa",
+        "agentToolConfigurationId__readable": "03-intent-classifier.tool",
+        "dataType": "string",
+        "definedStructure": false,
+        "id": "28c3a642-0df7-40b3-9f0a-bb0c58ad434a",
+        "isArray": false,
+        "outputExample": null,
+        "paramDescription": "also describe your reasoning behind the decision clearly step by step",
+        "paramName": "reasoning",
+        "paramPath": null,
+        "parentId": null,
+        "position": 1,
+        "structure": null,
+        "typeOptions": {
+          "enumValues": null
+        }
+      }
+    ],
+    "outputParamsData": null,
+    "pipedreamConfiguredProps": null,
+    "preferredModel": "GPT4_1_MINI",
+    "prompt": "You are classifying the intent of a customer's reply to a Betterment AR collections email.\nPlease read the entire email thread to figure out the intent of the customer. To arrive at the right conclusion read the entire thread and then make the decision\n\nInvoice amount on file: ```{invoice_amount}``` \nCustomer reply thread: ```{email_body}``` \n---\nReturn EXACTLY one of these values as reply_intent:\npayment_confirmed  — customer states they paid in full, references a payment matching\n                     or exceeding the invoice amount, or attaches proof of payment\npartial_payment    — customer paid less than the full amount, mentions a partial\n                     amount, or requests a payment plan\ndispute            — customer disagrees with the invoice, says they don't owe it,\n                     or requests investigation\nbankruptcy         — customer mentions bankruptcy, insolvency, chapter 7, chapter 11,\n                     receivership, or legal proceedings\nwrong_contact      — customer says wrong person, wrong email, or asks to update\n                     the billing contact\ngeneral_inquiry    — question, invoice copy request, or anything else\n---\nDecision order (check top to bottom, first match wins):\n1. BANKRUPTCY — keywords: \"bankruptcy\", \"bankrupt\", \"chapter 7\", \"chapter 11\",\n   \"insolvent\", \"receivership\", \"automatic stay\"\n2. DISPUTE — keywords: \"do not owe\", \"don't owe\", \"dispute\", \"billing error\",\n   \"incorrect invoice\", \"wrong amount\", \"we have no record\", \"please investigate\"\n3. WRONG CONTACT — keywords: \"wrong person\", \"wrong email\", \"not the right contact\",\n   \"no longer handle billing\", \"please update\", \"forward to\"\n4. PAYMENT — extract any dollar amount mentioned in the customer's reply:\n   IF stated amount >= invoice_amount → payment_confirmed\n   IF stated amount < invoice_amount  → partial_payment\n   IF no amount but says \"paid\", \"payment sent\", \"please find attached\" → payment_confirmed\n   IF says \"partial\", \"payment plan\", \"can only pay\" → partial_payment\n5. FALLBACK → general_inquiry\n---\nRules:\n- ALWAYS check bankruptcy first — it overrides everything else\n- Read only the customer's reply, not the quoted original email below\n- Never return empty or null\n- Only return one of the 6 exact values listed above",
+    "requiresConsent": false,
+    "testIntegrationProviderId": null,
+    "toolFunctionName": "GPTAction_Custom_IntentClassifier_wVjn",
+    "toolName": "Intent Classifier",
+    "userUploadedIcon": null
+  },
+  "userId": "b1a04028-3501-4b38-8a55-4afda26a8557"
+}

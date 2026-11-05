@@ -1,0 +1,463 @@
+{
+  "_export": {
+    "executionOrder": 4,
+    "folder": "04-code-executor",
+    "rawDetail": "../../raw/nodes/c91e872f-b7ff-4db6-b7b5-8f41c86e55d1.json",
+    "rawGraph": "../../raw/graph.json"
+  },
+  "agentGraphId": "0832d275-3287-49fd-9a90-faed1ba0b298",
+  "agentToolConfigurationId": "068cd38c-5938-4900-94ed-ed152004103f",
+  "agentToolConfigurationId__readable": "04-code-executor.tool",
+  "autoRetryCountWhenFailure": 1,
+  "autoRetryDescription": null,
+  "autoRetryLimitWhenAccuracyIsLow": 1,
+  "autoRetryWaitTimeWhenFailureInMs": 1000,
+  "autoRetryWhenAccuracyLessThan": 80,
+  "childEdges": [
+    {
+      "condition": "",
+      "conditionGroups": [],
+      "id": "33eaff86-e85c-41cc-8ed0-f90894b67ebb",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "c91e872f-b7ff-4db6-b7b5-8f41c86e55d1",
+      "sourceAgentGraphNodeId__readable": "04-code-executor",
+      "targetAgentGraphNodeId": "648dbaf6-f72d-4ec3-a50d-241a780a9c5e",
+      "targetAgentGraphNodeId__readable": "07-send-message"
+    }
+  ],
+  "customId": "3c314f0d-a26b-4767-bd32-e21f48a969eb",
+  "customId__readable": "04-code-executor",
+  "enableAutoRetryDescription": false,
+  "enableAutoRetryWhenAccuracyIsLow": false,
+  "enableAutoRetryWhenFailure": false,
+  "evaluationCriteria": [],
+  "evaluationLlmModel": null,
+  "evaluationLlmThinkingLevels": null,
+  "id": "c91e872f-b7ff-4db6-b7b5-8f41c86e55d1",
+  "isActiveNodeVersion": false,
+  "isAttachmentDataPulledIn": true,
+  "isEdited": true,
+  "isEntryNode": false,
+  "isEvaluationEnabled": false,
+  "isExitNode": false,
+  "markTaskAsFailedIfAccuracyLow": false,
+  "nodeConfigurations": {
+    "alias": "1"
+  },
+  "nodeType": "executionNode",
+  "objective": "Prepare the archive note for an item that is not an invoice",
+  "onError": "STOP",
+  "parentEdges": [
+    {
+      "condition": "Not an invoice (high confidence)",
+      "conditionGroups": [
+        {
+          "agentGraphEdgeId": "2bf58000-47a5-4f7e-919e-b98f078f05ca",
+          "agentGraphEdgeId__readable": "03-condition -> 04-code-executor",
+          "id": "088ce5ec-8b77-4a74-bd99-d9e488c62440",
+          "nextGroupOperator": null,
+          "rules": [
+            {
+              "agentGraphEdgeConditionGroupId": "088ce5ec-8b77-4a74-bd99-d9e488c62440",
+              "comparisonAgentToolConfigurationOutputParamsId": null,
+              "comparisonValue": "not_invoice",
+              "comparisonValueType": "static",
+              "id": "1c3934a5-3ed7-4d23-ba7b-e8577b2fdfaa",
+              "nextRuleOperator": null,
+              "operator": "equals",
+              "sourceAgentToolConfigurationOutputParamsId": "d872faf6-9dc1-47fb-a599-ef44c525114a",
+              "sourceAgentToolConfigurationOutputParamsId__readable": "02-classify-the-document.output.doc_type",
+              "sourceOutputParam": {
+                "agentToolConfigurationId": "0d66abc2-fda7-49ab-8398-b884773b53a2",
+                "agentToolConfigurationId__readable": "02-classify-the-document.tool",
+                "dataType": "string",
+                "definedStructure": false,
+                "id": "d872faf6-9dc1-47fb-a599-ef44c525114a",
+                "isArray": false,
+                "outputExample": null,
+                "paramDescription": "invoice, not_invoice, suspected_fraud or unclear. Unclear means a confidence below 0.90.",
+                "paramName": "doc_type",
+                "paramPath": null,
+                "parentId": null,
+                "position": 0,
+                "structure": null,
+                "typeOptions": null
+              }
+            }
+          ]
+        }
+      ],
+      "id": "2bf58000-47a5-4f7e-919e-b98f078f05ca",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "0ddd8da3-fd70-41ab-bc74-9622699a0f7b",
+      "sourceAgentGraphNodeId__readable": "03-condition",
+      "targetAgentGraphNodeId": "c91e872f-b7ff-4db6-b7b5-8f41c86e55d1",
+      "targetAgentGraphNodeId__readable": "04-code-executor"
+    }
+  ],
+  "parentNodeId": null,
+  "saveAsVersion": false,
+  "toolConfiguration": {
+    "accuracyScore": null,
+    "agentId": "f2bd02dc-6f1a-4f46-8f6e-7193ccadad4d",
+    "code": "function execute(input) {\n  // The classifier found an item that is not an invoice (high confidence).\n  // Phase 1: post a note only. Phase 2: archive the item in Zip.\n  // TODO (O3): Zip documents no archive endpoint. Ask the Zip contact before the write.\n  const preview = String(input.document_text || '').replace(/\\s+/g, ' ').slice(0, 90);\n  const link = input.zip_url ? ' | <' + input.zip_url + '|Open in Zip>' : '';\n  return {\n    archived: false,\n    archive_note: [\n      '*Not an invoice: archive recommended*',\n      'Item: ' + (input.vendor_name || 'unknown sender') + ' (' + (input.invoice_id || 'no id') + ')' + link,\n      'Reason: ' + (input.reason || 'n/a'),\n      'Preview: \"' + preview + '...\"',\n      'Action: archive the item in the Zip Inbox. An archive is a soft delete. To undo it, restore the item from the archived items in Zip.',\n      'The agent did not change Zip. Zip writes start in Phase 2.'\n    ].join('\\n')\n  };\n}\n",
+    "codeLanguage": "javascript",
+    "description": "Execute Code",
+    "dynamicPropsId": null,
+    "fallbackModels": null,
+    "iconSrc": "https://cdn.enterprise.beamstudio.ai/de117198-965b-4da6-8c16-1db26437ef88",
+    "id": "068cd38c-5938-4900-94ed-ed152004103f",
+    "inputParams": [
+      {
+        "agentToolConfigurationId": "068cd38c-5938-4900-94ed-ed152004103f",
+        "agentToolConfigurationId__readable": "04-code-executor.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "50fdf3db-c32a-4cdc-a0ce-47bbb7183d71",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "07ac29bb-000b-4881-beb5-7783259fba6a",
+          "agentToolConfigurationId__readable": "01-trigger.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "52313821-47a3-4a8e-899c-f3e18ddd0294",
+          "isArray": false,
+          "outputExample": null,
+          "paramDescription": "Vendor display name",
+          "paramName": "vendor_name",
+          "paramPath": null,
+          "parentId": null,
+          "position": 2,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "4252fc1f-8c0e-4340-a38f-d2ad57372436"
+              }
+            ],
+            "id": "07ac29bb-000b-4881-beb5-7783259fba6a"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "52313821-47a3-4a8e-899c-f3e18ddd0294",
+        "linkParamOutputId__readable": "01-trigger.output.vendor_name",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": null,
+        "paramDescription": "",
+        "paramName": "vendor_name",
+        "paramTip": null,
+        "position": 0,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "068cd38c-5938-4900-94ed-ed152004103f",
+        "agentToolConfigurationId__readable": "04-code-executor.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "5ffe28dc-e0cf-43e7-adb1-812d32513cc5",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "07ac29bb-000b-4881-beb5-7783259fba6a",
+          "agentToolConfigurationId__readable": "01-trigger.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "dbb84095-2c3f-43cd-bfba-533e1ff22784",
+          "isArray": false,
+          "outputExample": null,
+          "paramDescription": "Zip invoice id",
+          "paramName": "invoice_id",
+          "paramPath": null,
+          "parentId": null,
+          "position": 0,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "4252fc1f-8c0e-4340-a38f-d2ad57372436"
+              }
+            ],
+            "id": "07ac29bb-000b-4881-beb5-7783259fba6a"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "dbb84095-2c3f-43cd-bfba-533e1ff22784",
+        "linkParamOutputId__readable": "01-trigger.output.invoice_id",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": null,
+        "paramDescription": "",
+        "paramName": "invoice_id",
+        "paramTip": null,
+        "position": 1,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": false,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "068cd38c-5938-4900-94ed-ed152004103f",
+        "agentToolConfigurationId__readable": "04-code-executor.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "03fb6b60-1254-48b6-ba94-dc643428c5fe",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "07ac29bb-000b-4881-beb5-7783259fba6a",
+          "agentToolConfigurationId__readable": "01-trigger.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "3b27945b-8167-4c57-a4aa-87cdbdf01a08",
+          "isArray": false,
+          "outputExample": null,
+          "paramDescription": "Text of the source attachment",
+          "paramName": "document_text",
+          "paramPath": null,
+          "parentId": null,
+          "position": 6,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "4252fc1f-8c0e-4340-a38f-d2ad57372436"
+              }
+            ],
+            "id": "07ac29bb-000b-4881-beb5-7783259fba6a"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "3b27945b-8167-4c57-a4aa-87cdbdf01a08",
+        "linkParamOutputId__readable": "01-trigger.output.document_text",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": null,
+        "paramDescription": "",
+        "paramName": "document_text",
+        "paramTip": null,
+        "position": 2,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": false,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "068cd38c-5938-4900-94ed-ed152004103f",
+        "agentToolConfigurationId__readable": "04-code-executor.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "531f833b-3f83-4f99-8f3e-e696c381a1f8",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "0d66abc2-fda7-49ab-8398-b884773b53a2",
+          "agentToolConfigurationId__readable": "02-classify-the-document.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "dfffcaa3-7151-4db6-b817-37ebe9f5094e",
+          "isArray": false,
+          "outputExample": null,
+          "paramDescription": "One sentence that explains the document type.",
+          "paramName": "reason",
+          "paramPath": null,
+          "parentId": null,
+          "position": 2,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "12149f76-17f2-4e34-a05d-402225de6e11"
+              }
+            ],
+            "id": "0d66abc2-fda7-49ab-8398-b884773b53a2"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "dfffcaa3-7151-4db6-b817-37ebe9f5094e",
+        "linkParamOutputId__readable": "02-classify-the-document.output.reason",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": null,
+        "paramDescription": "",
+        "paramName": "reason",
+        "paramTip": null,
+        "position": 3,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": false,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "068cd38c-5938-4900-94ed-ed152004103f",
+        "agentToolConfigurationId__readable": "04-code-executor.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "16b16bdc-4ceb-4acd-a3e2-c5744a3557e2",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "07ac29bb-000b-4881-beb5-7783259fba6a",
+          "agentToolConfigurationId__readable": "01-trigger.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "d047adb0-383e-44e5-8601-b33c56c3de38",
+          "isArray": false,
+          "outputExample": null,
+          "paramDescription": "Link to the invoice in Zip",
+          "paramName": "zip_url",
+          "paramPath": null,
+          "parentId": null,
+          "position": 7,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "4252fc1f-8c0e-4340-a38f-d2ad57372436"
+              }
+            ],
+            "id": "07ac29bb-000b-4881-beb5-7783259fba6a"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "d047adb0-383e-44e5-8601-b33c56c3de38",
+        "linkParamOutputId__readable": "01-trigger.output.zip_url",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": null,
+        "paramDescription": "",
+        "paramName": "zip_url",
+        "paramTip": null,
+        "position": 4,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": false,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      }
+    ],
+    "inputParamsData": null,
+    "integrationProviderId": null,
+    "isBackgroundTool": false,
+    "isBatchExecutionEnabled": false,
+    "isMemoryTool": false,
+    "llmThinkingLevels": null,
+    "memoryLookupInstruction": "",
+    "originalTool": {
+      "agentId": null,
+      "allowWaiting": false,
+      "apiKeyType": null,
+      "bodyParams": null,
+      "description": "Execute Code",
+      "httpMethod": null,
+      "iconSrc": "https://cdn.enterprise.beamstudio.ai/de117198-965b-4da6-8c16-1db26437ef88",
+      "id": "2ac39c46-fe68-4e63-895e-0b4d0c05369e",
+      "inputParams": [],
+      "integration": {
+        "$ref": "../../../../shared/integrations/beam-tools.json",
+        "id": "c0464340-0393-4261-8687-867234ca27de",
+        "name": "Beam Tools"
+      },
+      "integrationId": "c0464340-0393-4261-8687-867234ca27de",
+      "isActive": true,
+      "isAvailableToWorkspace": false,
+      "isBackgroundTool": false,
+      "isBatchExecutionEnabled": null,
+      "isIntegrationConnected": false,
+      "isIntegrationRequired": false,
+      "isMemoryTool": null,
+      "isSharable": false,
+      "isVisibleOnUi": true,
+      "memoryLookupInstruction": null,
+      "meta": {
+        "content": "StandAloneAction_CodeExecutor: A code executor tool. Use this tool to execute custom code for data processing, calculations, transformations, or any programmatic operations.",
+        "data_source": false,
+        "description": "A code executor tool. Use this tool to execute custom code for data processing, calculations, transformations, or any programmatic operations.",
+        "description_human_readable": "Execute Code",
+        "function_name": "StandAloneAction_CodeExecutor",
+        "icon_src": "https://cdn.enterprise.beamstudio.ai/de117198-965b-4da6-8c16-1db26437ef88",
+        "input_params": [],
+        "integrationIdentifier": "httpCustomAuth",
+        "integration_provider_auth": "none",
+        "integration_provider_details": {},
+        "integration_provider_executor": "custom",
+        "optional_extracted_args": [],
+        "optional_generated_args": [],
+        "preferred_model": null,
+        "required_extracted_args": [],
+        "required_generated_args": [],
+        "requires_consent": false,
+        "tool_name": "Code Executor",
+        "type": "code_executor_tool"
+      },
+      "outputId": null,
+      "outputParams": [],
+      "parameter": null,
+      "preferredModel": null,
+      "prompt": "A code executor tool. Use this tool to execute custom code for data processing, calculations, transformations, or any programmatic operations.",
+      "queryParams": null,
+      "requiresConsent": false,
+      "shortDescription": "Execute code safely",
+      "systemIntegrationIdentifier": null,
+      "toolFunctionName": "StandAloneAction_CodeExecutor",
+      "toolName": "Code Executor",
+      "type": "code_executor_tool",
+      "url": null,
+      "urlParams": null,
+      "userId": null,
+      "workspaceId": null
+    },
+    "outputParams": [
+      {
+        "agentToolConfigurationId": "068cd38c-5938-4900-94ed-ed152004103f",
+        "agentToolConfigurationId__readable": "04-code-executor.tool",
+        "dataType": "string",
+        "definedStructure": false,
+        "id": "114de811-874d-4dc1-a4e5-60a9662c7dc5",
+        "isArray": false,
+        "outputExample": "<string>",
+        "paramDescription": "Slack text: the item, the reason, a preview and the undo step.",
+        "paramName": "archive_note",
+        "paramPath": "archive_note",
+        "parentId": null,
+        "position": 0,
+        "structure": null,
+        "typeOptions": null
+      },
+      {
+        "agentToolConfigurationId": "068cd38c-5938-4900-94ed-ed152004103f",
+        "agentToolConfigurationId__readable": "04-code-executor.tool",
+        "dataType": "boolean",
+        "definedStructure": false,
+        "id": "6946f96d-821b-41fa-ae8b-a3dd95e10342",
+        "isArray": false,
+        "outputExample": "<string>",
+        "paramDescription": "True when the item is archived in Zip. Always false until Phase 2.",
+        "paramName": "archived",
+        "paramPath": "archived",
+        "parentId": null,
+        "position": 0,
+        "structure": null,
+        "typeOptions": null
+      }
+    ],
+    "outputParamsData": null,
+    "pipedreamConfiguredProps": null,
+    "preferredModel": "GEMINI_3_FLASH",
+    "prompt": "",
+    "requiresConsent": false,
+    "testIntegrationProviderId": null,
+    "toolFunctionName": "StandAloneAction_CodeExecutor",
+    "toolName": null,
+    "userUploadedIcon": null
+  },
+  "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e"
+}

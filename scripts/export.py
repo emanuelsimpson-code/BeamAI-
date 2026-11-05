@@ -433,6 +433,9 @@ def build_agent_readme(m: AgentModel, meta: Dict[str, Any], detail_agent: Dict[s
         what = detail.get("objective") or ""
         if n.get("nodeType") == "conditionNode":
             what = "Branches: " + "; ".join(m.edge_condition(e) for e in n.get("childEdges") or [])
+        if n.get("nodeType") == "loopingNode":
+            var = m.node_conf(nid).get("linkedVariableId")
+            what = f"Loops over {m.id_names.get(var, var or '?')}" + (f" ({what})" if what and what != "Loop" else "")
         integ = m.integration(nid)
         tool = f"`{tc.get('toolFunctionName')}`" if tc.get("toolFunctionName") else ""
         if integ:

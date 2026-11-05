@@ -1,10 +1,20 @@
 {
   "_generated": "by scripts/export.py from agents/*/raw/nodes/*.json; credentials are {{SECRET:...}} placeholders",
   "actionsUsed": {
+    "CustomApiTool_AddInternalNote_c26w57WV": {
+      "httpMethod": "put",
+      "toolName": "Add Internal Note",
+      "url": "https://betterment.zendesk.com/api/v2/tickets/{{ticket_id}}"
+    },
     "CustomApiTool_CreateTicket_4JRVzsqI": {
       "httpMethod": "post",
       "toolName": "Create Ticket",
       "url": "https://betterment.zendesk.com/api/v2/tickets"
+    },
+    "CustomApiTool_ReplyonTicket_92UuZvCl": {
+      "httpMethod": "put",
+      "toolName": "Reply on Ticket",
+      "url": "https://betterment.zendesk.com/api/v2/tickets/{{ticket_id}}"
     },
     "CustomApiTool_SolveTicket_iJjUtVlK": {
       "httpMethod": "put",

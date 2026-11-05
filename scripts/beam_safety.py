@@ -281,11 +281,17 @@ def _email_bucket(addr: str) -> str:
     return "other domain"
 
 
-def scan_pii(obj: Any, path: str = "$") -> List[PiiHit]:
+_ID_PARAM_NAME = re.compile(r"id$", re.I)  # e.g. ticket.ticket_form_id, group_id, brandId
+
+
+def scan_pii(obj: Any, path: str = "$", numeric_ok: bool = False) -> List[PiiHit]:
+    """``numeric_ok``: the string is the static value of an ID parameter, so long
+    digit runs are object IDs (e.g. Zendesk form IDs), not cards or phones."""
     hits: List[PiiHit] = []
     if isinstance(obj, dict):
+        id_param = isinstance(obj.get("paramName"), str) and bool(_ID_PARAM_NAME.search(obj["paramName"]))
         for k, v in obj.items():
-            hits += scan_pii(v, f"{path}.{k}")
+            hits += scan_pii(v, f"{path}.{k}", numeric_ok=id_param and k == "staticValue")
     elif isinstance(obj, list):
         for i, v in enumerate(obj):
             hits += scan_pii(v, f"{path}[{i}]")
@@ -294,6 +300,8 @@ def scan_pii(obj: Any, path: str = "$") -> List[PiiHit]:
             hits.append(PiiHit(path, "email", _email_bucket(m.group())))
         # Remove UUIDs, hex IDs and epoch-millisecond timestamps before numeric checks.
         numeric = _ID_VALUE.sub(r"\1 ", _EPOCH_MS.sub(" ", _HEXISH.sub(" ", _UUID.sub(" ", obj))))
+        if numeric_ok and re.fullmatch(r"\s*\d{1,19}\s*", obj):
+            numeric = ""
         if _PHONE.search(numeric):
             hits.append(PiiHit(path, "phone_number"))
         if _SSN.search(numeric):

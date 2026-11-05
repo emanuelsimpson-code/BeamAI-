@@ -1,0 +1,482 @@
+{
+  "createdAt": "2026-06-23T13:07:14.918Z",
+  "updatedAt": "2026-06-23T13:07:16.997Z",
+  "deletedAt": null,
+  "id": "ab9ae27f-5fb3-45c9-8e08-13cb52224c41",
+  "evaluationCriteria": [],
+  "agentToolConfigurationId": "d615991b-58e7-4e22-a2dc-6eb7e94872e8",
+  "objective": "Set an internal note on zendesk identifying discrepancy",
+  "customId": "a1758d62-9d9a-4b3b-9449-8c0cc4693c21",
+  "isExitNode": false,
+  "isEntryNode": false,
+  "agentGraphId": "05a27cb0-a5d3-4f43-8c75-30c1dddaab09",
+  "xCoordinate": 1097.75,
+  "yCoordinate": 1984.5,
+  "onError": "STOP",
+  "isEvaluationEnabled": false,
+  "evaluationLlmModel": null,
+  "evaluationLlmThinkingLevels": null,
+  "autoRetryWhenAccuracyLessThan": 80,
+  "autoRetryLimitWhenAccuracyIsLow": 1,
+  "enableAutoRetryWhenAccuracyIsLow": false,
+  "markTaskAsFailedIfAccuracyLow": false,
+  "enableAutoRetryWhenFailure": false,
+  "autoRetryCountWhenFailure": 1,
+  "autoRetryWaitTimeWhenFailureInMs": 1000,
+  "isAttachmentDataPulledIn": true,
+  "nodeType": "executionNode",
+  "nodeConfigurations": {},
+  "saveAsVersion": false,
+  "isEdited": false,
+  "parentNodeId": null,
+  "isActiveNodeVersion": false,
+  "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+  "autoRetryDescription": null,
+  "enableAutoRetryDescription": false,
+  "agentGraph": {
+    "createdAt": "2026-06-23T13:07:14.903Z",
+    "updatedAt": "2026-10-19T16:26:57.890Z",
+    "deletedAt": null,
+    "id": "05a27cb0-a5d3-4f43-8c75-30c1dddaab09",
+    "agentId": "ca09ff3c-4dc0-488d-9415-3b4666301e94",
+    "isActive": false,
+    "isDraft": true,
+    "isPublished": false,
+    "publishedAt": null,
+    "isEverExecuted": false,
+    "isEverUsedForTemplate": false,
+    "isEdited": true,
+    "versionName": null,
+    "versionDescription": null,
+    "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+    "agent": {
+      "createdAt": "2026-04-17T10:20:34.110Z",
+      "updatedAt": "2026-10-22T00:00:01.544Z",
+      "deletedAt": null,
+      "id": "ca09ff3c-4dc0-488d-9415-3b4666301e94",
+      "name": "TST_Betterment AR Agent - Inbound",
+      "description": "",
+      "settings": {
+        "instructions": "",
+        "preferredModel": "GEMINI_3_FLASH"
+      },
+      "config": null,
+      "workspaceId": "{{SECRET:beam_workspace_id}}",
+      "creatorId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+      "type": "pre-configured-agent",
+      "vectorDbId": "90a150c2-8f65-4f25-9f11-88c326291450",
+      "defaultTaskId": null,
+      "themeIconUrl": "https://production-beam-assets-bucket.s3.eu-central-1.amazonaws.com/df719557-ce6d-40dd-b04d-6f8cf23cc86b",
+      "agentCategoryId": "09791b33-c0ec-4bf8-bb8e-d8cc8ae19f7a",
+      "userAccessTokenId": null,
+      "agentSetupSessionId": null,
+      "agentIntroMessage": null,
+      "agentSetupMessage": null,
+      "skipAgentSetupSop": false,
+      "reasoningEffort": null,
+      "governanceEnabled": false,
+      "governanceModel": null,
+      "isAttachmentDataPulledIn": true,
+      "creditUsage": 0,
+      "order": 8,
+      "maxTestRuns": null,
+      "currentTestRuns": 0,
+      "isTestModeEnabled": false,
+      "testStartedAt": null
+    }
+  },
+  "toolConfiguration": {
+    "createdAt": "2026-04-29T07:32:42.703Z",
+    "updatedAt": "2026-07-23T11:01:03.896Z",
+    "deletedAt": null,
+    "id": "d615991b-58e7-4e22-a2dc-6eb7e94872e8",
+    "toolFunctionName": "CustomApiTool_AddInternalNote",
+    "toolName": "Add Internal Note",
+    "integrationProviderId": "59aa0101-ff2f-4f17-978c-9630afef27b7",
+    "testIntegrationProviderId": null,
+    "outputParamsData": null,
+    "inputParamsData": null,
+    "agentId": "ca09ff3c-4dc0-488d-9415-3b4666301e94",
+    "requiresConsent": false,
+    "isBackgroundTool": false,
+    "isMemoryTool": null,
+    "isBatchExecutionEnabled": false,
+    "codeLanguage": null,
+    "code": null,
+    "prompt": null,
+    "accuracyScore": null,
+    "memoryLookupInstruction": "",
+    "preferredModel": "GEMINI_3_FLASH",
+    "fallbackModels": "GEMINI_3_1_PRO,GPT4_1,CLAUDE_4_SONNET",
+    "llmThinkingLevels": null,
+    "userUploadedIcon": null,
+    "dynamicPropsId": "",
+    "pipedreamConfiguredProps": null,
+    "inputParams": [
+      {
+        "createdAt": "2026-06-23T13:07:19.910Z",
+        "updatedAt": "2026-06-23T13:07:19.910Z",
+        "fillType": "static",
+        "position": 1,
+        "question": null,
+        "linkParamOutputId": null,
+        "staticValue": "pending",
+        "required": false,
+        "dataType": "string",
+        "outputExample": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "options": null,
+        "id": "8395c3ac-52e3-4dad-91e6-a99ceb6a43df",
+        "paramName": "ticket.status",
+        "agentToolConfigurationId": "d615991b-58e7-4e22-a2dc-6eb7e94872e8",
+        "paramDescription": "",
+        "paramTip": null,
+        "linkedParamRulePrompt": null,
+        "ruleConditionConfig": null,
+        "linkOutputParam": null
+      },
+      {
+        "createdAt": "2026-06-23T13:07:19.910Z",
+        "updatedAt": "2026-06-23T13:07:19.910Z",
+        "fillType": "static",
+        "position": 3,
+        "question": null,
+        "linkParamOutputId": null,
+        "staticValue": "false",
+        "required": false,
+        "dataType": "boolean",
+        "outputExample": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "options": null,
+        "id": "0d4a6415-b423-4e5d-92a7-f96d47939f12",
+        "paramName": "ticket.comment.public",
+        "agentToolConfigurationId": "d615991b-58e7-4e22-a2dc-6eb7e94872e8",
+        "paramDescription": "value for ${public}",
+        "paramTip": null,
+        "linkedParamRulePrompt": null,
+        "ruleConditionConfig": null,
+        "linkOutputParam": null
+      },
+      {
+        "createdAt": "2026-06-23T13:07:19.910Z",
+        "updatedAt": "2026-06-23T13:07:20.092Z",
+        "fillType": "linked",
+        "position": 0,
+        "question": null,
+        "linkParamOutputId": "773034ca-fa91-4f92-90de-12504d730747",
+        "staticValue": null,
+        "required": true,
+        "dataType": "string",
+        "outputExample": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "options": null,
+        "id": "c91d65b6-c78b-4063-85b7-f8ffa5973e13",
+        "paramName": "ticket_id",
+        "agentToolConfigurationId": "d615991b-58e7-4e22-a2dc-6eb7e94872e8",
+        "paramDescription": "Ticket id from the task query",
+        "paramTip": null,
+        "linkedParamRulePrompt": null,
+        "ruleConditionConfig": null,
+        "linkOutputParam": {
+          "isArray": false,
+          "definedStructure": false,
+          "id": "773034ca-fa91-4f92-90de-12504d730747",
+          "paramName": "ticket_id",
+          "position": 0,
+          "paramDescription": "-",
+          "agentToolConfigurationId": "2c8087fb-bc7a-4a05-9377-54d778320508",
+          "parentId": null,
+          "paramPath": "ticket_id",
+          "outputExample": "<string>",
+          "dataType": "string",
+          "typeOptions": null,
+          "structure": null,
+          "createdAt": "2026-06-23T13:07:17.875Z",
+          "updatedAt": "2026-06-23T13:10:42.236Z",
+          "tool": {
+            "id": "2c8087fb-bc7a-4a05-9377-54d778320508",
+            "agentGraphNodes": [
+              {
+                "id": "e50dd9c3-e5a7-494d-ae31-c9643c52d0a9"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "createdAt": "2026-06-23T13:07:19.910Z",
+        "updatedAt": "2026-06-23T13:07:20.092Z",
+        "fillType": "linked",
+        "position": 2,
+        "question": null,
+        "linkParamOutputId": "d14bf920-8c89-40ef-8076-d93c43fc9ac3",
+        "staticValue": null,
+        "required": false,
+        "dataType": "string",
+        "outputExample": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "options": null,
+        "id": "7716d914-e67a-41c4-a4e4-7f5f95ceee80",
+        "paramName": "ticket.comment.body",
+        "agentToolConfigurationId": "d615991b-58e7-4e22-a2dc-6eb7e94872e8",
+        "paramDescription": "use the following template strictly\n\nCustomer {requester_name} claimed partial payment but Stripe shows no payments recorded.\nTotal still outstanding: ${total_amount_remaining} across {invoice_count_outstanding}    \n  invoice(s).                                                                                  \n  Invoices: [list invoice IDs]                \n  Action: Verify payment with customer before responding.\n\nplease dont add any other text",
+        "paramTip": null,
+        "linkedParamRulePrompt": null,
+        "ruleConditionConfig": null,
+        "linkOutputParam": {
+          "isArray": false,
+          "definedStructure": false,
+          "id": "d14bf920-8c89-40ef-8076-d93c43fc9ac3",
+          "paramName": "internal_note",
+          "position": 0,
+          "paramDescription": "Formatted internal Zendesk note text",
+          "agentToolConfigurationId": "fefa1ef0-2716-4769-9494-6228c817b937",
+          "parentId": null,
+          "paramPath": null,
+          "outputExample": null,
+          "dataType": "string",
+          "typeOptions": null,
+          "structure": null,
+          "createdAt": "2026-06-23T13:07:17.875Z",
+          "updatedAt": "2026-06-23T13:07:17.875Z",
+          "tool": {
+            "id": "fefa1ef0-2716-4769-9494-6228c817b937",
+            "agentGraphNodes": [
+              {
+                "id": "fa2eeebc-c6cc-4915-844d-956d1d323ff2"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "outputParams": [],
+    "originalTool": {
+      "createdAt": "2026-04-21T11:33:43.437Z",
+      "updatedAt": "2026-11-02T04:24:05.294Z",
+      "deletedAt": null,
+      "id": "0bfa1423-289b-4af0-a69a-1efd7389bafa",
+      "toolFunctionName": "CustomApiTool_AddInternalNote",
+      "toolName": "Add Internal Note",
+      "iconSrc": "https://cdn.enterprise.beamstudio.ai/7d370fc4-2a6c-4caa-984a-26bb7972113e_zendesk-logo.png",
+      "type": "custom_integration_tool",
+      "isVisibleOnUi": true,
+      "integrationId": "e1d9ea8f-6f87-4b47-9346-370f75c48677",
+      "meta": {
+        "type": "custom_integration_tool",
+        "prompt": "",
+        "content": "CustomApiTool_AddInternalNote: Add an internal note on zendesk ticket for teams notice",
+        "payload": "{\n    \"ticket\": {                                                                                                                                 \n      \"status\": \"status\",                                                                                                                 \n      \"comment\": {           \n        \"body\": \"note_text\",\n        \"public\": false                                                                                                                         \n      }\n    }                                                                                                                                           \n  }",
+        "icon_src": "https://cdn.enterprise.beamstudio.ai/7d370fc4-2a6c-4caa-984a-26bb7972113e_zendesk-logo.png",
+        "isActive": true,
+        "parameter": "",
+        "tool_name": "Add Internal Note",
+        "apiKeyType": "default",
+        "categories": [],
+        "description": "Add an internal note on zendesk ticket for teams notice",
+        "workspace_id": "{{SECRET:beam_workspace_id}}",
+        "function_name": "CustomApiTool_AddInternalNote",
+        "agent_category": {},
+        "integration_id": "e1d9ea8f-6f87-4b47-9346-370f75c48677",
+        "is_memory_tool": false,
+        "agent_categories": [],
+        "requires_consent": false,
+        "requires_translation": false,
+        "integrationIdentifier": "httpBasicAuth",
+        "optional_extracted_args": [
+          "ticket.status: string // value for ${status}",
+          "ticket.comment.body: string // value for ${body}",
+          "ticket.comment.public: boolean // value for ${public}"
+        ],
+        "optional_generated_args": [],
+        "required_extracted_args": [
+          "ticket_id: string // value for ${ticket_id}"
+        ],
+        "required_generated_args": [],
+        "integration_provider_auth": "basic",
+        "memory_lookup_instruction": "",
+        "integration_provider_details": {
+          "request": {
+            "body": {
+              "ticket": {
+                "status": "status",
+                "comment": {
+                  "body": "note_text",
+                  "public": false
+                }
+              }
+            },
+            "query": {},
+            "method": "put",
+            "endpoint": "https://betterment1768446222.zendesk.com/api/v2/tickets/{{ticket_id}}",
+            "bypassTLS": false
+          },
+          "response": {
+            "data": "{{result.data}}"
+          }
+        },
+        "integration_provider_executor": "custom"
+      },
+      "outputId": null,
+      "prompt": null,
+      "inputParams": [
+        {
+          "dataType": "string",
+          "fillType": "ai_fill",
+          "required": true,
+          "paramName": "ticket_id",
+          "paramDescription": "value for ${ticket_id}"
+        },
+        {
+          "dataType": "string",
+          "fillType": "ai_fill",
+          "required": false,
+          "paramName": "ticket.status",
+          "paramDescription": "value for ${status}"
+        },
+        {
+          "dataType": "string",
+          "fillType": "ai_fill",
+          "required": false,
+          "paramName": "ticket.comment.body",
+          "paramDescription": "value for ${body}"
+        },
+        {
+          "dataType": "boolean",
+          "fillType": "ai_fill",
+          "required": false,
+          "paramName": "ticket.comment.public",
+          "paramDescription": "value for ${public}"
+        }
+      ],
+      "requiresConsent": null,
+      "isMemoryTool": null,
+      "isBackgroundTool": null,
+      "memoryLookupInstruction": null,
+      "outputParams": null,
+      "isBatchExecutionEnabled": null,
+      "description": "Add an internal note on zendesk ticket for teams notice",
+      "isActive": true,
+      "workspaceId": "{{SECRET:beam_workspace_id}}",
+      "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+      "agentId": null,
+      "httpMethod": "put",
+      "url": "https://betterment1768446222.zendesk.com/api/v2/tickets/{{ticket_id}}",
+      "isAvailableToWorkspace": false,
+      "preferredModel": null,
+      "shortDescription": null,
+      "isSharable": false,
+      "systemIntegrationIdentifier": "httpBasicAuth",
+      "apiKeyType": null,
+      "parameter": "",
+      "allowWaiting": false,
+      "queryParams": [],
+      "bodyParams": [
+        {
+          "key": "ticket.status",
+          "type": "string",
+          "required": false,
+          "parameterHint": "value for ${status}"
+        },
+        {
+          "key": "ticket.comment.body",
+          "type": "string",
+          "required": false,
+          "parameterHint": "value for ${body}"
+        },
+        {
+          "key": "ticket.comment.public",
+          "type": "boolean",
+          "required": false,
+          "parameterHint": "value for ${public}"
+        }
+      ],
+      "urlParams": [
+        {
+          "key": "ticket_id",
+          "required": true,
+          "parameterHint": "value for ${ticket_id}"
+        }
+      ],
+      "integration": {
+        "id": "e1d9ea8f-6f87-4b47-9346-370f75c48677",
+        "name": "Zendesk Custom",
+        "description": "Zendesk Custom",
+        "systemIntegrationIdentifier": "httpBasicAuth",
+        "integrationCategoryId": "503199fe-06d5-420d-87e0-b007a635dabd",
+        "iconSrc": "https://cdn.enterprise.beamstudio.ai/7d370fc4-2a6c-4caa-984a-26bb7972113e_zendesk-logo.png",
+        "type": "custom_integration",
+        "authType": "basic",
+        "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+        "workspaceId": "{{SECRET:beam_workspace_id}}",
+        "privacyPolicyUrl": null,
+        "shortDescription": null,
+        "longDescription": null,
+        "systemIntegrationProvider": "CUSTOM",
+        "customAuthParameters": null,
+        "category": null,
+        "authenticationMeta": {
+          "parameter": "",
+          "apiKeyType": "default"
+        },
+        "syncModels": null,
+        "isPublished": null,
+        "attributes": null,
+        "status": null,
+        "customHeaders": [],
+        "allowWaiting": false,
+        "provider": {
+          "createdAt": "2026-04-02T08:23:21.232Z",
+          "updatedAt": "2026-04-02T08:23:30.531Z",
+          "deletedAt": null,
+          "id": "59aa0101-ff2f-4f17-978c-9630afef27b7",
+          "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+          "credentialId": "58559d58-9b65-42ee-a16d-3635dcddb0b4",
+          "connectionName": "ZendeskCustom-connection-sandbox-1",
+          "integration": "httpBasicAuth",
+          "status": "active",
+          "integrationId": "e1d9ea8f-6f87-4b47-9346-370f75c48677",
+          "isOAuth2": false,
+          "provider": "custom",
+          "workspace": "{{SECRET:beam_workspace_id}}",
+          "tokenExpiresIn": null,
+          "credentials": {
+            "user": "90a3a3366b9669bed88883f16d1c243e6ef0a615c1a0834e3dd6742dc07673ac9310cc5a88eb61dc58f689fada7993a6",
+            "password": "{{SECRET:custom_password}}"
+          },
+          "isDefault": false
+        }
+      },
+      "isIntegrationConnected": true,
+      "isIntegrationRequired": true
+    }
+  },
+  "childEdges": [
+    {
+      "createdAt": "2026-06-23T13:07:16.699Z",
+      "updatedAt": "2026-06-23T13:07:16.699Z",
+      "deletedAt": null,
+      "id": "f93e47c4-8cf5-4e27-a419-984e35e960fe",
+      "sourceAgentGraphNodeId": "ab9ae27f-5fb3-45c9-8e08-13cb52224c41",
+      "targetAgentGraphNodeId": "3f50f96c-1867-4576-ae5f-e45fbfd66f6c",
+      "condition": "",
+      "isAttachmentDataPulledIn": true
+    }
+  ],
+  "parentEdges": [
+    {
+      "createdAt": "2026-06-23T13:07:16.699Z",
+      "updatedAt": "2026-06-23T13:07:16.699Z",
+      "deletedAt": null,
+      "id": "297dd778-bc78-4def-82c3-82ceee47b68f",
+      "sourceAgentGraphNodeId": "fa2eeebc-c6cc-4915-844d-956d1d323ff2",
+      "targetAgentGraphNodeId": "ab9ae27f-5fb3-45c9-8e08-13cb52224c41",
+      "condition": "",
+      "isAttachmentDataPulledIn": true
+    }
+  ]
+}

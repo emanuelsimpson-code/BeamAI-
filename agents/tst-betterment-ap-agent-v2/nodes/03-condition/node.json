@@ -1,0 +1,222 @@
+{
+  "_export": {
+    "executionOrder": 3,
+    "folder": "03-condition",
+    "rawDetail": "../../raw/nodes/0ddd8da3-fd70-41ab-bc74-9622699a0f7b.json",
+    "rawGraph": "../../raw/graph.json"
+  },
+  "agentGraphId": "0832d275-3287-49fd-9a90-faed1ba0b298",
+  "agentToolConfigurationId": null,
+  "autoRetryCountWhenFailure": 1,
+  "autoRetryDescription": null,
+  "autoRetryLimitWhenAccuracyIsLow": 1,
+  "autoRetryWaitTimeWhenFailureInMs": 1000,
+  "autoRetryWhenAccuracyLessThan": 80,
+  "childEdges": [
+    {
+      "condition": "Not an invoice (high confidence)",
+      "conditionGroups": [
+        {
+          "agentGraphEdgeId": "2bf58000-47a5-4f7e-919e-b98f078f05ca",
+          "agentGraphEdgeId__readable": "03-condition -> 04-code-executor",
+          "id": "088ce5ec-8b77-4a74-bd99-d9e488c62440",
+          "nextGroupOperator": null,
+          "rules": [
+            {
+              "agentGraphEdgeConditionGroupId": "088ce5ec-8b77-4a74-bd99-d9e488c62440",
+              "comparisonAgentToolConfigurationOutputParamsId": null,
+              "comparisonValue": "not_invoice",
+              "comparisonValueType": "static",
+              "id": "1c3934a5-3ed7-4d23-ba7b-e8577b2fdfaa",
+              "nextRuleOperator": null,
+              "operator": "equals",
+              "sourceAgentToolConfigurationOutputParamsId": "d872faf6-9dc1-47fb-a599-ef44c525114a",
+              "sourceAgentToolConfigurationOutputParamsId__readable": "02-classify-the-document.output.doc_type",
+              "sourceOutputParam": {
+                "agentToolConfigurationId": "0d66abc2-fda7-49ab-8398-b884773b53a2",
+                "agentToolConfigurationId__readable": "02-classify-the-document.tool",
+                "dataType": "string",
+                "definedStructure": false,
+                "id": "d872faf6-9dc1-47fb-a599-ef44c525114a",
+                "isArray": false,
+                "outputExample": null,
+                "paramDescription": "invoice, not_invoice, suspected_fraud or unclear. Unclear means a confidence below 0.90.",
+                "paramName": "doc_type",
+                "paramPath": null,
+                "parentId": null,
+                "position": 0,
+                "structure": null,
+                "typeOptions": null
+              }
+            }
+          ]
+        }
+      ],
+      "id": "2bf58000-47a5-4f7e-919e-b98f078f05ca",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "0ddd8da3-fd70-41ab-bc74-9622699a0f7b",
+      "sourceAgentGraphNodeId__readable": "03-condition",
+      "targetAgentGraphNodeId": "c91e872f-b7ff-4db6-b7b5-8f41c86e55d1",
+      "targetAgentGraphNodeId__readable": "04-code-executor"
+    },
+    {
+      "condition": "Invoice",
+      "conditionGroups": [
+        {
+          "agentGraphEdgeId": "ea55aafa-5789-4fad-b7b9-91f4140ce2a4",
+          "agentGraphEdgeId__readable": "03-condition -> 05-code-executor",
+          "id": "cc0234aa-96e2-4c98-ab1f-2e59be0da16b",
+          "nextGroupOperator": null,
+          "rules": [
+            {
+              "agentGraphEdgeConditionGroupId": "cc0234aa-96e2-4c98-ab1f-2e59be0da16b",
+              "comparisonAgentToolConfigurationOutputParamsId": null,
+              "comparisonValue": "invoice",
+              "comparisonValueType": "static",
+              "id": "014a0c1d-e00a-4ff6-a30e-2a5a30e417cb",
+              "nextRuleOperator": null,
+              "operator": "equals",
+              "sourceAgentToolConfigurationOutputParamsId": "d872faf6-9dc1-47fb-a599-ef44c525114a",
+              "sourceAgentToolConfigurationOutputParamsId__readable": "02-classify-the-document.output.doc_type",
+              "sourceOutputParam": {
+                "agentToolConfigurationId": "0d66abc2-fda7-49ab-8398-b884773b53a2",
+                "agentToolConfigurationId__readable": "02-classify-the-document.tool",
+                "dataType": "string",
+                "definedStructure": false,
+                "id": "d872faf6-9dc1-47fb-a599-ef44c525114a",
+                "isArray": false,
+                "outputExample": null,
+                "paramDescription": "invoice, not_invoice, suspected_fraud or unclear. Unclear means a confidence below 0.90.",
+                "paramName": "doc_type",
+                "paramPath": null,
+                "parentId": null,
+                "position": 0,
+                "structure": null,
+                "typeOptions": null
+              }
+            }
+          ]
+        }
+      ],
+      "id": "ea55aafa-5789-4fad-b7b9-91f4140ce2a4",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "0ddd8da3-fd70-41ab-bc74-9622699a0f7b",
+      "sourceAgentGraphNodeId__readable": "03-condition",
+      "targetAgentGraphNodeId": "19d24cf7-3476-418b-9440-a22ee6391733",
+      "targetAgentGraphNodeId__readable": "05-code-executor"
+    },
+    {
+      "condition": "Suspected fraud or unclear: route to a person",
+      "conditionGroups": [
+        {
+          "agentGraphEdgeId": "5d42c774-8190-4b66-ac0c-7cf1a3d15fb7",
+          "agentGraphEdgeId__readable": "03-condition -> 06-send-message",
+          "id": "7740b2e8-4cbe-4be7-a91a-e636167a78fa",
+          "nextGroupOperator": null,
+          "rules": [
+            {
+              "agentGraphEdgeConditionGroupId": "7740b2e8-4cbe-4be7-a91a-e636167a78fa",
+              "comparisonAgentToolConfigurationOutputParamsId": null,
+              "comparisonValue": "invoice",
+              "comparisonValueType": "static",
+              "id": "c46a3654-94dd-4926-acea-835be365feae",
+              "nextRuleOperator": "AND",
+              "operator": "not_equals",
+              "sourceAgentToolConfigurationOutputParamsId": "d872faf6-9dc1-47fb-a599-ef44c525114a",
+              "sourceAgentToolConfigurationOutputParamsId__readable": "02-classify-the-document.output.doc_type",
+              "sourceOutputParam": {
+                "agentToolConfigurationId": "0d66abc2-fda7-49ab-8398-b884773b53a2",
+                "agentToolConfigurationId__readable": "02-classify-the-document.tool",
+                "dataType": "string",
+                "definedStructure": false,
+                "id": "d872faf6-9dc1-47fb-a599-ef44c525114a",
+                "isArray": false,
+                "outputExample": null,
+                "paramDescription": "invoice, not_invoice, suspected_fraud or unclear. Unclear means a confidence below 0.90.",
+                "paramName": "doc_type",
+                "paramPath": null,
+                "parentId": null,
+                "position": 0,
+                "structure": null,
+                "typeOptions": null
+              }
+            },
+            {
+              "agentGraphEdgeConditionGroupId": "7740b2e8-4cbe-4be7-a91a-e636167a78fa",
+              "comparisonAgentToolConfigurationOutputParamsId": null,
+              "comparisonValue": "not_invoice",
+              "comparisonValueType": "static",
+              "id": "65764ad1-5006-4047-af11-38730e8b7118",
+              "nextRuleOperator": null,
+              "operator": "not_equals",
+              "sourceAgentToolConfigurationOutputParamsId": "d872faf6-9dc1-47fb-a599-ef44c525114a",
+              "sourceAgentToolConfigurationOutputParamsId__readable": "02-classify-the-document.output.doc_type",
+              "sourceOutputParam": {
+                "agentToolConfigurationId": "0d66abc2-fda7-49ab-8398-b884773b53a2",
+                "agentToolConfigurationId__readable": "02-classify-the-document.tool",
+                "dataType": "string",
+                "definedStructure": false,
+                "id": "d872faf6-9dc1-47fb-a599-ef44c525114a",
+                "isArray": false,
+                "outputExample": null,
+                "paramDescription": "invoice, not_invoice, suspected_fraud or unclear. Unclear means a confidence below 0.90.",
+                "paramName": "doc_type",
+                "paramPath": null,
+                "parentId": null,
+                "position": 0,
+                "structure": null,
+                "typeOptions": null
+              }
+            }
+          ]
+        }
+      ],
+      "id": "5d42c774-8190-4b66-ac0c-7cf1a3d15fb7",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "0ddd8da3-fd70-41ab-bc74-9622699a0f7b",
+      "sourceAgentGraphNodeId__readable": "03-condition",
+      "targetAgentGraphNodeId": "6a3810d2-165c-4ec3-a377-108f67a6ee40",
+      "targetAgentGraphNodeId__readable": "06-send-message"
+    }
+  ],
+  "customId": "8cb3be87-996b-449f-82c7-9939f1d52caf",
+  "customId__readable": "03-condition",
+  "enableAutoRetryDescription": false,
+  "enableAutoRetryWhenAccuracyIsLow": false,
+  "enableAutoRetryWhenFailure": false,
+  "evaluationCriteria": [],
+  "evaluationLlmModel": null,
+  "evaluationLlmThinkingLevels": null,
+  "id": "0ddd8da3-fd70-41ab-bc74-9622699a0f7b",
+  "isActiveNodeVersion": false,
+  "isAttachmentDataPulledIn": true,
+  "isEdited": false,
+  "isEntryNode": false,
+  "isEvaluationEnabled": false,
+  "isExitNode": false,
+  "markTaskAsFailedIfAccuracyLow": false,
+  "nodeConfigurations": {
+    "conditionType": "rule_based",
+    "fallbackModels": null,
+    "llmModel": null
+  },
+  "nodeType": "conditionNode",
+  "objective": "What type of document is it?",
+  "onError": "STOP",
+  "parentEdges": [
+    {
+      "condition": "",
+      "conditionGroups": [],
+      "id": "03c7e368-5369-4c30-813c-6a05c88914b3",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "12149f76-17f2-4e34-a05d-402225de6e11",
+      "sourceAgentGraphNodeId__readable": "02-classify-the-document",
+      "targetAgentGraphNodeId": "0ddd8da3-fd70-41ab-bc74-9622699a0f7b",
+      "targetAgentGraphNodeId__readable": "03-condition"
+    }
+  ],
+  "parentNodeId": null,
+  "saveAsVersion": false,
+  "toolConfiguration": {},
+  "userId": null
+}

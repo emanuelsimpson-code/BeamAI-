@@ -1,0 +1,264 @@
+{
+  "_export": {
+    "executionOrder": 20,
+    "folder": "20-payment-acknowledgement-generator",
+    "rawDetail": "../../raw/nodes/0924aada-c9e7-42ca-a971-1c7a6aae4719.json",
+    "rawGraph": "../../raw/graph.json"
+  },
+  "agentGraphId": "73aecd7e-318f-4b0b-8a3b-139c373df0cb",
+  "agentToolConfigurationId": "959b7576-8b53-4f83-aeac-d439b474b9c9",
+  "agentToolConfigurationId__readable": "20-payment-acknowledgement-generator.tool",
+  "autoRetryCountWhenFailure": 1,
+  "autoRetryDescription": null,
+  "autoRetryLimitWhenAccuracyIsLow": 1,
+  "autoRetryWaitTimeWhenFailureInMs": 1000,
+  "autoRetryWhenAccuracyLessThan": 80,
+  "childEdges": [
+    {
+      "condition": null,
+      "conditionGroups": [],
+      "id": "14fcfe68-359c-4886-b0ec-2aa5f1880d8a",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "0924aada-c9e7-42ca-a971-1c7a6aae4719",
+      "sourceAgentGraphNodeId__readable": "20-payment-acknowledgement-generator",
+      "targetAgentGraphNodeId": "875f1ff3-40ee-4604-80f8-fefaffd40d55",
+      "targetAgentGraphNodeId__readable": "26-reply-on-ticket"
+    }
+  ],
+  "customId": "564b4c00-8df6-498b-8b78-4fd7e43f40b3",
+  "customId__readable": "20-payment-acknowledgement-generator",
+  "enableAutoRetryDescription": false,
+  "enableAutoRetryWhenAccuracyIsLow": true,
+  "enableAutoRetryWhenFailure": true,
+  "evaluationCriteria": [],
+  "evaluationLlmModel": null,
+  "evaluationLlmThinkingLevels": null,
+  "id": "0924aada-c9e7-42ca-a971-1c7a6aae4719",
+  "isActiveNodeVersion": false,
+  "isAttachmentDataPulledIn": true,
+  "isEdited": false,
+  "isEntryNode": false,
+  "isEvaluationEnabled": false,
+  "isExitNode": false,
+  "markTaskAsFailedIfAccuracyLow": false,
+  "nodeConfigurations": {},
+  "nodeType": "executionNode",
+  "objective": "Generate the email to be sent for acknowledgement of the completed paymenr",
+  "onError": "STOP",
+  "parentEdges": [
+    {
+      "condition": "if the verification_status is fully_paid",
+      "conditionGroups": [],
+      "id": "399fc954-6ddf-47a4-b2be-5cfecfe080c2",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "e30f654e-1786-4318-be37-0821f39f0a6c",
+      "sourceAgentGraphNodeId__readable": "14-condition",
+      "targetAgentGraphNodeId": "0924aada-c9e7-42ca-a971-1c7a6aae4719",
+      "targetAgentGraphNodeId__readable": "20-payment-acknowledgement-generator"
+    }
+  ],
+  "parentNodeId": null,
+  "saveAsVersion": false,
+  "toolConfiguration": {
+    "accuracyScore": null,
+    "agentId": "56180518-a836-4998-b63b-fefc179cd0b6",
+    "code": "",
+    "codeLanguage": "",
+    "description": "",
+    "dynamicPropsId": "",
+    "fallbackModels": "GEMINI_3_1_PRO,GPT4_1,CLAUDE_4_SONNET",
+    "iconSrc": null,
+    "id": "959b7576-8b53-4f83-aeac-d439b474b9c9",
+    "inputParams": [
+      {
+        "agentToolConfigurationId": "959b7576-8b53-4f83-aeac-d439b474b9c9",
+        "agentToolConfigurationId__readable": "20-payment-acknowledgement-generator.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "009cf821-edbe-435f-b0d0-310107ddae9e",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "fa11e2a8-f38f-4a6f-ad08-9219a159c91c",
+          "agentToolConfigurationId__readable": "01-trigger.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "81a274fd-0a33-475f-a967-48e405d693b1",
+          "isArray": false,
+          "outputExample": "<string>",
+          "paramDescription": "-",
+          "paramName": "requester_email",
+          "paramPath": "requester_email",
+          "parentId": null,
+          "position": 0,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "59b60a34-90b9-4368-af49-1ee13b0e21fe"
+              }
+            ],
+            "id": "fa11e2a8-f38f-4a6f-ad08-9219a159c91c"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "81a274fd-0a33-475f-a967-48e405d693b1",
+        "linkParamOutputId__readable": "01-trigger.output.requester_email",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "ticket requester name or the client name from task query",
+        "paramName": "requester_name",
+        "paramTip": null,
+        "position": 0,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      }
+    ],
+    "inputParamsData": null,
+    "integrationProviderId": null,
+    "isBackgroundTool": false,
+    "isBatchExecutionEnabled": false,
+    "isMemoryTool": false,
+    "llmThinkingLevels": null,
+    "memoryLookupInstruction": "",
+    "originalTool": {
+      "agentId": "ca09ff3c-4dc0-488d-9415-3b4666301e94",
+      "allowWaiting": false,
+      "apiKeyType": null,
+      "bodyParams": null,
+      "description": "",
+      "httpMethod": null,
+      "iconSrc": null,
+      "id": "2e424ccc-1212-4836-9e36-81f8da1bee15",
+      "inputParams": [
+        {
+          "dataType": "string",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "968b6595-3f43-4362-b0df-b89923f4c4b5",
+          "options": null,
+          "paramDescription": "ticket requester name or the client name from task query",
+          "paramName": "requester_name",
+          "paramTip": null,
+          "position": 0,
+          "reloadProps": false,
+          "remoteOptions": false,
+          "required": true,
+          "staticValue": null
+        }
+      ],
+      "integration": null,
+      "integrationId": null,
+      "isActive": true,
+      "isAvailableToWorkspace": false,
+      "isBackgroundTool": false,
+      "isBatchExecutionEnabled": null,
+      "isIntegrationConnected": false,
+      "isIntegrationRequired": false,
+      "isMemoryTool": false,
+      "isSharable": false,
+      "isVisibleOnUi": true,
+      "memoryLookupInstruction": "",
+      "meta": {
+        "content": "",
+        "description": "",
+        "function_name": "GPTAction_Custom_PaymentAcknowledgementGenerator",
+        "preferred_model": "GEMINI_3_FLASH",
+        "prompt": "Generate the subject line and HTML email body for a full payment acknowledgement.\n                                                                                   \n  **Input Parameters (sources):**                                                                                                               \n  - requester_name: ```{requester_name}```     ← Zendesk webhook: ticket requester full name\n                                                                                                                                                \n  ---                                                                                                                                           \n                                                                                                                                                \n  ## Output Format                                                                                                                              \n                                                                                                                                                \n  First line: SUBJECT: [subject line here]\n  Remaining lines: HTML body only — pure HTML starting with <p>, no markdown, no plain text                                                     \n                                                                                           \n  ---                                         \n                                                                                                                                                \n  ## Template — Full Payment Acknowledgement\n                                                                                                                                                \n  SUBJECT: Re: Outstanding Balance — Payment Confirmed\n                                                                                                                                                \n  <p>Hi [customer_first_name],</p>        \n                                  \n  <p>Thank you for your recent payment. Your account is currently up to date and no further action is required.</p>                             \n                                                                                                                   \n  <p>If you believe you are receiving this email in error, please email us at <a href=\"mailto:ar@betterment.com\">ar@betterment.com</a>.</p>     \n                                                                                                                                           \n  <p>Best,<br>                                                                                                                                  \n  Betterment Accounts Receivable Team</p>\n                                                                                                                                                \n  ---             \n                                                                                                                                                \n  ## Formatting Rules\n                     \n  1. customer_first_name: first name only — e.g. \"Michael\" from \"Michael Torres\"\n  2. HTML only: no markdown, no plain text                                      \n  3. No wrappers: do not add <html>, <body>, or <div> — start with <p>\n  4. Strictly follow the template above — do not add or remove any lines",
+        "tool_name": "Payment Acknowledgement Generator",
+        "type": "custom_gpt_tool"
+      },
+      "outputId": null,
+      "outputParams": [
+        {
+          "dataType": "string",
+          "id": "b1184e4d-b0ec-4a57-959e-9081567815dd",
+          "isArray": false,
+          "paramDescription": "the complete email subject ",
+          "paramName": "email_subject",
+          "position": 0,
+          "typeOptions": {
+            "enumValues": null
+          }
+        },
+        {
+          "dataType": "string",
+          "id": "c6451969-5997-4789-bc35-ffc6e0a61d76",
+          "isArray": false,
+          "paramDescription": "The complete email body generated ",
+          "paramName": "email_body",
+          "position": 1,
+          "typeOptions": {
+            "enumValues": null
+          }
+        }
+      ],
+      "parameter": null,
+      "preferredModel": "GEMINI_3_FLASH",
+      "prompt": "Generate the subject line and HTML email body for a full payment acknowledgement.\n                                                                                   \n  **Input Parameters (sources):**                                                                                                               \n  - requester_name: ```{requester_name}```     ← Zendesk webhook: ticket requester full name\n                                                                                                                                                \n  ---                                                                                                                                           \n                                                                                                                                                \n  ## Output Format                                                                                                                              \n                                                                                                                                                \n  First line: SUBJECT: [subject line here]\n  Remaining lines: HTML body only — pure HTML starting with <p>, no markdown, no plain text                                                     \n                                                                                           \n  ---                                         \n                                                                                                                                                \n  ## Template — Full Payment Acknowledgement\n                                                                                                                                                \n  SUBJECT: Re: Outstanding Balance — Payment Confirmed\n                                                                                                                                                \n  <p>Hi [customer_first_name],</p>        \n                                  \n  <p>Thank you for your recent payment. Your account is currently up to date and no further action is required.</p>                             \n                                                                                                                   \n  <p>If you believe you are receiving this email in error, please email us at <a href=\"mailto:ar@betterment.com\">ar@betterment.com</a>.</p>     \n                                                                                                                                           \n  <p>Best,<br>                                                                                                                                  \n  Betterment Accounts Receivable Team</p>\n                                                                                                                                                \n  ---             \n                                                                                                                                                \n  ## Formatting Rules\n                     \n  1. customer_first_name: first name only — e.g. \"Michael\" from \"Michael Torres\"\n  2. HTML only: no markdown, no plain text                                      \n  3. No wrappers: do not add <html>, <body>, or <div> — start with <p>\n  4. Strictly follow the template above — do not add or remove any lines",
+      "queryParams": null,
+      "requiresConsent": false,
+      "shortDescription": "",
+      "systemIntegrationIdentifier": null,
+      "toolFunctionName": "GPTAction_Custom_PaymentAcknowledgementGenerator",
+      "toolName": "Payment Acknowledgement Generator",
+      "type": "custom_gpt_tool",
+      "url": null,
+      "urlParams": null,
+      "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+      "workspaceId": "{{SECRET:beam_workspace_id}}"
+    },
+    "outputParams": [
+      {
+        "agentToolConfigurationId": "959b7576-8b53-4f83-aeac-d439b474b9c9",
+        "agentToolConfigurationId__readable": "20-payment-acknowledgement-generator.tool",
+        "dataType": "string",
+        "definedStructure": false,
+        "id": "d45d45b4-c139-4e61-acbc-c1a4e324dc6e",
+        "isArray": false,
+        "outputExample": null,
+        "paramDescription": "the complete email subject ",
+        "paramName": "email_subject",
+        "paramPath": null,
+        "parentId": null,
+        "position": 0,
+        "structure": null,
+        "typeOptions": {
+          "enumValues": null
+        }
+      },
+      {
+        "agentToolConfigurationId": "959b7576-8b53-4f83-aeac-d439b474b9c9",
+        "agentToolConfigurationId__readable": "20-payment-acknowledgement-generator.tool",
+        "dataType": "string",
+        "definedStructure": false,
+        "id": "80700036-2604-4429-be9e-91038f25866e",
+        "isArray": false,
+        "outputExample": null,
+        "paramDescription": "The complete email body generated ",
+        "paramName": "email_body",
+        "paramPath": null,
+        "parentId": null,
+        "position": 1,
+        "structure": null,
+        "typeOptions": {
+          "enumValues": null
+        }
+      }
+    ],
+    "outputParamsData": null,
+    "pipedreamConfiguredProps": null,
+    "preferredModel": "GEMINI_3_FLASH",
+    "prompt": "Generate the subject line and HTML email body for a full payment acknowledgement.\n                                                                                   \n  **Input Parameters (sources):**                                                                                                               \n  - requester_name: ```{requester_name}```     ← Extract the requester name from the email\n                                                                                                                                                \n  ---                                                                                                                                           \n                                                                                                                                                \n  ## Output Format                                                                                                                              \n                                                                                                                                                \n  First line: SUBJECT: [subject line here]\n  Remaining lines: HTML body only — pure HTML starting with <p>, no markdown, no plain text                                                     \n                                                                                           \n  ---                                         \n                                                                                                                                                \n  ## Template — Full Payment Acknowledgement\n                                                                                                                                                \n  SUBJECT: Re: Outstanding Balance — Payment Confirmed\n                                                                                                                                                \n  <p>Hi [customer_first_name],</p>        \n                                  \n  <p>Thank you for your recent payment. Your account is currently up to date and no further action is required.</p>                             \n                                                                                                                   \n  <p>If you believe you are receiving this email in error, please email us at <a href=\"mailto:ar@betterment.com\">ar@betterment.com</a>.</p>     \n                                                                                                                                           \n  <p>Best,<br>                                                                                                                                  \n  Betterment Accounts Receivable Team</p>\n                                                                                                                                                \n  ---             \n                                                                                                                                                \n  ## Formatting Rules\n                     \n  1. customer_first_name: first name only — e.g. \"Michael\" from \"Michael Torres\"\n  2. HTML only: no markdown, no plain text                                      \n  3. No wrappers: do not add <html>, <body>, or <div> — start with <p>\n  4. Strictly follow the template above — do not add or remove any lines",
+    "requiresConsent": false,
+    "testIntegrationProviderId": null,
+    "toolFunctionName": "GPTAction_Custom_PaymentAcknowledgementGenerator",
+    "toolName": "Payment Acknowledgement Generator",
+    "userUploadedIcon": null
+  },
+  "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e"
+}
