@@ -1,0 +1,290 @@
+{
+  "_export": {
+    "executionOrder": 10,
+    "folder": "10-update-case-working-prod",
+    "rawDetail": "../../raw/nodes/dff1aeff-924a-40dc-b2ba-8339539c2230.json",
+    "rawGraph": "../../raw/graph.json"
+  },
+  "agentGraphId": "bbf94f07-77c8-44ee-8bcb-34d452ab62f3",
+  "agentToolConfigurationId": "2d3faf5c-1d98-4bda-ab20-62fabd5b6443",
+  "agentToolConfigurationId__readable": "10-update-case-working-prod.tool",
+  "autoRetryCountWhenFailure": 1,
+  "autoRetryDescription": null,
+  "autoRetryLimitWhenAccuracyIsLow": 1,
+  "autoRetryWaitTimeWhenFailureInMs": 1000,
+  "autoRetryWhenAccuracyLessThan": 80,
+  "childEdges": [
+    {
+      "condition": "",
+      "conditionGroups": [],
+      "id": "c492ad7c-e20d-4e1b-9119-f1146c3d0f8a",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "dff1aeff-924a-40dc-b2ba-8339539c2230",
+      "sourceAgentGraphNodeId__readable": "10-update-case-working-prod",
+      "targetAgentGraphNodeId": "02fb2eaf-f004-4606-873f-6f6c4409d921",
+      "targetAgentGraphNodeId__readable": "11-condition"
+    }
+  ],
+  "customId": "f01ba4a9-5000-4f2c-a29d-252e6c17a39d",
+  "customId__readable": "10-update-case-working-prod",
+  "enableAutoRetryDescription": false,
+  "enableAutoRetryWhenAccuracyIsLow": false,
+  "enableAutoRetryWhenFailure": false,
+  "evaluationCriteria": [],
+  "evaluationLlmModel": null,
+  "evaluationLlmThinkingLevels": null,
+  "id": "dff1aeff-924a-40dc-b2ba-8339539c2230",
+  "isActiveNodeVersion": false,
+  "isAttachmentDataPulledIn": true,
+  "isEdited": false,
+  "isEntryNode": false,
+  "isEvaluationEnabled": false,
+  "isExitNode": false,
+  "markTaskAsFailedIfAccuracyLow": false,
+  "nodeConfigurations": {},
+  "nodeType": "executionNode",
+  "objective": "update the case status to working",
+  "onError": "STOP",
+  "parentEdges": [
+    {
+      "condition": "",
+      "conditionGroups": [],
+      "id": "1978d11f-7ce8-4e12-a54b-09d5c21a6a90",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "903b63b4-0801-426e-8b9f-8aa13abe6d87",
+      "sourceAgentGraphNodeId__readable": "09-complete-task-prod",
+      "targetAgentGraphNodeId": "dff1aeff-924a-40dc-b2ba-8339539c2230",
+      "targetAgentGraphNodeId__readable": "10-update-case-working-prod"
+    }
+  ],
+  "parentNodeId": null,
+  "saveAsVersion": false,
+  "toolConfiguration": {
+    "accuracyScore": null,
+    "agentId": "c8a3e542-cb80-4f89-b0ba-b64e685284d1",
+    "code": null,
+    "codeLanguage": null,
+    "description": "update the case status to working on production",
+    "dynamicPropsId": "",
+    "fallbackModels": "GPT5",
+    "iconSrc": "https://cdn.enterprise.beamstudio.ai/33fea372-3f7d-4792-aef5-0201a4ce965a_salesforce_icon.png",
+    "id": "2d3faf5c-1d98-4bda-ab20-62fabd5b6443",
+    "inputParams": [
+      {
+        "agentToolConfigurationId": "2d3faf5c-1d98-4bda-ab20-62fabd5b6443",
+        "agentToolConfigurationId__readable": "10-update-case-working-prod.tool",
+        "dataType": "string",
+        "fillType": "ai_fill",
+        "id": "43f63667-dd3e-42af-b8ca-edbcf28f0492",
+        "linkOutputParam": null,
+        "linkParamOutputId": null,
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "case id retrieved from the salesforce",
+        "paramName": "case_id",
+        "paramTip": null,
+        "position": 0,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "2d3faf5c-1d98-4bda-ab20-62fabd5b6443",
+        "agentToolConfigurationId__readable": "10-update-case-working-prod.tool",
+        "dataType": "string",
+        "fillType": "static",
+        "id": "75fdb8a9-db93-480d-a277-ff28394149a5",
+        "linkOutputParam": null,
+        "linkParamOutputId": null,
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "value for ${Status}",
+        "paramName": "Status",
+        "paramTip": null,
+        "position": 1,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": false,
+        "ruleConditionConfig": null,
+        "staticValue": "Working"
+      }
+    ],
+    "inputParamsData": null,
+    "integrationProviderId": "f83665ed-06ac-49ec-94a7-4ddad01e3263",
+    "isBackgroundTool": false,
+    "isBatchExecutionEnabled": false,
+    "isMemoryTool": false,
+    "llmThinkingLevels": null,
+    "memoryLookupInstruction": "",
+    "originalTool": {
+      "agentId": null,
+      "allowWaiting": false,
+      "apiKeyType": null,
+      "bodyParams": [
+        {
+          "key": "Status",
+          "parameterHint": "value for ${Status}",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "description": "update the case status to working on production",
+      "httpMethod": "patch",
+      "iconSrc": "https://cdn.enterprise.beamstudio.ai/33fea372-3f7d-4792-aef5-0201a4ce965a_salesforce_icon.png",
+      "id": "6bd2c00c-dfe7-4849-a880-80d7f8db20d2",
+      "inputParams": [
+        {
+          "dataType": "string",
+          "fillType": "ai_fill",
+          "paramDescription": "value for ${case_id}",
+          "paramName": "case_id",
+          "required": true
+        },
+        {
+          "dataType": "string",
+          "fillType": "ai_fill",
+          "paramDescription": "value for ${Status}",
+          "paramName": "Status",
+          "required": false
+        }
+      ],
+      "integration": {
+        "$ref": "../../../../shared/integrations/salesforce-production.json",
+        "id": "650eed02-30b4-4077-8fec-c79ef25c7603",
+        "name": "Salesforce Production"
+      },
+      "integrationId": "650eed02-30b4-4077-8fec-c79ef25c7603",
+      "isActive": true,
+      "isAvailableToWorkspace": false,
+      "isBackgroundTool": null,
+      "isBatchExecutionEnabled": null,
+      "isIntegrationConnected": true,
+      "isIntegrationRequired": true,
+      "isMemoryTool": null,
+      "isSharable": false,
+      "isVisibleOnUi": true,
+      "memoryLookupInstruction": null,
+      "meta": {
+        "agent_categories": [],
+        "agent_category": {},
+        "apiKeyType": "bearer",
+        "categories": [],
+        "content": "CustomApiTool_UpdateCaseWorkingProd: update the case status to working on production",
+        "description": "update the case status to working on production",
+        "function_name": "CustomApiTool_UpdateCaseWorkingProd",
+        "icon_src": "https://cdn.enterprise.beamstudio.ai/33fea372-3f7d-4792-aef5-0201a4ce965a_salesforce_icon.png",
+        "integrationIdentifier": "customOAuth",
+        "integration_id": "650eed02-30b4-4077-8fec-c79ef25c7603",
+        "integration_provider_auth": "oauth",
+        "integration_provider_details": {
+          "request": {
+            "body": {
+              "Status": "Working"
+            },
+            "bypassTLS": false,
+            "endpoint": "https://betterment.my.salesforce.com/services/data/v59.0/sobjects/Case/{{case_id}}",
+            "method": "patch",
+            "query": {}
+          },
+          "response": {
+            "data": "{{result.data}}"
+          }
+        },
+        "integration_provider_executor": "custom",
+        "isActive": true,
+        "is_memory_tool": false,
+        "memory_lookup_instruction": "",
+        "optional_extracted_args": [
+          "Status: string // value for ${Status}"
+        ],
+        "optional_generated_args": [],
+        "parameter": "",
+        "payload": " { \"Status\": \"Working\" }",
+        "prompt": "",
+        "required_extracted_args": [
+          "case_id: string // value for ${case_id}"
+        ],
+        "required_generated_args": [],
+        "requires_consent": false,
+        "requires_translation": false,
+        "tool_name": "Update Case Working Prod",
+        "type": "custom_integration_tool",
+        "workspace_id": "{{SECRET:beam_workspace_id}}"
+      },
+      "outputId": null,
+      "outputParams": null,
+      "parameter": "",
+      "preferredModel": null,
+      "prompt": null,
+      "queryParams": [],
+      "requiresConsent": null,
+      "shortDescription": null,
+      "systemIntegrationIdentifier": "customOAuth",
+      "toolFunctionName": "CustomApiTool_UpdateCaseWorkingProd",
+      "toolName": "Update Case Working Prod",
+      "type": "custom_integration_tool",
+      "url": "https://betterment.my.salesforce.com/services/data/v59.0/sobjects/Case/{{case_id}}",
+      "urlParams": [
+        {
+          "key": "case_id",
+          "parameterHint": "value for ${case_id}",
+          "required": true
+        }
+      ],
+      "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+      "workspaceId": "{{SECRET:beam_workspace_id}}"
+    },
+    "outputParams": [
+      {
+        "agentToolConfigurationId": "2d3faf5c-1d98-4bda-ab20-62fabd5b6443",
+        "agentToolConfigurationId__readable": "10-update-case-working-prod.tool",
+        "dataType": "string",
+        "definedStructure": false,
+        "id": "714d0234-8003-4265-9e1e-ec7567aecd6a",
+        "isArray": false,
+        "outputExample": null,
+        "paramDescription": "-",
+        "paramName": "data",
+        "paramPath": "data",
+        "parentId": null,
+        "position": 0,
+        "structure": null,
+        "typeOptions": null
+      },
+      {
+        "agentToolConfigurationId": "2d3faf5c-1d98-4bda-ab20-62fabd5b6443",
+        "agentToolConfigurationId__readable": "10-update-case-working-prod.tool",
+        "dataType": "string",
+        "definedStructure": false,
+        "id": "d2436bce-2d81-428a-9bc7-9dc5fbeb4b5b",
+        "isArray": false,
+        "outputExample": null,
+        "paramDescription": "-",
+        "paramName": "data",
+        "paramPath": "data",
+        "parentId": null,
+        "position": 1,
+        "structure": null,
+        "typeOptions": null
+      }
+    ],
+    "outputParamsData": null,
+    "pipedreamConfiguredProps": null,
+    "preferredModel": "GEMINI_3_1_PRO",
+    "prompt": null,
+    "requiresConsent": false,
+    "testIntegrationProviderId": null,
+    "toolFunctionName": "CustomApiTool_UpdateCaseWorkingProd",
+    "toolName": "Update Case Working Prod",
+    "userUploadedIcon": null
+  },
+  "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e"
+}

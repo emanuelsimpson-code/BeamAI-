@@ -1,0 +1,5 @@
+.env.tpl
+.env
+discovery/
+.venv/
+__pycache__/

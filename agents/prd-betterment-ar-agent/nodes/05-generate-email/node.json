@@ -1,0 +1,464 @@
+{
+  "_export": {
+    "executionOrder": 5,
+    "folder": "05-generate-email",
+    "rawDetail": "../../raw/nodes/40bc4237-c6d9-4075-a9b5-9606fe931337.json",
+    "rawGraph": "../../raw/graph.json"
+  },
+  "agentGraphId": "bbf94f07-77c8-44ee-8bcb-34d452ab62f3",
+  "agentToolConfigurationId": "e1424567-9345-46e1-ac2f-57bd278d57c7",
+  "agentToolConfigurationId__readable": "05-generate-email.tool",
+  "autoRetryCountWhenFailure": 1,
+  "autoRetryDescription": null,
+  "autoRetryLimitWhenAccuracyIsLow": 1,
+  "autoRetryWaitTimeWhenFailureInMs": 1000,
+  "autoRetryWhenAccuracyLessThan": 80,
+  "childEdges": [
+    {
+      "condition": "",
+      "conditionGroups": [],
+      "id": "d70f1d0c-8a04-4bf8-80dd-5db40f81053b",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "40bc4237-c6d9-4075-a9b5-9606fe931337",
+      "sourceAgentGraphNodeId__readable": "05-generate-email",
+      "targetAgentGraphNodeId": "08500228-6be1-4e4a-aca8-94fa82a4392e",
+      "targetAgentGraphNodeId__readable": "06-create-ticket"
+    }
+  ],
+  "customId": "047ee9d9-fe98-4e42-9c8a-da2b5d4abcaa",
+  "customId__readable": "05-generate-email",
+  "enableAutoRetryDescription": false,
+  "enableAutoRetryWhenAccuracyIsLow": false,
+  "enableAutoRetryWhenFailure": false,
+  "evaluationCriteria": [],
+  "evaluationLlmModel": null,
+  "evaluationLlmThinkingLevels": null,
+  "id": "40bc4237-c6d9-4075-a9b5-9606fe931337",
+  "isActiveNodeVersion": false,
+  "isAttachmentDataPulledIn": true,
+  "isEdited": true,
+  "isEntryNode": false,
+  "isEvaluationEnabled": false,
+  "isExitNode": false,
+  "markTaskAsFailedIfAccuracyLow": false,
+  "nodeConfigurations": {},
+  "nodeType": "executionNode",
+  "objective": "generate email to put on zendesk",
+  "onError": "STOP",
+  "parentEdges": [
+    {
+      "condition": "",
+      "conditionGroups": [],
+      "id": "84127aa7-3ec4-4856-af24-e60b8bc31d23",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "3bd4099a-c7d2-469f-89f0-b5779c69c8d1",
+      "sourceAgentGraphNodeId__readable": "04-code-executor",
+      "targetAgentGraphNodeId": "40bc4237-c6d9-4075-a9b5-9606fe931337",
+      "targetAgentGraphNodeId__readable": "05-generate-email"
+    }
+  ],
+  "parentNodeId": null,
+  "saveAsVersion": false,
+  "toolConfiguration": {
+    "accuracyScore": null,
+    "agentId": "c8a3e542-cb80-4f89-b0ba-b64e685284d1",
+    "code": null,
+    "codeLanguage": null,
+    "description": "",
+    "dynamicPropsId": "",
+    "fallbackModels": "GEMINI_3_1_PRO,GPT4_1,CLAUDE_4_SONNET",
+    "iconSrc": "",
+    "id": "e1424567-9345-46e1-ac2f-57bd278d57c7",
+    "inputParams": [
+      {
+        "agentToolConfigurationId": "e1424567-9345-46e1-ac2f-57bd278d57c7",
+        "agentToolConfigurationId__readable": "05-generate-email.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "ea1d0b5d-be7c-4f90-b497-ea43511fa2d2",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "9050a3bf-82e3-4e4d-a6c5-7b456ef6ab94",
+          "agentToolConfigurationId__readable": "04-code-executor.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "34561367-314e-44df-add1-f26a2b294c3c",
+          "isArray": false,
+          "outputExample": "<string>",
+          "paramDescription": "-",
+          "paramName": "customer_name",
+          "paramPath": "customer_name",
+          "parentId": null,
+          "position": 4,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "3bd4099a-c7d2-469f-89f0-b5779c69c8d1"
+              }
+            ],
+            "id": "9050a3bf-82e3-4e4d-a6c5-7b456ef6ab94"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "34561367-314e-44df-add1-f26a2b294c3c",
+        "linkParamOutputId__readable": "04-code-executor.output.customer_name",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "customer name from the task payload",
+        "paramName": "customer_name",
+        "paramTip": null,
+        "position": 3,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "e1424567-9345-46e1-ac2f-57bd278d57c7",
+        "agentToolConfigurationId__readable": "05-generate-email.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "7676784c-3d61-490c-b6f6-c8a097ea7d9c",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "9050a3bf-82e3-4e4d-a6c5-7b456ef6ab94",
+          "agentToolConfigurationId__readable": "04-code-executor.tool",
+          "dataType": "number",
+          "definedStructure": false,
+          "id": "90b898f3-561a-427f-be61-4219606285a9",
+          "isArray": false,
+          "outputExample": null,
+          "paramDescription": null,
+          "paramName": "reminder_count",
+          "paramPath": null,
+          "parentId": null,
+          "position": 0,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "3bd4099a-c7d2-469f-89f0-b5779c69c8d1"
+              }
+            ],
+            "id": "9050a3bf-82e3-4e4d-a6c5-7b456ef6ab94"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "90b898f3-561a-427f-be61-4219606285a9",
+        "linkParamOutputId__readable": "04-code-executor.output.reminder_count",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "Dunning stage for this invoice, derived from days_overdue by the 'create the necessary inputs for the email' step (0=first notice, 1=second, 2=final). Use it verbatim - do not re-derive from Salesforce.",
+        "paramName": "reminder_count",
+        "paramTip": null,
+        "position": 4,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "e1424567-9345-46e1-ac2f-57bd278d57c7",
+        "agentToolConfigurationId__readable": "05-generate-email.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "0e9025a4-69ca-4753-97b7-1b81ad915b18",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "9050a3bf-82e3-4e4d-a6c5-7b456ef6ab94",
+          "agentToolConfigurationId__readable": "04-code-executor.tool",
+          "dataType": "number",
+          "definedStructure": false,
+          "id": "cfc5520f-a0ca-4b2a-a6d9-862c68807a60",
+          "isArray": false,
+          "outputExample": "<string>",
+          "paramDescription": "-",
+          "paramName": "total_amount_due",
+          "paramPath": "total_amount_due",
+          "parentId": null,
+          "position": 1,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "3bd4099a-c7d2-469f-89f0-b5779c69c8d1"
+              }
+            ],
+            "id": "9050a3bf-82e3-4e4d-a6c5-7b456ef6ab94"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "cfc5520f-a0ca-4b2a-a6d9-862c68807a60",
+        "linkParamOutputId__readable": "04-code-executor.output.total_amount_due",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "sum of amount_due across all invoices",
+        "paramName": "total_amount_due",
+        "paramTip": null,
+        "position": 0,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "e1424567-9345-46e1-ac2f-57bd278d57c7",
+        "agentToolConfigurationId__readable": "05-generate-email.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "b0078fa6-8567-4b73-9e01-6fe4bafe81ad",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "9050a3bf-82e3-4e4d-a6c5-7b456ef6ab94",
+          "agentToolConfigurationId__readable": "04-code-executor.tool",
+          "dataType": "number",
+          "definedStructure": false,
+          "id": "fc720831-60db-4446-91d4-2d93cee067f8",
+          "isArray": false,
+          "outputExample": "<string>",
+          "paramDescription": "-",
+          "paramName": "invoice_count",
+          "paramPath": "invoice_count",
+          "parentId": null,
+          "position": 0,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "3bd4099a-c7d2-469f-89f0-b5779c69c8d1"
+              }
+            ],
+            "id": "9050a3bf-82e3-4e4d-a6c5-7b456ef6ab94"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "fc720831-60db-4446-91d4-2d93cee067f8",
+        "linkParamOutputId__readable": "04-code-executor.output.invoice_count",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "number of overdue invoices for this entity",
+        "paramName": "invoice_count",
+        "paramTip": null,
+        "position": 1,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "e1424567-9345-46e1-ac2f-57bd278d57c7",
+        "agentToolConfigurationId__readable": "05-generate-email.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "d13ff3e4-f804-4cf7-89db-d0e6e7102100",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "9050a3bf-82e3-4e4d-a6c5-7b456ef6ab94",
+          "agentToolConfigurationId__readable": "04-code-executor.tool",
+          "dataType": "object",
+          "definedStructure": false,
+          "id": "9a49aa19-319b-469e-877c-2f4a67807b6b",
+          "isArray": true,
+          "outputExample": "[{\"invoice_number\": \"<string>\", \"days_overdue\": \"<number>\", \"hosted_invoice_url\": \"<string>\"}]",
+          "paramDescription": "-",
+          "paramName": "invoices",
+          "paramPath": "invoices",
+          "parentId": null,
+          "position": 10,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "3bd4099a-c7d2-469f-89f0-b5779c69c8d1"
+              }
+            ],
+            "id": "9050a3bf-82e3-4e4d-a6c5-7b456ef6ab94"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "9a49aa19-319b-469e-877c-2f4a67807b6b",
+        "linkParamOutputId__readable": "04-code-executor.output.invoices",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "array of objects, one per invoice containing invoice_id, days_overdue, stripe hosted invoice url",
+        "paramName": "invoices",
+        "paramTip": null,
+        "position": 2,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      }
+    ],
+    "inputParamsData": null,
+    "integrationProviderId": null,
+    "isBackgroundTool": false,
+    "isBatchExecutionEnabled": false,
+    "isMemoryTool": false,
+    "llmThinkingLevels": null,
+    "memoryLookupInstruction": "",
+    "originalTool": {
+      "agentId": "a693caf9-5be5-4b81-87a6-0f2cecc0734f",
+      "allowWaiting": false,
+      "apiKeyType": null,
+      "bodyParams": null,
+      "description": "",
+      "httpMethod": null,
+      "iconSrc": "",
+      "id": "ae32680a-cfbf-4ab9-bc11-73a51c655671",
+      "inputParams": [
+        {
+          "dataType": "object",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "67b6fb62-dacc-493d-bf59-da54bca76d8b",
+          "paramDescription": "Linked from 1.  -> invoice",
+          "paramName": "invoice",
+          "position": 0,
+          "required": true
+        },
+        {
+          "dataType": "array",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "8d11e105-b284-43a8-b175-060d521007be",
+          "paramDescription": "Linked from 5.  -> open_pos",
+          "paramName": "open_pos",
+          "position": 1,
+          "required": true
+        },
+        {
+          "dataType": "array",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "99380f23-41cf-4f7b-93a1-2722c0249652",
+          "paramDescription": "Linked from 5.  -> requester_history",
+          "paramName": "requester_history",
+          "position": 2,
+          "required": false
+        },
+        {
+          "dataType": "string",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "ff37850b-6f13-42ce-a9c9-d50a5c62447f",
+          "paramDescription": "Linked from 5.  -> zip_suggested_po",
+          "paramName": "zip_suggested_po",
+          "position": 3,
+          "required": false
+        }
+      ],
+      "integration": null,
+      "integrationId": null,
+      "isActive": true,
+      "isAvailableToWorkspace": false,
+      "isBackgroundTool": false,
+      "isBatchExecutionEnabled": null,
+      "isIntegrationConnected": false,
+      "isIntegrationRequired": false,
+      "isMemoryTool": false,
+      "isSharable": false,
+      "isVisibleOnUi": true,
+      "memoryLookupInstruction": "",
+      "meta": {
+        "content": "",
+        "description": "",
+        "function_name": "GPTAction_Custom_GenerateEmail",
+        "preferred_model": "GEMINI_3_1_PRO",
+        "prompt": "Generate the subject line and HTML email body for an overdue invoice reminder.                                                    \n   \n \n **Input Parameters (sources):**                                                                                                   \n  - reminder_count: ```{reminder_count}```             ← Salesforce: Task_Index__c of next open Task on the Case\n  - customer_first_name: ```{customer_name}```    ← Stripe: object.customer_name (extract first name only)\n  - invoice_count: ```{invoice_count}```                 ← number of overdue invoices for this entity                                       \n  - total_amount_due: ```{total_amount_due}```          ← sum of amount_duacross all invoices ÷ 100 (cents → dollars)                    \n  - invoices: ```{invoices}```                          ← array of objects, one per invoice:                                               \n                                                      bill_name: Salesforce Bill__c.Name (e.g. DB5FB8E5-0004)                       \n                                                      days_overdue: integer                                                         \n                                                      invoice_url: Stripe hosted_invoice_url\n                                                                                                                                 \n  ---                                                                                                                               \n   \n  ## Output Format                                                                                                                  \n                  \n  First line: SUBJECT: [subject line here]                                                                                          \n  Remaining lines: HTML body only — pure HTML starting with <p>, no markdown, no plain text\n                                                                                                                                    \n  ---             \n                                                                                                                                    \n  ## Decision Logic\n\n    0        → First Notice    (action required, provide payment date)                                                              \n    1         → Second Notice   (immediate payment required, deduction warning)\n    2        → Final Notice    (urgent, 10 business days, deduction warning)                                                                                             \n  ---                                                                                                                               \n                                                                                                                                    \n  ## Invoice List Block\n\n  For all templates, render the invoices list as:                                                                                   \n   \n  IF invoice_count == 1:                                                                                                            \n    <p>Invoice #[bill_name] — <a href=\"[invoice_url]”>Stripe Payment Link</a></p>\n                                                                                                                                    \n  IF invoice_count > 1:                                                                                                             \n    <p>                                                                                                                             \n    Invoice #[bill_name_1] — <a href=\"[invoice_url_1]\">Stripe Payment Link</a><br>                                                  \n    Invoice #[bill_name_2] — <a href=\"[invoice_url_2]\">Stripe Payment Link</a><br>                                                  \n    ... (one line per invoice)\n    </p>                                                                                                                            \n                  \n  ---                                                                                                                               \n                  \n  ## TEMPLATE 1: reminder_count == 0 — First Overdue Notice\n\n  SUBJECT: Reminder: Regarding your outstanding Betterment invoice(s)                                                               \n   \n  <p>Hi [customer_first_name],</p>                                                                                                  \n                  \n  <p>According to our records, your Betterment invoice(s) totaling <strong>$ [total_amount_due]</strong> are overdue. Immediate      \n  action is required. Confirm receipt of this email and provide a definitive date for when we can expect payment. If your plan is on\n   Autopay, your payment method on file has failed. You must update your payment method and settle your invoice immediately using   \n  the payment link(s) below or by accessing it within your plan sponsor dashboard:</p>\n\n  [invoice_list_block]\n\n  <p>If there is a better email for billing correspondence or further questions, please let us know at <a                           \n  href=\"mailto:ar@betterment.com\">ar@betterment.com</a>.</p>\n                                                                                                                                    \n  <p>Best,<br>    \n  Betterment Accounts Receivable Team</p>\n\n  ---                                                                                                                               \n   \n  ## TEMPLATE 2: reminder_count == 1 — Second Overdue Notice                                                                   \n                  \n  SUBJECT: Second Notice: Regarding your outstanding Betterment invoice(s)\n\n  <p>Hi [customer_first_name],</p>                                                                                                  \n   \n  <p>According to our records, your Betterment invoice(s) totaling <strong>$[total_amount_due]</strong> are overdue. Immediate      \n  payment is required. Confirm receipt of this email and provide a payment date. If your plan is on Autopay, your payment method on\n  file has failed. You must update your payment method and settle your invoice immediately using the payment link(s) below or by    \n  accessing it within your plan sponsor dashboard:</p>\n\n  [invoice_list_block]\n\n  <p>Betterment will deduct the fees from plan assets in a per capita amount from each Participant if we do not hear from you. Refer\n   to Section A (Service Fees) of your Betterment for Business Statement of Work for details.</p>\n                                                                                                                                    \n  <p>If there is a better email for billing correspondence or further questions, please let us know at <a                           \n  href=\"mailto:ar@betterment.com\">ar@betterment.com</a>.</p>\n                                                                                                                                    \n  <p>Best,<br>    \n  Betterment Accounts Receivable Team</p>\n\n  ---\n\n  ## TEMPLATE 3: reminder_count == 2 — Final Notice\n\n  SUBJECT: Final Notice: Regarding your outstanding Betterment invoice(s)                                                           \n   \n  <p>Hi [customer_first_name],</p>                                                                                                  \n                  \n  <p>Your plan has <strong>[invoice_count] outstanding invoice(s) totaling $[total_amount_due]</strong>. We have reached out several\n   times and have not yet received payment in regards to the invoice(s) that have been unpaid for [days_overdue] days or more.</p>\n                                                                                                                                    \n  <p>You have <strong>10 business days</strong> to reply to this message. Failure to pay will result in Betterment deducting fees   \n  from plan assets in a per capita amount from each Participant. Please refer to Section A (Service Fees) of the Betterment for\n  Business Statement of Work within your Betterment for Business Master Services Agreement for more details.</p>                    \n                  \n  [invoice_list_block]\n\n  <p>If there is a better email for billing correspondence or further questions, please let us know at <a                           \n  href=\"mailto:ar@betterment.com\">ar@betterment.com</a>.</p>\n                                                                                                                                    \n  <p>Best,<br>    \n  Betterment Accounts Receivable Team</p>\n                                                                                                                                    \n  ---\n\n  ## Formatting Rules\n\n  1. Currency: always $X,XXX.XX — e.g. $649.04 not 64904 or 649                                                                     \n  2. invoice_list_block: render using the Invoice List Block rules above — one line per invoice with Stripe Payment Link as a\n  hyperlink                                                                                                                         \n  3. customer_first_name: first name only — e.g. \"Govind\" from \"Govind Balu - Employer\"\n  4. HTML only: no markdown, no plain text                                                                                          \n  5. No wrappers: do not add <html>, <body>, or <div> — start with <p>\n  6. amount_due from Stripe is in cents — divide by 100 before displaying                                                           \n  7. Use Bill__c.Name for invoice references (e.g. DB5FB8E5-0004) — NOT Stripe in_xxx IDs                                           \n  8. If invoice_count == 1: omit \"totaling $[total_amount_due]\" and use singular \"invoice\" throughout\n  9. Please DONT forget to add the total_amount_due in the email.\n  10. Strictly follow the templates",
+        "tool_name": "Generate Email",
+        "type": "custom_gpt_tool"
+      },
+      "outputId": null,
+      "outputParams": [
+        {
+          "dataType": "object",
+          "definedStructure": false,
+          "isArray": false,
+          "paramDescription": "path, selected_po, allocations, confidence, needs_split_review, subsidiary_mismatch, over_tolerance, requester, coding, reasoning",
+          "paramName": "decision",
+          "paramPath": null,
+          "position": 0
+        }
+      ],
+      "parameter": null,
+      "preferredModel": "GEMINI_3_1_PRO",
+      "prompt": "Generate the subject line and HTML email body for an overdue invoice reminder.                                                    \n   \n \n **Input Parameters (sources):**                                                                                                   \n  - reminder_count: ```{reminder_count}```             ← Salesforce: Task_Index__c of next open Task on the Case\n  - customer_first_name: ```{customer_name}```    ← Stripe: object.customer_name (extract first name only)\n  - invoice_count: ```{invoice_count}```                 ← number of overdue invoices for this entity                                       \n  - total_amount_due: ```{total_amount_due}```          ← sum of amount_duacross all invoices ÷ 100 (cents → dollars)                    \n  - invoices: ```{invoices}```                          ← array of objects, one per invoice:                                               \n                                                      bill_name: Salesforce Bill__c.Name (e.g. DB5FB8E5-0004)                       \n                                                      days_overdue: integer                                                         \n                                                      invoice_url: Stripe hosted_invoice_url\n                                                                                                                                 \n  ---                                                                                                                               \n   \n  ## Output Format                                                                                                                  \n                  \n  First line: SUBJECT: [subject line here]                                                                                          \n  Remaining lines: HTML body only — pure HTML starting with <p>, no markdown, no plain text\n                                                                                                                                    \n  ---             \n                                                                                                                                    \n  ## Decision Logic\n\n    0        → First Notice    (action required, provide payment date)                                                              \n    1         → Second Notice   (immediate payment required, deduction warning)\n    2        → Final Notice    (urgent, 10 business days, deduction warning)                                                                                             \n  ---                                                                                                                               \n                                                                                                                                    \n  ## Invoice List Block\n\n  For all templates, render the invoices list as:                                                                                   \n   \n  IF invoice_count == 1:                                                                                                            \n    <p>Invoice #[bill_name] — <a href=\"[invoice_url]”>Stripe Payment Link</a></p>\n                                                                                                                                    \n  IF invoice_count > 1:                                                                                                             \n    <p>                                                                                                                             \n    Invoice #[bill_name_1] — <a href=\"[invoice_url_1]\">Stripe Payment Link</a><br>                                                  \n    Invoice #[bill_name_2] — <a href=\"[invoice_url_2]\">Stripe Payment Link</a><br>                                                  \n    ... (one line per invoice)\n    </p>                                                                                                                            \n                  \n  ---                                                                                                                               \n                  \n  ## TEMPLATE 1: reminder_count == 0 — First Overdue Notice\n\n  SUBJECT: Reminder: Regarding your outstanding Betterment invoice(s)                                                               \n   \n  <p>Hi [customer_first_name],</p>                                                                                                  \n                  \n  <p>According to our records, your Betterment invoice(s) totaling <strong>$ [total_amount_due]</strong> are overdue. Immediate      \n  action is required. Confirm receipt of this email and provide a definitive date for when we can expect payment. If your plan is on\n   Autopay, your payment method on file has failed. You must update your payment method and settle your invoice immediately using   \n  the payment link(s) below or by accessing it within your plan sponsor dashboard:</p>\n\n  [invoice_list_block]\n\n  <p>If there is a better email for billing correspondence or further questions, please let us know at <a                           \n  href=\"mailto:ar@betterment.com\">ar@betterment.com</a>.</p>\n                                                                                                                                    \n  <p>Best,<br>    \n  Betterment Accounts Receivable Team</p>\n\n  ---                                                                                                                               \n   \n  ## TEMPLATE 2: reminder_count == 1 — Second Overdue Notice                                                                   \n                  \n  SUBJECT: Second Notice: Regarding your outstanding Betterment invoice(s)\n\n  <p>Hi [customer_first_name],</p>                                                                                                  \n   \n  <p>According to our records, your Betterment invoice(s) totaling <strong>$[total_amount_due]</strong> are overdue. Immediate      \n  payment is required. Confirm receipt of this email and provide a payment date. If your plan is on Autopay, your payment method on\n  file has failed. You must update your payment method and settle your invoice immediately using the payment link(s) below or by    \n  accessing it within your plan sponsor dashboard:</p>\n\n  [invoice_list_block]\n\n  <p>Betterment will deduct the fees from plan assets in a per capita amount from each Participant if we do not hear from you. Refer\n   to Section A (Service Fees) of your Betterment for Business Statement of Work for details.</p>\n                                                                                                                                    \n  <p>If there is a better email for billing correspondence or further questions, please let us know at <a                           \n  href=\"mailto:ar@betterment.com\">ar@betterment.com</a>.</p>\n                                                                                                                                    \n  <p>Best,<br>    \n  Betterment Accounts Receivable Team</p>\n\n  ---\n\n  ## TEMPLATE 3: reminder_count == 2 — Final Notice\n\n  SUBJECT: Final Notice: Regarding your outstanding Betterment invoice(s)                                                           \n   \n  <p>Hi [customer_first_name],</p>                                                                                                  \n                  \n  <p>Your plan has <strong>[invoice_count] outstanding invoice(s) totaling $[total_amount_due]</strong>. We have reached out several\n   times and have not yet received payment in regards to the invoice(s) that have been unpaid for [days_overdue] days or more.</p>\n                                                                                                                                    \n  <p>You have <strong>10 business days</strong> to reply to this message. Failure to pay will result in Betterment deducting fees   \n  from plan assets in a per capita amount from each Participant. Please refer to Section A (Service Fees) of the Betterment for\n  Business Statement of Work within your Betterment for Business Master Services Agreement for more details.</p>                    \n                  \n  [invoice_list_block]\n\n  <p>If there is a better email for billing correspondence or further questions, please let us know at <a                           \n  href=\"mailto:ar@betterment.com\">ar@betterment.com</a>.</p>\n                                                                                                                                    \n  <p>Best,<br>    \n  Betterment Accounts Receivable Team</p>\n                                                                                                                                    \n  ---\n\n  ## Formatting Rules\n\n  1. Currency: always $X,XXX.XX — e.g. $649.04 not 64904 or 649                                                                     \n  2. invoice_list_block: render using the Invoice List Block rules above — one line per invoice with Stripe Payment Link as a\n  hyperlink                                                                                                                         \n  3. customer_first_name: first name only — e.g. \"Govind\" from \"Govind Balu - Employer\"\n  4. HTML only: no markdown, no plain text                                                                                          \n  5. No wrappers: do not add <html>, <body>, or <div> — start with <p>\n  6. amount_due from Stripe is in cents — divide by 100 before displaying                                                           \n  7. Use Bill__c.Name for invoice references (e.g. DB5FB8E5-0004) — NOT Stripe in_xxx IDs                                           \n  8. If invoice_count == 1: omit \"totaling $[total_amount_due]\" and use singular \"invoice\" throughout\n  9. Please DONT forget to add the total_amount_due in the email.\n  10. Strictly follow the templates",
+      "queryParams": null,
+      "requiresConsent": false,
+      "shortDescription": "",
+      "systemIntegrationIdentifier": null,
+      "toolFunctionName": "GPTAction_Custom_GenerateEmail",
+      "toolName": "Score + Allocate Line Items",
+      "type": "custom_gpt_tool",
+      "url": null,
+      "urlParams": null,
+      "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+      "workspaceId": "{{SECRET:beam_workspace_id}}"
+    },
+    "outputParams": [
+      {
+        "agentToolConfigurationId": "e1424567-9345-46e1-ac2f-57bd278d57c7",
+        "agentToolConfigurationId__readable": "05-generate-email.tool",
+        "dataType": "string",
+        "definedStructure": false,
+        "id": "78d87402-7e08-4db8-886d-85c2863fd940",
+        "isArray": false,
+        "outputExample": null,
+        "paramDescription": "The subject of the email generated",
+        "paramName": "email_subject",
+        "paramPath": null,
+        "parentId": null,
+        "position": 0,
+        "structure": null,
+        "typeOptions": {
+          "enumValues": null
+        }
+      },
+      {
+        "agentToolConfigurationId": "e1424567-9345-46e1-ac2f-57bd278d57c7",
+        "agentToolConfigurationId__readable": "05-generate-email.tool",
+        "dataType": "string",
+        "definedStructure": false,
+        "id": "6302463b-b185-4398-950b-c169fd53caee",
+        "isArray": false,
+        "outputExample": null,
+        "paramDescription": "The body of the email generated",
+        "paramName": "email_body",
+        "paramPath": null,
+        "parentId": null,
+        "position": 1,
+        "structure": null,
+        "typeOptions": {
+          "enumValues": null
+        }
+      }
+    ],
+    "outputParamsData": null,
+    "pipedreamConfiguredProps": null,
+    "preferredModel": "GPT4_1",
+    "prompt": "Generate the subject line and HTML email body for an overdue invoice reminder.                                                    \n   \n \n **Input Parameters (sources):**                                                                                                   \n  - reminder_count: ```{reminder_count}```             ← Salesforce: Task_Index__c of next open Task on the Case\n  - customer_first_name: ```{customer_name}```    ← Stripe: object.customer_name (extract first name only)\n  - invoice_count: ```{invoice_count}```                 ← number of overdue invoices for this entity                                       \n  - total_amount_due: ```{total_amount_due}```          ← sum of amount_due across all invoices             \n  - invoices: ```{invoices}```                          ← array of objects, one per invoice:                                               \n                                                      invoice_number: human-readable invoice number (e.g. SKB18OAG-0002)                       \n                                                      days_overdue: integer                                                         \n                                                      invoice_url: Stripe hosted_invoice_url\n                                                                                                                                 \n  ---                                                                                                                               \n   \n  ## Output Format                                                                                                                  \n                  \n  First line: SUBJECT: [subject line here]                                                                                          \n  Remaining lines: HTML body only — pure HTML starting with <p>, no markdown, no plain text\n                                                                                                                                    \n  ---             \n                                                                                                                                    \n  ## Decision Logic\n\n    0        → First Notice    (action required, provide payment date)                                                              \n    1         → Second Notice   (immediate payment required, deduction warning)\n    2        → Final Notice    (urgent, 10 business days, deduction warning)                                                                                             \n  ---                                                                                                                               \n                                                                                                                                    \n  ## Invoice List Block\n\n  For all templates, render the invoices list as:                                                                                   \n   \n  IF invoice_count == 1:                                                                                                            \n    <p>Invoice #[invoice_number] — <a href=\"[invoice_url]”>Stripe Payment Link</a></p>\n                                                                                                                                    \n  IF invoice_count > 1:                                                                                                             \n    <p>                                                                                                                             \n    Invoice #[invoice_number_1] — <a href=\"[invoice_url_1]\">Stripe Payment Link</a><br>                                                  \n    Invoice #[invoice_number_2] — <a href=\"[invoice_url_2]\">Stripe Payment Link</a><br>                                                  \n    ... (one line per invoice)\n    </p>                                                                                                                            \n                  \n  ---                                                                                                                               \n                  \n  ## TEMPLATE 1: reminder_count == 0 — First Overdue Notice\n\n  SUBJECT: Reminder: Regarding your outstanding Betterment invoice(s)                                                               \n   \n  <p>Hi [customer_first_name],</p>                                                                                                  \n                  \n  <p>According to our records, your Betterment invoice(s) totaling <strong>$ [total_amount_due]</strong> are overdue. Immediate      \n  action is required. Confirm receipt of this email and provide a definitive date for when we can expect payment. If your plan is on\n   Autopay, your payment method on file has failed. You must update your payment method and settle your invoice immediately using   \n  the payment link(s) below or by accessing it within your plan sponsor dashboard:</p>\n\n  [invoice_list_block]\n\n  <p>If there is a better email for billing correspondence or further questions, please let us know at <a                           \n  href=\"mailto:ar@betterment.com\">ar@betterment.com</a>.</p>\n                                                                                                                                    \n  <p>Best,<br>    \n  Betterment Accounts Receivable Team</p>\n\n  ---                                                                                                                               \n   \n  ## TEMPLATE 2: reminder_count == 1 — Second Overdue Notice                                                                   \n                  \n  SUBJECT: Second Notice: Regarding your outstanding Betterment invoice(s)\n\n  <p>Hi [customer_first_name],</p>                                                                                                  \n   \n  <p>According to our records, your Betterment invoice(s) totaling <strong>$[total_amount_due]</strong> are overdue. Immediate      \n  payment is required. Confirm receipt of this email and provide a payment date. If your plan is on Autopay, your payment method on\n  file has failed. You must update your payment method and settle your invoice immediately using the payment link(s) below or by    \n  accessing it within your plan sponsor dashboard:</p>\n\n  [invoice_list_block]\n\n  <p>Betterment will deduct the fees from plan assets in a per capita amount from each Participant if we do not hear from you. Refer\n   to Section A (Service Fees) of your Betterment for Business Statement of Work for details.</p>\n                                                                                                                                    \n  <p>If there is a better email for billing correspondence or further questions, please let us know at <a                           \n  href=\"mailto:ar@betterment.com\">ar@betterment.com</a>.</p>\n                                                                                                                                    \n  <p>Best,<br>    \n  Betterment Accounts Receivable Team</p>\n\n  ---\n\n  ## TEMPLATE 3: reminder_count == 2 — Final Notice\n\n  SUBJECT: Final Notice: Regarding your outstanding Betterment invoice(s)                                                           \n   \n  <p>Hi [customer_first_name],</p>                                                                                                  \n                  \n  <p>Your plan has <strong>[invoice_count] outstanding invoice(s) totaling $[total_amount_due]</strong>. We have reached out several\n   times and have not yet received payment in regards to the invoice(s) that have been unpaid for [days_overdue] days or more.</p>\n                                                                                                                                    \n  <p>You have <strong>10 business days</strong> to reply to this message. Failure to pay will result in Betterment deducting fees   \n  from plan assets in a per capita amount from each Participant. Please refer to Section A (Service Fees) of the Betterment for\n  Business Statement of Work within your Betterment for Business Master Services Agreement for more details.</p>                    \n                  \n  [invoice_list_block]\n\n  <p>If there is a better email for billing correspondence or further questions, please let us know at <a                           \n  href=\"mailto:ar@betterment.com\">ar@betterment.com</a>.</p>\n                                                                                                                                    \n  <p>Best,<br>    \n  Betterment Accounts Receivable Team</p>\n                                                                                                                                    \n  ---\n\n  ## Formatting Rules\n\n  1. Currency: always $X,XXX.XX — e.g. $649.04 not 64904 or 649                                                                     \n  2. invoice_list_block: render using the Invoice List Block rules above — one line per invoice with Stripe Payment Link as a\n  hyperlink                                                                                                                         \n  3. customer_first_name: first name only — e.g. \"Govind\" from \"Govind Balu - Employer\"\n  4. HTML only: no markdown, no plain text                                                                                          \n  5. No wrappers: do not add <html>, <body>, or <div> — start with <p>\n  6. amount_due from Stripe is in cents — divide by 100 before displaying                                                           \n  7. Use invoice_number for invoice references (e.g. SKB18OAG-0002)                                           \n  8. If invoice_count == 1: omit \"totaling $[total_amount_due]\" and use singular \"invoice\" throughout\n  9. Please DONT forget to add the total_amount_due in the email.\n  10. Strictly follow the templates\n  11. Always use the exact same hosted_invoice_url when sending email\n  12. ALWAYS use the Customers full name when greeting",
+    "requiresConsent": false,
+    "testIntegrationProviderId": null,
+    "toolFunctionName": "GPTAction_Custom_GenerateEmail",
+    "toolName": "Generate Email",
+    "userUploadedIcon": null
+  },
+  "userId": "65fa691e-4547-4659-8026-0dcb581adcd0"
+}

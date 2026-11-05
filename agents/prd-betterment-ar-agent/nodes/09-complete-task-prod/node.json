@@ -1,0 +1,374 @@
+{
+  "_export": {
+    "executionOrder": 9,
+    "folder": "09-complete-task-prod",
+    "rawDetail": "../../raw/nodes/903b63b4-0801-426e-8b9f-8aa13abe6d87.json",
+    "rawGraph": "../../raw/graph.json"
+  },
+  "agentGraphId": "bbf94f07-77c8-44ee-8bcb-34d452ab62f3",
+  "agentToolConfigurationId": "4edf29c1-496e-4693-a0e7-c4ca606b96d3",
+  "agentToolConfigurationId__readable": "09-complete-task-prod.tool",
+  "autoRetryCountWhenFailure": 1,
+  "autoRetryDescription": null,
+  "autoRetryLimitWhenAccuracyIsLow": 1,
+  "autoRetryWaitTimeWhenFailureInMs": 1000,
+  "autoRetryWhenAccuracyLessThan": 80,
+  "childEdges": [
+    {
+      "condition": "",
+      "conditionGroups": [],
+      "id": "1978d11f-7ce8-4e12-a54b-09d5c21a6a90",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "903b63b4-0801-426e-8b9f-8aa13abe6d87",
+      "sourceAgentGraphNodeId__readable": "09-complete-task-prod",
+      "targetAgentGraphNodeId": "dff1aeff-924a-40dc-b2ba-8339539c2230",
+      "targetAgentGraphNodeId__readable": "10-update-case-working-prod"
+    }
+  ],
+  "customId": "d308e5f7-1543-4074-ab95-2e3446bffe36",
+  "customId__readable": "09-complete-task-prod",
+  "enableAutoRetryDescription": false,
+  "enableAutoRetryWhenAccuracyIsLow": false,
+  "enableAutoRetryWhenFailure": false,
+  "evaluationCriteria": [],
+  "evaluationLlmModel": null,
+  "evaluationLlmThinkingLevels": null,
+  "id": "903b63b4-0801-426e-8b9f-8aa13abe6d87",
+  "isActiveNodeVersion": false,
+  "isAttachmentDataPulledIn": true,
+  "isEdited": false,
+  "isEntryNode": false,
+  "isEvaluationEnabled": false,
+  "isExitNode": false,
+  "markTaskAsFailedIfAccuracyLow": false,
+  "nodeConfigurations": {},
+  "nodeType": "executionNode",
+  "objective": "complete the task",
+  "onError": "STOP",
+  "parentEdges": [
+    {
+      "condition": "",
+      "conditionGroups": [],
+      "id": "ab318474-e52e-4837-85aa-c21bca1bfb9c",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "78e0d722-50ec-4646-accb-38cbb9359e20",
+      "sourceAgentGraphNodeId__readable": "08-solve-ticket",
+      "targetAgentGraphNodeId": "903b63b4-0801-426e-8b9f-8aa13abe6d87",
+      "targetAgentGraphNodeId__readable": "09-complete-task-prod"
+    }
+  ],
+  "parentNodeId": null,
+  "saveAsVersion": false,
+  "toolConfiguration": {
+    "accuracyScore": null,
+    "agentId": "c8a3e542-cb80-4f89-b0ba-b64e685284d1",
+    "code": null,
+    "codeLanguage": null,
+    "description": "Complete the salesforce task on prod",
+    "dynamicPropsId": "",
+    "fallbackModels": "GPT5_2",
+    "iconSrc": "https://cdn.enterprise.beamstudio.ai/33fea372-3f7d-4792-aef5-0201a4ce965a_salesforce_icon.png",
+    "id": "4edf29c1-496e-4693-a0e7-c4ca606b96d3",
+    "inputParams": [
+      {
+        "agentToolConfigurationId": "4edf29c1-496e-4693-a0e7-c4ca606b96d3",
+        "agentToolConfigurationId__readable": "09-complete-task-prod.tool",
+        "dataType": "string",
+        "fillType": "static",
+        "id": "d9db557e-12c4-4e68-a085-f1266a4f6e7a",
+        "linkOutputParam": null,
+        "linkParamOutputId": null,
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "Completed",
+        "paramName": "Status",
+        "paramTip": null,
+        "position": 1,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": false,
+        "ruleConditionConfig": null,
+        "staticValue": "Completed"
+      },
+      {
+        "agentToolConfigurationId": "4edf29c1-496e-4693-a0e7-c4ca606b96d3",
+        "agentToolConfigurationId__readable": "09-complete-task-prod.tool",
+        "dataType": "string",
+        "fillType": "ai_fill",
+        "id": "d30f00de-e22a-41bb-a237-c87e9c2f65c8",
+        "linkOutputParam": null,
+        "linkParamOutputId": null,
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "Append one line to the Task's existing description. NEVER replace or drop existing lines.\n\nStart from target_existing_description (from \"create the necessary inputs for the email\").\nIt may be empty. Output it verbatim, then a newline, then this new line:\n\n[<today YYYY-MM-DD>] invoice <invoice_number>, stage <reminder_count>, Zendesk #<zendesk_ticket_id>\n\nUse the real Zendesk ticket id created in the Create Ticket step. If\ntarget_existing_description is empty, output only the new line with no leading newline.\n\nSibling invoices at the same stage land on the same Task, so this field accumulates one\nline per outreach.",
+        "paramName": "Description",
+        "paramTip": null,
+        "position": 3,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": false,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "4edf29c1-496e-4693-a0e7-c4ca606b96d3",
+        "agentToolConfigurationId__readable": "09-complete-task-prod.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "618983dd-3843-4ab7-a95a-a0a070848cc9",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "9050a3bf-82e3-4e4d-a6c5-7b456ef6ab94",
+          "agentToolConfigurationId__readable": "04-code-executor.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "20ccfa68-96bf-4670-8794-88638c23dbb6",
+          "isArray": false,
+          "outputExample": null,
+          "paramDescription": null,
+          "paramName": "target_task_id",
+          "paramPath": null,
+          "parentId": null,
+          "position": 0,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "3bd4099a-c7d2-469f-89f0-b5779c69c8d1"
+              }
+            ],
+            "id": "9050a3bf-82e3-4e4d-a6c5-7b456ef6ab94"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "20ccfa68-96bf-4670-8794-88638c23dbb6",
+        "linkParamOutputId__readable": "04-code-executor.output.target_task_id",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "task id received from the salesforce",
+        "paramName": "task_id",
+        "paramTip": null,
+        "position": 0,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "4edf29c1-496e-4693-a0e7-c4ca606b96d3",
+        "agentToolConfigurationId__readable": "09-complete-task-prod.tool",
+        "dataType": "boolean",
+        "fillType": "static",
+        "id": "69cd966e-0c74-4868-bdc8-706aad5a056a",
+        "linkOutputParam": null,
+        "linkParamOutputId": null,
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "true",
+        "paramName": "Completed_by_Beam_ai__c",
+        "paramTip": null,
+        "position": 2,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": false,
+        "ruleConditionConfig": null,
+        "staticValue": "true"
+      }
+    ],
+    "inputParamsData": null,
+    "integrationProviderId": "f83665ed-06ac-49ec-94a7-4ddad01e3263",
+    "isBackgroundTool": false,
+    "isBatchExecutionEnabled": false,
+    "isMemoryTool": false,
+    "llmThinkingLevels": null,
+    "memoryLookupInstruction": "",
+    "originalTool": {
+      "agentId": null,
+      "allowWaiting": false,
+      "apiKeyType": null,
+      "bodyParams": [
+        {
+          "key": "Status",
+          "parameterHint": "value for ${Status}",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "key": "Completed_by_Beam_ai__c",
+          "parameterHint": "value for ${Completed_by_Beam_ai__c}",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "key": "Description",
+          "parameterHint": "value for ${Description}",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "description": "Complete the salesforce task on prod",
+      "httpMethod": "patch",
+      "iconSrc": "https://cdn.enterprise.beamstudio.ai/33fea372-3f7d-4792-aef5-0201a4ce965a_salesforce_icon.png",
+      "id": "688ed129-c428-4087-95c7-5ffbf6d204da",
+      "inputParams": [
+        {
+          "dataType": "string",
+          "fillType": "ai_fill",
+          "paramDescription": "value for ${task_id}",
+          "paramName": "task_id",
+          "required": true
+        },
+        {
+          "dataType": "string",
+          "fillType": "ai_fill",
+          "paramDescription": "value for ${Status}",
+          "paramName": "Status",
+          "required": false
+        },
+        {
+          "dataType": "boolean",
+          "fillType": "ai_fill",
+          "paramDescription": "value for ${Completed_by_Beam_ai__c}",
+          "paramName": "Completed_by_Beam_ai__c",
+          "required": false
+        },
+        {
+          "dataType": "string",
+          "fillType": "ai_fill",
+          "paramDescription": "value for ${Description}",
+          "paramName": "Description",
+          "required": false
+        }
+      ],
+      "integration": {
+        "$ref": "../../../../shared/integrations/salesforce-production.json",
+        "id": "650eed02-30b4-4077-8fec-c79ef25c7603",
+        "name": "Salesforce Production"
+      },
+      "integrationId": "650eed02-30b4-4077-8fec-c79ef25c7603",
+      "isActive": true,
+      "isAvailableToWorkspace": false,
+      "isBackgroundTool": null,
+      "isBatchExecutionEnabled": null,
+      "isIntegrationConnected": true,
+      "isIntegrationRequired": true,
+      "isMemoryTool": null,
+      "isSharable": false,
+      "isVisibleOnUi": true,
+      "memoryLookupInstruction": null,
+      "meta": {
+        "agent_categories": [],
+        "agent_category": {},
+        "apiKeyType": "bearer",
+        "categories": [],
+        "content": "CustomApiTool_CompleteTaskProd: Complete the salesforce task on prod",
+        "description": "Complete the salesforce task on prod",
+        "function_name": "CustomApiTool_CompleteTaskProd",
+        "icon_src": "https://cdn.enterprise.beamstudio.ai/33fea372-3f7d-4792-aef5-0201a4ce965a_salesforce_icon.png",
+        "integrationIdentifier": "customOAuth",
+        "integration_id": "650eed02-30b4-4077-8fec-c79ef25c7603",
+        "integration_provider_auth": "oauth",
+        "integration_provider_details": {
+          "request": {
+            "body": {
+              "Completed_by_Beam_ai__c": true,
+              "Description": "Completed by Beam.ai agent. Zendesk Ticket: {zendesk_ticket_id}",
+              "Status": "Completed"
+            },
+            "bypassTLS": false,
+            "endpoint": "https://betterment.my.salesforce.com/services/data/v59.0/sobjects/Task/{{task_id}}",
+            "method": "patch",
+            "query": {}
+          },
+          "response": {
+            "data": "{{result.data}}"
+          }
+        },
+        "integration_provider_executor": "custom",
+        "isActive": true,
+        "is_memory_tool": false,
+        "memory_lookup_instruction": "",
+        "optional_extracted_args": [
+          "Status: string // value for ${Status}",
+          "Completed_by_Beam_ai__c: boolean // value for ${Completed_by_Beam_ai__c}",
+          "Description: string // value for ${Description}"
+        ],
+        "optional_generated_args": [],
+        "parameter": "",
+        "payload": "  { \"Status\": \"Completed\", \"Completed_by_Beam_ai__c\": true, \"Description\": \"Completed by Beam.ai agent. Zendesk Ticket: {zendesk_ticket_id}\" }",
+        "prompt": "",
+        "required_extracted_args": [
+          "task_id: string // value for ${task_id}"
+        ],
+        "required_generated_args": [],
+        "requires_consent": false,
+        "requires_translation": false,
+        "tool_name": "Complete Task Prod",
+        "type": "custom_integration_tool",
+        "workspace_id": "{{SECRET:beam_workspace_id}}"
+      },
+      "outputId": null,
+      "outputParams": null,
+      "parameter": "",
+      "preferredModel": null,
+      "prompt": null,
+      "queryParams": [],
+      "requiresConsent": null,
+      "shortDescription": null,
+      "systemIntegrationIdentifier": "customOAuth",
+      "toolFunctionName": "CustomApiTool_CompleteTaskProd",
+      "toolName": "Complete Task Prod",
+      "type": "custom_integration_tool",
+      "url": "https://betterment.my.salesforce.com/services/data/v59.0/sobjects/Task/{{task_id}}",
+      "urlParams": [
+        {
+          "key": "task_id",
+          "parameterHint": "value for ${task_id}",
+          "required": true
+        }
+      ],
+      "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+      "workspaceId": "{{SECRET:beam_workspace_id}}"
+    },
+    "outputParams": [
+      {
+        "agentToolConfigurationId": "4edf29c1-496e-4693-a0e7-c4ca606b96d3",
+        "agentToolConfigurationId__readable": "09-complete-task-prod.tool",
+        "dataType": "string",
+        "definedStructure": false,
+        "id": "2d3514ab-6a2b-4a54-8227-ff90f7730164",
+        "isArray": false,
+        "outputExample": null,
+        "paramDescription": "-",
+        "paramName": "data",
+        "paramPath": "data",
+        "parentId": null,
+        "position": 0,
+        "structure": null,
+        "typeOptions": null
+      }
+    ],
+    "outputParamsData": null,
+    "pipedreamConfiguredProps": null,
+    "preferredModel": "GEMINI_3_1_PRO",
+    "prompt": null,
+    "requiresConsent": false,
+    "testIntegrationProviderId": null,
+    "toolFunctionName": "CustomApiTool_CompleteTaskProd",
+    "toolName": "Complete Task Prod",
+    "userUploadedIcon": null
+  },
+  "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e"
+}
