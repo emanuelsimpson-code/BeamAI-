@@ -16,6 +16,11 @@
       "toolName": "Find the next Task",
       "url": "https://betterment.my.salesforce.com/services/data/v59.0/query"
     },
+    "CustomApiTool_ReopenTaskProd": {
+      "httpMethod": "patch",
+      "toolName": "Reopen Task Prod",
+      "url": "https://betterment.my.salesforce.com/services/data/v59.0/sobjects/Task/{{task_id}}"
+    },
     "CustomApiTool_UpdateCaseWorkingProd": {
       "httpMethod": "patch",
       "toolName": "Update Case Working Prod",

@@ -1,0 +1,522 @@
+{
+  "createdAt": "2026-06-23T13:07:14.920Z",
+  "updatedAt": "2026-06-23T13:07:17.004Z",
+  "deletedAt": null,
+  "id": "7134f5e5-3602-4048-96de-1058364322f1",
+  "evaluationCriteria": [],
+  "agentToolConfigurationId": "053b507f-d5ca-4ce3-9f66-f13bd04b5f6b",
+  "objective": "Send the email to the client confirming about the partial payment",
+  "customId": "546fb5c4-cb8b-442d-8711-928db9e63eb6",
+  "isExitNode": false,
+  "isEntryNode": false,
+  "agentGraphId": "05a27cb0-a5d3-4f43-8c75-30c1dddaab09",
+  "xCoordinate": 509.99999999999994,
+  "yCoordinate": 2074.5,
+  "onError": "STOP",
+  "isEvaluationEnabled": false,
+  "evaluationLlmModel": null,
+  "evaluationLlmThinkingLevels": null,
+  "autoRetryWhenAccuracyLessThan": 80,
+  "autoRetryLimitWhenAccuracyIsLow": 1,
+  "enableAutoRetryWhenAccuracyIsLow": true,
+  "markTaskAsFailedIfAccuracyLow": false,
+  "enableAutoRetryWhenFailure": true,
+  "autoRetryCountWhenFailure": 1,
+  "autoRetryWaitTimeWhenFailureInMs": 1000,
+  "isAttachmentDataPulledIn": true,
+  "nodeType": "executionNode",
+  "nodeConfigurations": {},
+  "saveAsVersion": false,
+  "isEdited": false,
+  "parentNodeId": null,
+  "isActiveNodeVersion": false,
+  "userId": "65fa691e-4547-4659-8026-0dcb581adcd0",
+  "autoRetryDescription": null,
+  "enableAutoRetryDescription": false,
+  "agentGraph": {
+    "createdAt": "2026-06-23T13:07:14.903Z",
+    "updatedAt": "2026-10-19T16:26:57.890Z",
+    "deletedAt": null,
+    "id": "05a27cb0-a5d3-4f43-8c75-30c1dddaab09",
+    "agentId": "ca09ff3c-4dc0-488d-9415-3b4666301e94",
+    "isActive": false,
+    "isDraft": true,
+    "isPublished": false,
+    "publishedAt": null,
+    "isEverExecuted": false,
+    "isEverUsedForTemplate": false,
+    "isEdited": true,
+    "versionName": null,
+    "versionDescription": null,
+    "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+    "agent": {
+      "createdAt": "2026-04-17T10:20:34.110Z",
+      "updatedAt": "2026-10-22T00:00:01.544Z",
+      "deletedAt": null,
+      "id": "ca09ff3c-4dc0-488d-9415-3b4666301e94",
+      "name": "TST_Betterment AR Agent - Inbound",
+      "description": "",
+      "settings": {
+        "instructions": "",
+        "preferredModel": "GEMINI_3_FLASH"
+      },
+      "config": null,
+      "workspaceId": "{{SECRET:beam_workspace_id}}",
+      "creatorId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+      "type": "pre-configured-agent",
+      "vectorDbId": "90a150c2-8f65-4f25-9f11-88c326291450",
+      "defaultTaskId": null,
+      "themeIconUrl": "https://production-beam-assets-bucket.s3.eu-central-1.amazonaws.com/df719557-ce6d-40dd-b04d-6f8cf23cc86b",
+      "agentCategoryId": "09791b33-c0ec-4bf8-bb8e-d8cc8ae19f7a",
+      "userAccessTokenId": null,
+      "agentSetupSessionId": null,
+      "agentIntroMessage": null,
+      "agentSetupMessage": null,
+      "skipAgentSetupSop": false,
+      "reasoningEffort": null,
+      "governanceEnabled": false,
+      "governanceModel": null,
+      "isAttachmentDataPulledIn": true,
+      "creditUsage": 0,
+      "order": 8,
+      "maxTestRuns": null,
+      "currentTestRuns": 0,
+      "isTestModeEnabled": false,
+      "testStartedAt": null
+    }
+  },
+  "toolConfiguration": {
+    "createdAt": "2026-04-29T07:23:27.156Z",
+    "updatedAt": "2026-07-23T11:01:03.896Z",
+    "deletedAt": null,
+    "id": "053b507f-d5ca-4ce3-9f66-f13bd04b5f6b",
+    "toolFunctionName": "CustomApiTool_ReplyonTicket",
+    "toolName": "Reply on Ticket",
+    "integrationProviderId": "59aa0101-ff2f-4f17-978c-9630afef27b7",
+    "testIntegrationProviderId": null,
+    "outputParamsData": null,
+    "inputParamsData": null,
+    "agentId": "ca09ff3c-4dc0-488d-9415-3b4666301e94",
+    "requiresConsent": false,
+    "isBackgroundTool": false,
+    "isMemoryTool": false,
+    "isBatchExecutionEnabled": false,
+    "codeLanguage": null,
+    "code": null,
+    "prompt": null,
+    "accuracyScore": null,
+    "memoryLookupInstruction": "",
+    "preferredModel": "GEMINI_3_FLASH",
+    "fallbackModels": "GEMINI_3_1_PRO,GPT4_1,CLAUDE_4_SONNET",
+    "llmThinkingLevels": null,
+    "userUploadedIcon": null,
+    "dynamicPropsId": "",
+    "pipedreamConfiguredProps": null,
+    "inputParams": [
+      {
+        "createdAt": "2026-06-23T13:07:19.910Z",
+        "updatedAt": "2026-06-23T13:07:19.910Z",
+        "fillType": "static",
+        "position": 3,
+        "question": null,
+        "linkParamOutputId": null,
+        "staticValue": "pending",
+        "required": false,
+        "dataType": "string",
+        "outputExample": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "options": null,
+        "id": "bae46146-27fc-4abd-82df-0cdec3803791",
+        "paramName": "ticket.status",
+        "agentToolConfigurationId": "053b507f-d5ca-4ce3-9f66-f13bd04b5f6b",
+        "paramDescription": "value for ${status}",
+        "paramTip": null,
+        "linkedParamRulePrompt": null,
+        "ruleConditionConfig": null,
+        "linkOutputParam": null
+      },
+      {
+        "createdAt": "2026-06-23T13:07:19.910Z",
+        "updatedAt": "2026-06-23T13:07:20.107Z",
+        "fillType": "linked",
+        "position": 0,
+        "question": null,
+        "linkParamOutputId": "773034ca-fa91-4f92-90de-12504d730747",
+        "staticValue": null,
+        "required": true,
+        "dataType": "string",
+        "outputExample": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "options": null,
+        "id": "9a2da2cb-cdf9-4070-871c-3d77145e68fa",
+        "paramName": "ticket_id",
+        "agentToolConfigurationId": "053b507f-d5ca-4ce3-9f66-f13bd04b5f6b",
+        "paramDescription": "The ticket id from the task query",
+        "paramTip": null,
+        "linkedParamRulePrompt": null,
+        "ruleConditionConfig": null,
+        "linkOutputParam": {
+          "isArray": false,
+          "definedStructure": false,
+          "id": "773034ca-fa91-4f92-90de-12504d730747",
+          "paramName": "ticket_id",
+          "position": 0,
+          "paramDescription": "-",
+          "agentToolConfigurationId": "2c8087fb-bc7a-4a05-9377-54d778320508",
+          "parentId": null,
+          "paramPath": "ticket_id",
+          "outputExample": "<string>",
+          "dataType": "string",
+          "typeOptions": null,
+          "structure": null,
+          "createdAt": "2026-06-23T13:07:17.875Z",
+          "updatedAt": "2026-06-23T13:10:42.236Z",
+          "tool": {
+            "id": "2c8087fb-bc7a-4a05-9377-54d778320508",
+            "agentGraphNodes": [
+              {
+                "id": "e50dd9c3-e5a7-494d-ae31-c9643c52d0a9"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "createdAt": "2026-06-23T13:07:19.910Z",
+        "updatedAt": "2026-06-23T13:07:19.910Z",
+        "fillType": "static",
+        "position": 1,
+        "question": null,
+        "linkParamOutputId": null,
+        "staticValue": "1900263981784",
+        "required": false,
+        "dataType": "number",
+        "outputExample": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "options": null,
+        "id": "8adbbae7-36ac-40bf-beb1-13d506fb52f8",
+        "paramName": "ticket.comment.author_id",
+        "agentToolConfigurationId": "053b507f-d5ca-4ce3-9f66-f13bd04b5f6b",
+        "paramDescription": "value for ${author_id}",
+        "paramTip": null,
+        "linkedParamRulePrompt": null,
+        "ruleConditionConfig": null,
+        "linkOutputParam": null
+      },
+      {
+        "createdAt": "2026-06-23T13:07:19.910Z",
+        "updatedAt": "2026-06-23T13:07:19.910Z",
+        "fillType": "static",
+        "position": 2,
+        "question": null,
+        "linkParamOutputId": null,
+        "staticValue": "true",
+        "required": false,
+        "dataType": "boolean",
+        "outputExample": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "options": null,
+        "id": "b67a0075-06a4-427d-8ae2-63d9d8ee2835",
+        "paramName": "ticket.comment.public",
+        "agentToolConfigurationId": "053b507f-d5ca-4ce3-9f66-f13bd04b5f6b",
+        "paramDescription": "value for ${public}",
+        "paramTip": null,
+        "linkedParamRulePrompt": null,
+        "ruleConditionConfig": null,
+        "linkOutputParam": null
+      },
+      {
+        "createdAt": "2026-06-23T13:07:19.910Z",
+        "updatedAt": "2026-06-23T13:07:20.108Z",
+        "fillType": "linked",
+        "position": 4,
+        "question": null,
+        "linkParamOutputId": "ad20c0c3-8521-4c4a-937a-12a6126f7722",
+        "staticValue": null,
+        "required": false,
+        "dataType": "string",
+        "outputExample": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "options": null,
+        "id": "e946fe8d-78b1-4c75-8d78-c6219a6585b1",
+        "paramName": "ticket.comment.html_body",
+        "agentToolConfigurationId": "053b507f-d5ca-4ce3-9f66-f13bd04b5f6b",
+        "paramDescription": "value for ${html_body}",
+        "paramTip": null,
+        "linkedParamRulePrompt": null,
+        "ruleConditionConfig": null,
+        "linkOutputParam": {
+          "isArray": false,
+          "definedStructure": false,
+          "id": "ad20c0c3-8521-4c4a-937a-12a6126f7722",
+          "paramName": "email_body",
+          "position": 0,
+          "paramDescription": "The complete email body generated",
+          "agentToolConfigurationId": "7858da77-3ccc-459a-823d-d4ea03570acd",
+          "parentId": null,
+          "paramPath": null,
+          "outputExample": null,
+          "dataType": "string",
+          "typeOptions": {
+            "enumValues": null
+          },
+          "structure": null,
+          "createdAt": "2026-06-23T13:07:17.875Z",
+          "updatedAt": "2026-06-23T13:07:17.875Z",
+          "tool": {
+            "id": "7858da77-3ccc-459a-823d-d4ea03570acd",
+            "agentGraphNodes": [
+              {
+                "id": "a655960d-1058-49e4-bc12-1777ec0a8613"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "outputParams": [],
+    "originalTool": {
+      "createdAt": "2026-04-21T11:35:09.296Z",
+      "updatedAt": "2026-11-02T04:24:07.840Z",
+      "deletedAt": null,
+      "id": "d2f84327-2e92-44d4-b877-4c438fa7cbbf",
+      "toolFunctionName": "CustomApiTool_ReplyonTicket",
+      "toolName": "Reply on Ticket",
+      "iconSrc": "https://cdn.enterprise.beamstudio.ai/7d370fc4-2a6c-4caa-984a-26bb7972113e_zendesk-logo.png",
+      "type": "custom_integration_tool",
+      "isVisibleOnUi": true,
+      "integrationId": "e1d9ea8f-6f87-4b47-9346-370f75c48677",
+      "meta": {
+        "type": "custom_integration_tool",
+        "prompt": "",
+        "content": "CustomApiTool_ReplyonTicket: Reply on the previously created zendesk ticket",
+        "payload": "{                                                                                                                                             \n    \"ticket\": {                                                                                                                                 \n      \"status\": \"solved\",                                                                                                                       \n      \"comment\": {                                                                                                                              \n        \"html_body\": \"reply_html\",                                                                                                        \n        \"public\": true,                                                                                                                         \n        \"author_id\": 1900263981784\n      }                                                                                                                                         \n    }                                                                                                                                           \n  }",
+        "icon_src": "https://cdn.enterprise.beamstudio.ai/7d370fc4-2a6c-4caa-984a-26bb7972113e_zendesk-logo.png",
+        "isActive": true,
+        "parameter": "",
+        "tool_name": "Reply on Ticket",
+        "apiKeyType": "default",
+        "categories": [],
+        "description": "Reply on the previously created zendesk ticket",
+        "workspace_id": "{{SECRET:beam_workspace_id}}",
+        "function_name": "CustomApiTool_ReplyonTicket",
+        "agent_category": {},
+        "integration_id": "e1d9ea8f-6f87-4b47-9346-370f75c48677",
+        "is_memory_tool": false,
+        "agent_categories": [],
+        "requires_consent": false,
+        "requires_translation": false,
+        "integrationIdentifier": "httpBasicAuth",
+        "optional_extracted_args": [
+          "ticket.status: string // value for ${status}",
+          "ticket.comment.html_body: string // value for ${html_body}",
+          "ticket.comment.public: boolean // value for ${public}",
+          "ticket.comment.author_id: number // value for ${author_id}"
+        ],
+        "optional_generated_args": [],
+        "required_extracted_args": [
+          "ticket_id: string // value for ${ticket_id}"
+        ],
+        "required_generated_args": [],
+        "integration_provider_auth": "basic",
+        "memory_lookup_instruction": "",
+        "integration_provider_details": {
+          "request": {
+            "body": {
+              "ticket": {
+                "status": "solved",
+                "comment": {
+                  "public": true,
+                  "author_id": 1900263981784,
+                  "html_body": "reply_html"
+                }
+              }
+            },
+            "query": {},
+            "method": "put",
+            "endpoint": "https://betterment1768446222.zendesk.com/api/v2/tickets/{{ticket_id}}",
+            "bypassTLS": false
+          },
+          "response": {
+            "data": "{{result.data}}"
+          }
+        },
+        "integration_provider_executor": "custom"
+      },
+      "outputId": null,
+      "prompt": null,
+      "inputParams": [
+        {
+          "dataType": "string",
+          "fillType": "ai_fill",
+          "required": true,
+          "paramName": "ticket_id",
+          "paramDescription": "value for ${ticket_id}"
+        },
+        {
+          "dataType": "string",
+          "fillType": "ai_fill",
+          "required": false,
+          "paramName": "ticket.status",
+          "paramDescription": "value for ${status}"
+        },
+        {
+          "dataType": "string",
+          "fillType": "ai_fill",
+          "required": false,
+          "paramName": "ticket.comment.html_body",
+          "paramDescription": "value for ${html_body}"
+        },
+        {
+          "dataType": "boolean",
+          "fillType": "ai_fill",
+          "required": false,
+          "paramName": "ticket.comment.public",
+          "paramDescription": "value for ${public}"
+        },
+        {
+          "dataType": "number",
+          "fillType": "ai_fill",
+          "required": false,
+          "paramName": "ticket.comment.author_id",
+          "paramDescription": "value for ${author_id}"
+        }
+      ],
+      "requiresConsent": null,
+      "isMemoryTool": null,
+      "isBackgroundTool": null,
+      "memoryLookupInstruction": null,
+      "outputParams": null,
+      "isBatchExecutionEnabled": null,
+      "description": "Reply on the previously created zendesk ticket",
+      "isActive": true,
+      "workspaceId": "{{SECRET:beam_workspace_id}}",
+      "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+      "agentId": null,
+      "httpMethod": "put",
+      "url": "https://betterment1768446222.zendesk.com/api/v2/tickets/{{ticket_id}}",
+      "isAvailableToWorkspace": false,
+      "preferredModel": null,
+      "shortDescription": null,
+      "isSharable": false,
+      "systemIntegrationIdentifier": "httpBasicAuth",
+      "apiKeyType": null,
+      "parameter": "",
+      "allowWaiting": false,
+      "queryParams": [],
+      "bodyParams": [
+        {
+          "key": "ticket.status",
+          "type": "string",
+          "required": false,
+          "parameterHint": "value for ${status}"
+        },
+        {
+          "key": "ticket.comment.html_body",
+          "type": "string",
+          "required": false,
+          "parameterHint": "value for ${html_body}"
+        },
+        {
+          "key": "ticket.comment.public",
+          "type": "boolean",
+          "required": false,
+          "parameterHint": "value for ${public}"
+        },
+        {
+          "key": "ticket.comment.author_id",
+          "type": "number",
+          "required": false,
+          "parameterHint": "value for ${author_id}"
+        }
+      ],
+      "urlParams": [
+        {
+          "key": "ticket_id",
+          "required": true,
+          "parameterHint": "value for ${ticket_id}"
+        }
+      ],
+      "integration": {
+        "id": "e1d9ea8f-6f87-4b47-9346-370f75c48677",
+        "name": "Zendesk Custom",
+        "description": "Zendesk Custom",
+        "systemIntegrationIdentifier": "httpBasicAuth",
+        "integrationCategoryId": "503199fe-06d5-420d-87e0-b007a635dabd",
+        "iconSrc": "https://cdn.enterprise.beamstudio.ai/7d370fc4-2a6c-4caa-984a-26bb7972113e_zendesk-logo.png",
+        "type": "custom_integration",
+        "authType": "basic",
+        "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+        "workspaceId": "{{SECRET:beam_workspace_id}}",
+        "privacyPolicyUrl": null,
+        "shortDescription": null,
+        "longDescription": null,
+        "systemIntegrationProvider": "CUSTOM",
+        "customAuthParameters": null,
+        "category": null,
+        "authenticationMeta": {
+          "parameter": "",
+          "apiKeyType": "default"
+        },
+        "syncModels": null,
+        "isPublished": null,
+        "attributes": null,
+        "status": null,
+        "customHeaders": [],
+        "allowWaiting": false,
+        "provider": {
+          "createdAt": "2026-04-02T08:23:21.232Z",
+          "updatedAt": "2026-04-02T08:23:30.531Z",
+          "deletedAt": null,
+          "id": "59aa0101-ff2f-4f17-978c-9630afef27b7",
+          "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+          "credentialId": "58559d58-9b65-42ee-a16d-3635dcddb0b4",
+          "connectionName": "ZendeskCustom-connection-sandbox-1",
+          "integration": "httpBasicAuth",
+          "status": "active",
+          "integrationId": "e1d9ea8f-6f87-4b47-9346-370f75c48677",
+          "isOAuth2": false,
+          "provider": "custom",
+          "workspace": "{{SECRET:beam_workspace_id}}",
+          "tokenExpiresIn": null,
+          "credentials": {
+            "user": "90a3a3366b9669bed88883f16d1c243e6ef0a615c1a0834e3dd6742dc07673ac9310cc5a88eb61dc58f689fada7993a6",
+            "password": "{{SECRET:custom_password}}"
+          },
+          "isDefault": false
+        }
+      },
+      "isIntegrationConnected": true,
+      "isIntegrationRequired": true
+    }
+  },
+  "childEdges": [
+    {
+      "createdAt": "2026-06-23T13:07:16.699Z",
+      "updatedAt": "2026-06-23T13:07:16.699Z",
+      "deletedAt": null,
+      "id": "96362b9d-42af-46fc-ac4f-930ae0ca5a46",
+      "sourceAgentGraphNodeId": "7134f5e5-3602-4048-96de-1058364322f1",
+      "targetAgentGraphNodeId": "a4a0b627-df1e-4121-a76e-58511f3550d6",
+      "condition": "",
+      "isAttachmentDataPulledIn": true
+    }
+  ],
+  "parentEdges": [
+    {
+      "createdAt": "2026-06-23T13:07:16.699Z",
+      "updatedAt": "2026-06-23T13:07:16.699Z",
+      "deletedAt": null,
+      "id": "823581e4-1c39-4438-8015-a21ce2824d51",
+      "sourceAgentGraphNodeId": "a655960d-1058-49e4-bc12-1777ec0a8613",
+      "targetAgentGraphNodeId": "7134f5e5-3602-4048-96de-1058364322f1",
+      "condition": null,
+      "isAttachmentDataPulledIn": true
+    }
+  ]
+}

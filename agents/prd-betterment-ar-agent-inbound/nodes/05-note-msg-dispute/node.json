@@ -1,0 +1,550 @@
+{
+  "_export": {
+    "executionOrder": 5,
+    "folder": "05-note-msg-dispute",
+    "rawDetail": "../../raw/nodes/9d47a599-a93e-4a21-a309-f7c7723a715c.json",
+    "rawGraph": "../../raw/graph.json"
+  },
+  "agentGraphId": "73aecd7e-318f-4b0b-8a3b-139c373df0cb",
+  "agentToolConfigurationId": "9237c42f-e166-4461-ac95-315636d83b2d",
+  "agentToolConfigurationId__readable": "05-note-msg-dispute.tool",
+  "autoRetryCountWhenFailure": 1,
+  "autoRetryDescription": null,
+  "autoRetryLimitWhenAccuracyIsLow": 1,
+  "autoRetryWaitTimeWhenFailureInMs": 1000,
+  "autoRetryWhenAccuracyLessThan": 80,
+  "childEdges": [
+    {
+      "condition": "",
+      "conditionGroups": [],
+      "id": "2e309525-d74e-47d3-8021-b1a4ce576e43",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "9d47a599-a93e-4a21-a309-f7c7723a715c",
+      "sourceAgentGraphNodeId__readable": "05-note-msg-dispute",
+      "targetAgentGraphNodeId": "f6151407-64a9-4ffc-bf80-6efe8b7e1956",
+      "targetAgentGraphNodeId__readable": "09-add-internal-note"
+    }
+  ],
+  "customId": "ee86f25c-8060-4dd8-97e6-cc528b639f43",
+  "customId__readable": "05-note-msg-dispute",
+  "enableAutoRetryDescription": false,
+  "enableAutoRetryWhenAccuracyIsLow": false,
+  "enableAutoRetryWhenFailure": false,
+  "evaluationCriteria": [],
+  "evaluationLlmModel": null,
+  "evaluationLlmThinkingLevels": null,
+  "id": "9d47a599-a93e-4a21-a309-f7c7723a715c",
+  "isActiveNodeVersion": false,
+  "isAttachmentDataPulledIn": true,
+  "isEdited": false,
+  "isEntryNode": false,
+  "isEvaluationEnabled": false,
+  "isExitNode": false,
+  "markTaskAsFailedIfAccuracyLow": false,
+  "nodeConfigurations": {},
+  "nodeType": "executionNode",
+  "objective": "Create the internal note message — dispute",
+  "onError": "STOP",
+  "parentEdges": [
+    {
+      "condition": "if reply_intent is dispute",
+      "conditionGroups": [],
+      "id": "955fdfd0-5c35-4a6a-b1eb-7dad277a138d",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "b91aeddb-52cf-4da8-8572-48e71d90a025",
+      "sourceAgentGraphNodeId__readable": "04-condition",
+      "targetAgentGraphNodeId": "9d47a599-a93e-4a21-a309-f7c7723a715c",
+      "targetAgentGraphNodeId__readable": "05-note-msg-dispute"
+    }
+  ],
+  "parentNodeId": null,
+  "saveAsVersion": false,
+  "toolConfiguration": {
+    "accuracyScore": null,
+    "agentId": "56180518-a836-4998-b63b-fefc179cd0b6",
+    "code": null,
+    "codeLanguage": null,
+    "description": "",
+    "dynamicPropsId": "",
+    "fallbackModels": "GEMINI_3_1_PRO",
+    "iconSrc": "",
+    "id": "9237c42f-e166-4461-ac95-315636d83b2d",
+    "inputParams": [
+      {
+        "agentToolConfigurationId": "9237c42f-e166-4461-ac95-315636d83b2d",
+        "agentToolConfigurationId__readable": "05-note-msg-dispute.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "b7a474ab-ebe3-40c4-beb3-56841fdc0416",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "cf4ecd5c-42c8-464e-ae69-ad937c974fd9",
+          "agentToolConfigurationId__readable": "02-extract-invoice-context.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "fa9553fb-d222-4709-9438-47371969eea6",
+          "isArray": true,
+          "outputExample": null,
+          "paramDescription": "the list of invoice ids extracted from the email",
+          "paramName": "invoice_ids",
+          "paramPath": null,
+          "parentId": null,
+          "position": 1,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "f797e381-f62f-40a8-87c9-ba0fa862dc7c"
+              }
+            ],
+            "id": "cf4ecd5c-42c8-464e-ae69-ad937c974fd9"
+          },
+          "typeOptions": {
+            "enumValues": null
+          }
+        },
+        "linkParamOutputId": "fa9553fb-d222-4709-9438-47371969eea6",
+        "linkParamOutputId__readable": "02-extract-invoice-context.output.invoice_ids",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "Linked upstream output",
+        "paramName": "invoice_ids",
+        "paramTip": null,
+        "position": 3,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "9237c42f-e166-4461-ac95-315636d83b2d",
+        "agentToolConfigurationId__readable": "05-note-msg-dispute.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "413def91-fff7-482b-8c5a-031be8dfddfb",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "05a4a24f-cc44-4033-b67e-e426bf0230fa",
+          "agentToolConfigurationId__readable": "03-intent-classifier.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "7d2c43a3-977e-4168-8b58-2b7d90e4165b",
+          "isArray": false,
+          "outputExample": null,
+          "paramDescription": "intent from one of payment_confirmed, partial_payment, dispute, bankruptcy, wrong_contact, general_inquiry",
+          "paramName": "reply_intent",
+          "paramPath": null,
+          "parentId": null,
+          "position": 0,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "15e52e9d-d1a7-4040-a9a0-34597e7be8c0"
+              }
+            ],
+            "id": "05a4a24f-cc44-4033-b67e-e426bf0230fa"
+          },
+          "typeOptions": {
+            "enumValues": null
+          }
+        },
+        "linkParamOutputId": "7d2c43a3-977e-4168-8b58-2b7d90e4165b",
+        "linkParamOutputId__readable": "03-intent-classifier.output.reply_intent",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "Linked upstream output",
+        "paramName": "reply_intent",
+        "paramTip": null,
+        "position": 5,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "9237c42f-e166-4461-ac95-315636d83b2d",
+        "agentToolConfigurationId__readable": "05-note-msg-dispute.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "9a54a425-89bd-469f-b6fb-14a1c34d6299",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "cf4ecd5c-42c8-464e-ae69-ad937c974fd9",
+          "agentToolConfigurationId__readable": "02-extract-invoice-context.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "e2edd3c2-6437-4ca3-aa38-a3d06241e90b",
+          "isArray": false,
+          "outputExample": null,
+          "paramDescription": "The invoice amount extracted from the email",
+          "paramName": "invoice_amount",
+          "paramPath": null,
+          "parentId": null,
+          "position": 0,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "f797e381-f62f-40a8-87c9-ba0fa862dc7c"
+              }
+            ],
+            "id": "cf4ecd5c-42c8-464e-ae69-ad937c974fd9"
+          },
+          "typeOptions": {
+            "enumValues": null
+          }
+        },
+        "linkParamOutputId": "e2edd3c2-6437-4ca3-aa38-a3d06241e90b",
+        "linkParamOutputId__readable": "02-extract-invoice-context.output.invoice_amount",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "Linked upstream output",
+        "paramName": "invoice_amount",
+        "paramTip": null,
+        "position": 4,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "9237c42f-e166-4461-ac95-315636d83b2d",
+        "agentToolConfigurationId__readable": "05-note-msg-dispute.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "b29b80e8-9886-4478-87f1-3485b583dd95",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "fa11e2a8-f38f-4a6f-ad08-9219a159c91c",
+          "agentToolConfigurationId__readable": "01-trigger.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "81a274fd-0a33-475f-a967-48e405d693b1",
+          "isArray": false,
+          "outputExample": "<string>",
+          "paramDescription": "-",
+          "paramName": "requester_email",
+          "paramPath": "requester_email",
+          "parentId": null,
+          "position": 0,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "59b60a34-90b9-4368-af49-1ee13b0e21fe"
+              }
+            ],
+            "id": "fa11e2a8-f38f-4a6f-ad08-9219a159c91c"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "81a274fd-0a33-475f-a967-48e405d693b1",
+        "linkParamOutputId__readable": "01-trigger.output.requester_email",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "Linked upstream output",
+        "paramName": "requester_email",
+        "paramTip": null,
+        "position": 1,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "9237c42f-e166-4461-ac95-315636d83b2d",
+        "agentToolConfigurationId__readable": "05-note-msg-dispute.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "2b9a9409-91b1-4e11-9678-82141029477b",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "fa11e2a8-f38f-4a6f-ad08-9219a159c91c",
+          "agentToolConfigurationId__readable": "01-trigger.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "cec5bc48-50ea-4e68-89ab-073682f22964",
+          "isArray": false,
+          "outputExample": "<string>",
+          "paramDescription": "-",
+          "paramName": "ticket_id",
+          "paramPath": "ticket_id",
+          "parentId": null,
+          "position": 0,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "59b60a34-90b9-4368-af49-1ee13b0e21fe"
+              }
+            ],
+            "id": "fa11e2a8-f38f-4a6f-ad08-9219a159c91c"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "cec5bc48-50ea-4e68-89ab-073682f22964",
+        "linkParamOutputId__readable": "01-trigger.output.ticket_id",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "Linked upstream output",
+        "paramName": "ticket_id",
+        "paramTip": null,
+        "position": 2,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "9237c42f-e166-4461-ac95-315636d83b2d",
+        "agentToolConfigurationId__readable": "05-note-msg-dispute.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "c45159ae-fc76-4af5-999e-036c103edd01",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "fa11e2a8-f38f-4a6f-ad08-9219a159c91c",
+          "agentToolConfigurationId__readable": "01-trigger.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "19daded6-c834-41ea-9963-4997dcd3e2ac",
+          "isArray": false,
+          "outputExample": "<string>",
+          "paramDescription": "-",
+          "paramName": "all_comments",
+          "paramPath": "all_comments",
+          "parentId": null,
+          "position": 0,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "59b60a34-90b9-4368-af49-1ee13b0e21fe"
+              }
+            ],
+            "id": "fa11e2a8-f38f-4a6f-ad08-9219a159c91c"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "19daded6-c834-41ea-9963-4997dcd3e2ac",
+        "linkParamOutputId__readable": "01-trigger.output.all_comments",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "Linked upstream output",
+        "paramName": "email_body",
+        "paramTip": null,
+        "position": 0,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      }
+    ],
+    "inputParamsData": null,
+    "integrationProviderId": null,
+    "isBackgroundTool": false,
+    "isBatchExecutionEnabled": false,
+    "isMemoryTool": false,
+    "llmThinkingLevels": null,
+    "memoryLookupInstruction": "",
+    "originalTool": {
+      "agentId": "ca09ff3c-4dc0-488d-9415-3b4666301e94",
+      "allowWaiting": false,
+      "apiKeyType": null,
+      "bodyParams": null,
+      "description": "",
+      "httpMethod": null,
+      "iconSrc": "",
+      "id": "a02cdf3c-0ed9-4b1e-a6ec-83e441df1c56",
+      "inputParams": [
+        {
+          "dataType": "string",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "bb803f88-a995-43f6-9403-7879e31c0618",
+          "options": null,
+          "paramDescription": "Linked upstream output",
+          "paramName": "email_body",
+          "paramTip": null,
+          "position": 0,
+          "reloadProps": false,
+          "remoteOptions": false,
+          "required": true,
+          "staticValue": null
+        },
+        {
+          "dataType": "string",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "5d682471-a806-490e-804d-1f99dbaee56f",
+          "options": null,
+          "paramDescription": "Linked upstream output",
+          "paramName": "requester_email",
+          "paramTip": null,
+          "position": 1,
+          "reloadProps": false,
+          "remoteOptions": false,
+          "required": true,
+          "staticValue": null
+        },
+        {
+          "dataType": "string",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "ad08954c-4f56-4685-97d8-fadcb2484b42",
+          "options": null,
+          "paramDescription": "Linked upstream output",
+          "paramName": "ticket_id",
+          "paramTip": null,
+          "position": 2,
+          "reloadProps": false,
+          "remoteOptions": false,
+          "required": true,
+          "staticValue": null
+        },
+        {
+          "dataType": "string",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "a2f52590-abe8-46e2-9abc-840f688eb468",
+          "options": null,
+          "paramDescription": "Linked upstream output",
+          "paramName": "invoice_ids",
+          "paramTip": null,
+          "position": 3,
+          "reloadProps": false,
+          "remoteOptions": false,
+          "required": true,
+          "staticValue": null
+        },
+        {
+          "dataType": "string",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "564fb3c9-0039-4f19-aef4-ec2973a733cf",
+          "options": null,
+          "paramDescription": "Linked upstream output",
+          "paramName": "invoice_amount",
+          "paramTip": null,
+          "position": 4,
+          "reloadProps": false,
+          "remoteOptions": false,
+          "required": true,
+          "staticValue": null
+        },
+        {
+          "dataType": "string",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "3280ec9c-bb83-484f-b670-32cf036db6ab",
+          "options": null,
+          "paramDescription": "Linked upstream output",
+          "paramName": "reply_intent",
+          "paramTip": null,
+          "position": 5,
+          "reloadProps": false,
+          "remoteOptions": false,
+          "required": true,
+          "staticValue": null
+        }
+      ],
+      "integration": null,
+      "integrationId": null,
+      "isActive": true,
+      "isAvailableToWorkspace": false,
+      "isBackgroundTool": false,
+      "isBatchExecutionEnabled": null,
+      "isIntegrationConnected": false,
+      "isIntegrationRequired": false,
+      "isMemoryTool": false,
+      "isSharable": false,
+      "isVisibleOnUi": true,
+      "memoryLookupInstruction": "",
+      "meta": {
+        "content": "",
+        "description": "",
+        "function_name": "GPTAction_Custom__j9TT",
+        "icon_src": null,
+        "preferred_model": "GEMINI_25_FLASH",
+        "prompt": null,
+        "tool_name": "",
+        "type": "custom_gpt_tool"
+      },
+      "outputId": null,
+      "outputParams": [
+        {
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "a24b0bbd-8fd4-439d-917e-4088cab3c263",
+          "isArray": false,
+          "paramDescription": "Formatted internal Zendesk note text",
+          "paramName": "internal_note",
+          "position": 0,
+          "structure": null,
+          "typeOptions": null
+        }
+      ],
+      "parameter": null,
+      "preferredModel": "GEMINI_25_FLASH",
+      "prompt": null,
+      "queryParams": null,
+      "requiresConsent": false,
+      "shortDescription": "",
+      "systemIntegrationIdentifier": null,
+      "toolFunctionName": "GPTAction_Custom__j9TT",
+      "toolName": "Note Msg — dispute",
+      "type": "custom_gpt_tool",
+      "url": null,
+      "urlParams": null,
+      "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+      "workspaceId": "{{SECRET:beam_workspace_id}}"
+    },
+    "outputParams": [
+      {
+        "agentToolConfigurationId": "9237c42f-e166-4461-ac95-315636d83b2d",
+        "agentToolConfigurationId__readable": "05-note-msg-dispute.tool",
+        "dataType": "string",
+        "definedStructure": false,
+        "id": "9ec4b37c-822a-490d-b5a4-3b7c001dd837",
+        "isArray": false,
+        "outputExample": null,
+        "paramDescription": "Formatted internal Zendesk note text",
+        "paramName": "internal_note",
+        "paramPath": null,
+        "parentId": null,
+        "position": 0,
+        "structure": null,
+        "typeOptions": null
+      }
+    ],
+    "outputParamsData": null,
+    "pipedreamConfiguredProps": null,
+    "preferredModel": "GEMINI_25_FLASH",
+    "prompt": "You are writing an INTERNAL Zendesk note for the Betterment AR collections team.\nUse ONLY the data provided. If a value is missing, write \"N/A\". Return ONLY the note text — no code fences, no preamble, no commentary.\n\n**Inputs:**\n- Customer email thread: ```{email_body}```\n- Requester:             ```{requester_email}```\n- Ticket ID:             ```{ticket_id}```\n- Invoice IDs:           ```{invoice_ids}```\n- Invoice amount:        ```{invoice_amount}```\n- Reply intent:          ```{reply_intent}```\n\nOutput EXACTLY this format, nothing else:\n\nDISPUTE — <requester_email> has disputed invoice(s) totaling $<invoice_amount>.\nCustomer reply: <first 200 characters of the customer's latest reply>",
+    "requiresConsent": false,
+    "testIntegrationProviderId": null,
+    "toolFunctionName": "GPTAction_Custom__j9TT",
+    "toolName": "Note Msg — dispute",
+    "userUploadedIcon": null
+  },
+  "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e"
+}

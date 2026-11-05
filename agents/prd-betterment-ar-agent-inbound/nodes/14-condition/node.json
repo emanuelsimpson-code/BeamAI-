@@ -1,0 +1,86 @@
+{
+  "_export": {
+    "executionOrder": 14,
+    "folder": "14-condition",
+    "rawDetail": "../../raw/nodes/e30f654e-1786-4318-be37-0821f39f0a6c.json",
+    "rawGraph": "../../raw/graph.json"
+  },
+  "agentGraphId": "73aecd7e-318f-4b0b-8a3b-139c373df0cb",
+  "agentToolConfigurationId": null,
+  "autoRetryCountWhenFailure": 1,
+  "autoRetryDescription": null,
+  "autoRetryLimitWhenAccuracyIsLow": 1,
+  "autoRetryWaitTimeWhenFailureInMs": 1000,
+  "autoRetryWhenAccuracyLessThan": 80,
+  "childEdges": [
+    {
+      "condition": "if the verification_status partial",
+      "conditionGroups": [],
+      "id": "c69c0bcb-761f-4461-9d7f-41baa1d7b38a",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "e30f654e-1786-4318-be37-0821f39f0a6c",
+      "sourceAgentGraphNodeId__readable": "14-condition",
+      "targetAgentGraphNodeId": "e8485c25-e84a-4bab-97de-c1c5a4975b5a",
+      "targetAgentGraphNodeId__readable": "18-payment-discrepancy-email"
+    },
+    {
+      "condition": "if the verification_status is not_paid",
+      "conditionGroups": [],
+      "id": "3811c56c-04b5-478f-94ef-792935da8206",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "e30f654e-1786-4318-be37-0821f39f0a6c",
+      "sourceAgentGraphNodeId__readable": "14-condition",
+      "targetAgentGraphNodeId": "a9e562a1-23bb-410c-9100-e9f2c329beb9",
+      "targetAgentGraphNodeId__readable": "19-note-msg-not-paid"
+    },
+    {
+      "condition": "if the verification_status is fully_paid",
+      "conditionGroups": [],
+      "id": "399fc954-6ddf-47a4-b2be-5cfecfe080c2",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "e30f654e-1786-4318-be37-0821f39f0a6c",
+      "sourceAgentGraphNodeId__readable": "14-condition",
+      "targetAgentGraphNodeId": "0924aada-c9e7-42ca-a971-1c7a6aae4719",
+      "targetAgentGraphNodeId__readable": "20-payment-acknowledgement-generator"
+    }
+  ],
+  "customId": "26f5208c-6931-4ab9-b849-950abff0dad0",
+  "customId__readable": "14-condition",
+  "enableAutoRetryDescription": false,
+  "enableAutoRetryWhenAccuracyIsLow": false,
+  "enableAutoRetryWhenFailure": false,
+  "evaluationCriteria": [],
+  "evaluationLlmModel": null,
+  "evaluationLlmThinkingLevels": null,
+  "id": "e30f654e-1786-4318-be37-0821f39f0a6c",
+  "isActiveNodeVersion": false,
+  "isAttachmentDataPulledIn": true,
+  "isEdited": false,
+  "isEntryNode": false,
+  "isEvaluationEnabled": false,
+  "isExitNode": false,
+  "markTaskAsFailedIfAccuracyLow": false,
+  "nodeConfigurations": {
+    "conditionType": "llm_based",
+    "llmModel": "GEMINI_3_FLASH"
+  },
+  "nodeType": "conditionNode",
+  "objective": "",
+  "onError": "STOP",
+  "parentEdges": [
+    {
+      "condition": null,
+      "conditionGroups": [],
+      "id": "b5fe2734-fa5b-421a-90a9-f2111c1f1282",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "25f8929a-f0a2-461a-96f2-0c23ac975b78",
+      "sourceAgentGraphNodeId__readable": "10-verify-complete-payment",
+      "targetAgentGraphNodeId": "e30f654e-1786-4318-be37-0821f39f0a6c",
+      "targetAgentGraphNodeId__readable": "14-condition"
+    }
+  ],
+  "parentNodeId": null,
+  "saveAsVersion": false,
+  "toolConfiguration": {},
+  "userId": null
+}

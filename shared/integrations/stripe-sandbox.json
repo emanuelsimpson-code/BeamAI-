@@ -1,0 +1,65 @@
+{
+  "_generated": "by scripts/export.py from agents/*/raw/nodes/*.json; credentials are {{SECRET:...}} placeholders",
+  "actionsUsed": {
+    "CustomApiTool_FetchInvoice": {
+      "httpMethod": "get",
+      "toolName": "Fetch Invoice",
+      "url": "https://api.stripe.com/v1/invoices/{{invoice_id}}"
+    }
+  },
+  "definition": {
+    "allowWaiting": false,
+    "attributes": null,
+    "authType": "basic",
+    "authenticationMeta": {
+      "apiKeyType": "default",
+      "parameter": ""
+    },
+    "category": null,
+    "customAuthParameters": null,
+    "customHeaders": [
+      {
+        "key": "username",
+        "value": "STRIPE_SECRET_KEY"
+      },
+      {
+        "key": "password",
+        "value": "EMPTY"
+      }
+    ],
+    "description": "Stripe Sandbox",
+    "iconSrc": "https://cdn.enterprise.beamstudio.ai/905c46d0-7bbe-4b68-aea0-16c2192caddf_stripe-logo.png",
+    "id": "7d85a0a2-f0e8-4d5c-ac63-96e4ea9de951",
+    "integrationCategoryId": "98fdffee-72c5-4b5c-aa97-8f6735043fe0",
+    "isPublished": null,
+    "longDescription": null,
+    "name": "Stripe Sandbox",
+    "privacyPolicyUrl": null,
+    "provider": {
+      "connectionName": "StripeSandbox-betterment-connection",
+      "credentialId": "7b144d7a-c88f-462b-82b8-50c6f4aaf8da",
+      "credentials": {
+        "password": "{{SECRET:custom_password}}",
+        "user": "bd3090be308a2a624299eb9204655eeaba8a34c4180eceb6fb809312a0ae12493154212dcd942aaf11aba72a9194bf181f8b39333ba42351431590c34045ed7bbdbdfa4d358473e7ace19fb60d2f9b0ecd9b9c1775d63f8aa27c74ca8bc7539252905d04e30a2a45956dad46e0878aa3"
+      },
+      "id": "0d7e9c3c-d767-4689-8936-ab6b4980a937",
+      "integration": "httpBasicAuth",
+      "integrationId": "7d85a0a2-f0e8-4d5c-ac63-96e4ea9de951",
+      "isDefault": false,
+      "isOAuth2": false,
+      "provider": "custom",
+      "status": "active",
+      "tokenExpiresIn": null,
+      "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+      "workspace": "{{SECRET:beam_workspace_id}}"
+    },
+    "shortDescription": null,
+    "status": null,
+    "syncModels": null,
+    "systemIntegrationIdentifier": "httpBasicAuth",
+    "systemIntegrationProvider": "CUSTOM",
+    "type": "custom_integration",
+    "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+    "workspaceId": "{{SECRET:beam_workspace_id}}"
+  }
+}

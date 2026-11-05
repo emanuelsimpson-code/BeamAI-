@@ -1,0 +1,363 @@
+{
+  "_export": {
+    "executionOrder": 37,
+    "folder": "37-reopen-task-prod",
+    "rawDetail": "../../raw/nodes/2975bdbc-bd59-4ab8-b480-6b059d92f95f.json",
+    "rawGraph": "../../raw/graph.json"
+  },
+  "agentGraphId": "73aecd7e-318f-4b0b-8a3b-139c373df0cb",
+  "agentToolConfigurationId": "14123f69-5a75-4fed-aef2-7e22c8cb534b",
+  "agentToolConfigurationId__readable": "37-reopen-task-prod.tool",
+  "autoRetryCountWhenFailure": 1,
+  "autoRetryDescription": null,
+  "autoRetryLimitWhenAccuracyIsLow": 1,
+  "autoRetryWaitTimeWhenFailureInMs": 1000,
+  "autoRetryWhenAccuracyLessThan": 80,
+  "childEdges": [],
+  "customId": "db27cc9e-8040-4e0b-89c9-ce8000a47a5f",
+  "customId__readable": "37-reopen-task-prod",
+  "enableAutoRetryDescription": false,
+  "enableAutoRetryWhenAccuracyIsLow": true,
+  "enableAutoRetryWhenFailure": true,
+  "evaluationCriteria": [],
+  "evaluationLlmModel": null,
+  "evaluationLlmThinkingLevels": null,
+  "id": "2975bdbc-bd59-4ab8-b480-6b059d92f95f",
+  "isActiveNodeVersion": false,
+  "isAttachmentDataPulledIn": true,
+  "isEdited": false,
+  "isEntryNode": false,
+  "isEvaluationEnabled": false,
+  "isExitNode": false,
+  "markTaskAsFailedIfAccuracyLow": false,
+  "nodeConfigurations": {},
+  "nodeType": "executionNode",
+  "objective": "Uncomplete the task",
+  "onError": "STOP",
+  "parentEdges": [
+    {
+      "condition": null,
+      "conditionGroups": [],
+      "id": "d48ab7eb-b77a-45a9-afd6-4e766c81a8b3",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "e61ece91-9070-44cd-9c23-323013f620a0",
+      "sourceAgentGraphNodeId__readable": "32-find-the-next-task",
+      "targetAgentGraphNodeId": "2975bdbc-bd59-4ab8-b480-6b059d92f95f",
+      "targetAgentGraphNodeId__readable": "37-reopen-task-prod"
+    }
+  ],
+  "parentNodeId": null,
+  "saveAsVersion": false,
+  "toolConfiguration": {
+    "accuracyScore": null,
+    "agentId": "56180518-a836-4998-b63b-fefc179cd0b6",
+    "code": null,
+    "codeLanguage": null,
+    "description": "Reopen the closed task on salesforce",
+    "dynamicPropsId": "",
+    "fallbackModels": "GEMINI_3_1_PRO",
+    "iconSrc": "https://cdn.enterprise.beamstudio.ai/33fea372-3f7d-4792-aef5-0201a4ce965a_salesforce_icon.png",
+    "id": "14123f69-5a75-4fed-aef2-7e22c8cb534b",
+    "inputParams": [
+      {
+        "agentToolConfigurationId": "14123f69-5a75-4fed-aef2-7e22c8cb534b",
+        "agentToolConfigurationId__readable": "37-reopen-task-prod.tool",
+        "dataType": "string",
+        "fillType": "static",
+        "id": "e4c1c529-2e8d-464b-bb8c-c5808a233f46",
+        "linkOutputParam": null,
+        "linkParamOutputId": null,
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "Open",
+        "paramName": "Status",
+        "paramTip": null,
+        "position": 1,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": false,
+        "ruleConditionConfig": null,
+        "staticValue": "Open"
+      },
+      {
+        "agentToolConfigurationId": "14123f69-5a75-4fed-aef2-7e22c8cb534b",
+        "agentToolConfigurationId__readable": "37-reopen-task-prod.tool",
+        "dataType": "string",
+        "fillType": "ai_fill",
+        "id": "961351bb-9165-41d2-9049-f0eba67f7173",
+        "linkOutputParam": null,
+        "linkParamOutputId": null,
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "\"Reopened by Beam AI agent. Customer indicated wrong billing contact. Zendesk Ticket: {ticket_id}. Awaiting correct billing contact before re-sending outreach.\"\n\nreplace {ticket_id} with the real Zendesk ticket id from the task. Output ONLY this single note (do NOT keep or append the previous task description).",
+        "paramName": "Description",
+        "paramTip": null,
+        "position": 3,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": false,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "14123f69-5a75-4fed-aef2-7e22c8cb534b",
+        "agentToolConfigurationId__readable": "37-reopen-task-prod.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "440eddbb-378c-4dd6-b4b9-df0d661a5a7f",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "98397ea8-e1f3-44b0-b2fa-6bec34659b85",
+          "agentToolConfigurationId__readable": "32-find-the-next-task.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "27ca9c45-d0ce-4bb3-8ed5-3f7a6804cac1",
+          "isArray": false,
+          "outputExample": "<string>",
+          "paramDescription": "-",
+          "paramName": "Id",
+          "paramPath": "data.records.Id",
+          "parentId": null,
+          "position": 7,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "e61ece91-9070-44cd-9c23-323013f620a0"
+              }
+            ],
+            "id": "98397ea8-e1f3-44b0-b2fa-6bec34659b85"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "27ca9c45-d0ce-4bb3-8ed5-3f7a6804cac1",
+        "linkParamOutputId__readable": "32-find-the-next-task.output.data.records.Id",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "Linked: Salesforce Task Id of the most recent Beam-completed task from the find-task step.",
+        "paramName": "task_id",
+        "paramTip": null,
+        "position": 0,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "14123f69-5a75-4fed-aef2-7e22c8cb534b",
+        "agentToolConfigurationId__readable": "37-reopen-task-prod.tool",
+        "dataType": "boolean",
+        "fillType": "static",
+        "id": "55f01c36-cfc7-418f-8d25-94b8561db23a",
+        "linkOutputParam": null,
+        "linkParamOutputId": null,
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "false",
+        "paramName": "Completed_by_Beam_ai__c",
+        "paramTip": null,
+        "position": 2,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": false,
+        "ruleConditionConfig": null,
+        "staticValue": "false"
+      }
+    ],
+    "inputParamsData": null,
+    "integrationProviderId": "f83665ed-06ac-49ec-94a7-4ddad01e3263",
+    "isBackgroundTool": false,
+    "isBatchExecutionEnabled": false,
+    "isMemoryTool": false,
+    "llmThinkingLevels": null,
+    "memoryLookupInstruction": "",
+    "originalTool": {
+      "agentId": null,
+      "allowWaiting": false,
+      "apiKeyType": null,
+      "bodyParams": [
+        {
+          "key": "Status",
+          "parameterHint": "value for ${Status}",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "key": "Completed_by_Beam_ai__c",
+          "parameterHint": "value for ${Completed_by_Beam_ai__c}",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "key": "Description",
+          "parameterHint": "value for ${Description}",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "description": "Reopen the closed task on salesforce",
+      "httpMethod": "patch",
+      "iconSrc": "https://cdn.enterprise.beamstudio.ai/33fea372-3f7d-4792-aef5-0201a4ce965a_salesforce_icon.png",
+      "id": "f1fc1233-c3f0-4e27-be33-d1f750c67a97",
+      "inputParams": [
+        {
+          "dataType": "string",
+          "fillType": "ai_fill",
+          "paramDescription": "value for ${task_id}",
+          "paramName": "task_id",
+          "required": true
+        },
+        {
+          "dataType": "string",
+          "fillType": "ai_fill",
+          "paramDescription": "value for ${Status}",
+          "paramName": "Status",
+          "required": false
+        },
+        {
+          "dataType": "boolean",
+          "fillType": "ai_fill",
+          "paramDescription": "value for ${Completed_by_Beam_ai__c}",
+          "paramName": "Completed_by_Beam_ai__c",
+          "required": false
+        },
+        {
+          "dataType": "string",
+          "fillType": "ai_fill",
+          "paramDescription": "value for ${Description}",
+          "paramName": "Description",
+          "required": false
+        }
+      ],
+      "integration": {
+        "$ref": "../../../../shared/integrations/salesforce-production.json",
+        "id": "650eed02-30b4-4077-8fec-c79ef25c7603",
+        "name": "Salesforce Production"
+      },
+      "integrationId": "650eed02-30b4-4077-8fec-c79ef25c7603",
+      "isActive": true,
+      "isAvailableToWorkspace": false,
+      "isBackgroundTool": null,
+      "isBatchExecutionEnabled": null,
+      "isIntegrationConnected": true,
+      "isIntegrationRequired": true,
+      "isMemoryTool": null,
+      "isSharable": false,
+      "isVisibleOnUi": true,
+      "memoryLookupInstruction": null,
+      "meta": {
+        "agent_categories": [],
+        "agent_category": {},
+        "apiKeyType": "bearer",
+        "categories": [],
+        "content": "CustomApiTool_ReopenTaskProd: Reopen the closed task on salesforce",
+        "description": "Reopen the closed task on salesforce",
+        "function_name": "CustomApiTool_ReopenTaskProd",
+        "icon_src": "https://cdn.enterprise.beamstudio.ai/33fea372-3f7d-4792-aef5-0201a4ce965a_salesforce_icon.png",
+        "integrationIdentifier": "customOAuth",
+        "integration_id": "650eed02-30b4-4077-8fec-c79ef25c7603",
+        "integration_provider_auth": "oauth",
+        "integration_provider_details": {
+          "request": {
+            "body": {
+              "Completed_by_Beam_ai__c": false,
+              "Description": "{reopen_note}",
+              "Status": "Open"
+            },
+            "bypassTLS": false,
+            "endpoint": "https://betterment.my.salesforce.com/services/data/v59.0/sobjects/Task/{{task_id}}",
+            "method": "patch",
+            "query": {}
+          },
+          "response": {
+            "data": "{{result.data}}"
+          }
+        },
+        "integration_provider_executor": "custom",
+        "isActive": true,
+        "is_memory_tool": false,
+        "memory_lookup_instruction": "",
+        "optional_extracted_args": [
+          "Status: string // value for ${Status}",
+          "Completed_by_Beam_ai__c: boolean // value for ${Completed_by_Beam_ai__c}",
+          "Description: string // value for ${Description}"
+        ],
+        "optional_generated_args": [],
+        "parameter": "",
+        "payload": "{ \"Status\": \"Open\", \"Completed_by_Beam_ai__c\": false, \"Description\": \"{reopen_note}\" }",
+        "prompt": "",
+        "required_extracted_args": [
+          "task_id: string // value for ${task_id}"
+        ],
+        "required_generated_args": [],
+        "requires_consent": false,
+        "requires_translation": false,
+        "tool_name": "Reopen Task Prod",
+        "type": "custom_integration_tool",
+        "workspace_id": "{{SECRET:beam_workspace_id}}"
+      },
+      "outputId": null,
+      "outputParams": null,
+      "parameter": "",
+      "preferredModel": null,
+      "prompt": null,
+      "queryParams": [],
+      "requiresConsent": null,
+      "shortDescription": null,
+      "systemIntegrationIdentifier": "customOAuth",
+      "toolFunctionName": "CustomApiTool_ReopenTaskProd",
+      "toolName": "Reopen Task Prod",
+      "type": "custom_integration_tool",
+      "url": "https://betterment.my.salesforce.com/services/data/v59.0/sobjects/Task/{{task_id}}",
+      "urlParams": [
+        {
+          "key": "task_id",
+          "parameterHint": "value for ${task_id}",
+          "required": true
+        }
+      ],
+      "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+      "workspaceId": "{{SECRET:beam_workspace_id}}"
+    },
+    "outputParams": [
+      {
+        "agentToolConfigurationId": "14123f69-5a75-4fed-aef2-7e22c8cb534b",
+        "agentToolConfigurationId__readable": "37-reopen-task-prod.tool",
+        "dataType": "string",
+        "definedStructure": false,
+        "id": "49758252-1241-4be3-8609-a758c48e9afe",
+        "isArray": false,
+        "outputExample": null,
+        "paramDescription": "-",
+        "paramName": "data",
+        "paramPath": "data",
+        "parentId": null,
+        "position": 0,
+        "structure": null,
+        "typeOptions": null
+      }
+    ],
+    "outputParamsData": null,
+    "pipedreamConfiguredProps": null,
+    "preferredModel": "GEMINI_25_FLASH",
+    "prompt": null,
+    "requiresConsent": false,
+    "testIntegrationProviderId": null,
+    "toolFunctionName": "CustomApiTool_ReopenTaskProd",
+    "toolName": "Reopen Task Prod",
+    "userUploadedIcon": null
+  },
+  "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e"
+}

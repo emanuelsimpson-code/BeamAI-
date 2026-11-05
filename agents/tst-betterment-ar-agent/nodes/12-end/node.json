@@ -1,0 +1,52 @@
+{
+  "_export": {
+    "executionOrder": 12,
+    "folder": "12-end",
+    "rawDetail": "../../raw/nodes/af8183ae-3d0c-4d39-8ddc-2787f50328e4.json",
+    "rawGraph": "../../raw/graph.json"
+  },
+  "agentGraphId": "666e2248-7f44-4950-a1f4-ab8fccdd1387",
+  "agentToolConfigurationId": null,
+  "autoRetryCountWhenFailure": 1,
+  "autoRetryDescription": null,
+  "autoRetryLimitWhenAccuracyIsLow": 1,
+  "autoRetryWaitTimeWhenFailureInMs": 1000,
+  "autoRetryWhenAccuracyLessThan": 80,
+  "childEdges": [],
+  "customId": "d2355bc8-bd10-4a17-a504-69e7ce66f115",
+  "customId__readable": "12-end",
+  "enableAutoRetryDescription": false,
+  "enableAutoRetryWhenAccuracyIsLow": false,
+  "enableAutoRetryWhenFailure": false,
+  "evaluationCriteria": [],
+  "evaluationLlmModel": null,
+  "evaluationLlmThinkingLevels": null,
+  "id": "af8183ae-3d0c-4d39-8ddc-2787f50328e4",
+  "isActiveNodeVersion": false,
+  "isAttachmentDataPulledIn": false,
+  "isEdited": false,
+  "isEntryNode": false,
+  "isEvaluationEnabled": false,
+  "isExitNode": true,
+  "markTaskAsFailedIfAccuracyLow": false,
+  "nodeConfigurations": null,
+  "nodeType": "executionNode",
+  "objective": "",
+  "onError": "STOP",
+  "parentEdges": [
+    {
+      "condition": "If value of invoice is less than 500 usd",
+      "conditionGroups": [],
+      "id": "a7a103fb-457e-41bc-9002-2b63a6505471",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "fd6975de-c12c-47e8-8501-6e51a20f04ec",
+      "sourceAgentGraphNodeId__readable": "11-condition",
+      "targetAgentGraphNodeId": "af8183ae-3d0c-4d39-8ddc-2787f50328e4",
+      "targetAgentGraphNodeId__readable": "12-end"
+    }
+  ],
+  "parentNodeId": null,
+  "saveAsVersion": false,
+  "toolConfiguration": {},
+  "userId": null
+}

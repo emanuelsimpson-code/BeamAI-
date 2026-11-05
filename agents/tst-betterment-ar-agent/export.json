@@ -1,0 +1,70 @@
+{
+  "agentId": "a693caf9-5be5-4b81-87a6-0f2cecc0734f",
+  "agentName": "TST_Betterment AR Agent",
+  "edgeCount": 13,
+  "folder": "tst-betterment-ar-agent",
+  "graphId": "666e2248-7f44-4950-a1f4-ab8fccdd1387",
+  "integrations": {
+    "beam-tools.json": [
+      "04-code-executor"
+    ],
+    "salesforce-custom.json": [
+      "02-find-open-case",
+      "03-find-the-next-task",
+      "09-complete-task",
+      "10-update-case-to-working"
+    ],
+    "slack-bot.json": [
+      "14-send-message"
+    ],
+    "zendesk-custom.json": [
+      "06-create-ticket",
+      "07-update-ticket",
+      "08-solve-ticket"
+    ]
+  },
+  "lastExported": "2026-11-05",
+  "nodeCount": 14,
+  "rawSha256": "0031d9f95656938e8135eaee7527f44c5552617bc3a3f0c6f1e22b151b6fd56e",
+  "secrets": {
+    "beam_workspace_id": [
+      "raw/graph.json (02-find-open-case)",
+      "raw/graph.json (03-find-the-next-task)",
+      "raw/graph.json (06-create-ticket)",
+      "raw/graph.json (07-update-ticket)",
+      "raw/graph.json (08-solve-ticket)",
+      "raw/graph.json (09-complete-task)",
+      "raw/graph.json (10-update-case-to-working)",
+      "raw/nodes/1091e2ad-3c8f-4402-afa2-5dd7afed7831.json (07-update-ticket)",
+      "raw/nodes/10d5fd4b-bed9-4e70-b7b9-6568652fcf06.json (03-find-the-next-task)",
+      "raw/nodes/16aa83c7-db41-416b-a0bb-6e504916bff6.json (04-code-executor)",
+      "raw/nodes/3d25bd09-0740-4660-8db7-ecff83e23c42.json (09-complete-task)",
+      "raw/nodes/469a22f3-b0bc-4023-ba30-37214e709d05.json (13-create-slack-ticket-message)",
+      "raw/nodes/8ae8eb8a-b0a7-426b-b5e2-08815927df3f.json (02-find-open-case)",
+      "raw/nodes/aae0cdc7-7b84-4b18-80b0-f40d5b55bcb1.json (06-create-ticket)",
+      "raw/nodes/af8183ae-3d0c-4d39-8ddc-2787f50328e4.json (12-end)",
+      "raw/nodes/b76ec34e-c812-463c-af85-f372d313bb83.json (10-update-case-to-working)",
+      "raw/nodes/bd3b650c-fcdd-41b5-a617-9cf6d038c8e7.json (01-trigger)",
+      "raw/nodes/dd36176c-217f-4a9e-a7b1-d520b5bcc886.json (14-send-message)",
+      "raw/nodes/de7dc427-9526-40bc-8217-f76e2260d1e8.json (08-solve-ticket)",
+      "raw/nodes/e1b98969-8978-4e42-9cf2-239ed53e65aa.json (05-generate-email)",
+      "raw/nodes/fd6975de-c12c-47e8-8501-6e51a20f04ec.json (11-condition)"
+    ],
+    "custom_client_secret": [
+      "raw/nodes/10d5fd4b-bed9-4e70-b7b9-6568652fcf06.json (03-find-the-next-task)",
+      "raw/nodes/3d25bd09-0740-4660-8db7-ecff83e23c42.json (09-complete-task)",
+      "raw/nodes/8ae8eb8a-b0a7-426b-b5e2-08815927df3f.json (02-find-open-case)",
+      "raw/nodes/b76ec34e-c812-463c-af85-f372d313bb83.json (10-update-case-to-working)"
+    ],
+    "custom_password": [
+      "raw/nodes/1091e2ad-3c8f-4402-afa2-5dd7afed7831.json (07-update-ticket)",
+      "raw/nodes/aae0cdc7-7b84-4b18-80b0-f40d5b55bcb1.json (06-create-ticket)",
+      "raw/nodes/de7dc427-9526-40bc-8217-f76e2260d1e8.json (08-solve-ticket)"
+    ],
+    "pipedream_bot_token": [
+      "raw/graph.json (14-send-message)",
+      "raw/nodes/dd36176c-217f-4a9e-a7b1-d520b5bcc886.json (14-send-message)"
+    ]
+  },
+  "status": "draft"
+}

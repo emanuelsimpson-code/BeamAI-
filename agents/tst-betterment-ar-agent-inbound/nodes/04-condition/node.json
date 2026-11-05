@@ -1,0 +1,96 @@
+{
+  "_export": {
+    "executionOrder": 4,
+    "folder": "04-condition",
+    "rawDetail": "../../raw/nodes/8e4ba4b0-86d6-409e-bdca-2d4499026b8b.json",
+    "rawGraph": "../../raw/graph.json"
+  },
+  "agentGraphId": "05a27cb0-a5d3-4f43-8c75-30c1dddaab09",
+  "agentToolConfigurationId": null,
+  "autoRetryCountWhenFailure": 1,
+  "autoRetryDescription": null,
+  "autoRetryLimitWhenAccuracyIsLow": 1,
+  "autoRetryWaitTimeWhenFailureInMs": 1000,
+  "autoRetryWhenAccuracyLessThan": 80,
+  "childEdges": [
+    {
+      "condition": "if reply_intent is dispute",
+      "conditionGroups": [],
+      "id": "bfc61a7c-b51d-4eed-98d6-ee96c19197d8",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "8e4ba4b0-86d6-409e-bdca-2d4499026b8b",
+      "sourceAgentGraphNodeId__readable": "04-condition",
+      "targetAgentGraphNodeId": "b4b6eb38-3efe-459c-91a3-471d7af8a760",
+      "targetAgentGraphNodeId__readable": "05-note-msg-dispute"
+    },
+    {
+      "condition": "if reply_intent is partial_payment",
+      "conditionGroups": [],
+      "id": "a4412931-fe0c-4129-bc8a-83ed842bcfc4",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "8e4ba4b0-86d6-409e-bdca-2d4499026b8b",
+      "sourceAgentGraphNodeId__readable": "04-condition",
+      "targetAgentGraphNodeId": "67ff22c8-5198-4e34-8b1a-2e2069613893",
+      "targetAgentGraphNodeId__readable": "06-loop"
+    },
+    {
+      "condition": "if reply_intent is wrong_contact",
+      "conditionGroups": [],
+      "id": "9a7150e8-d438-4f8c-afd4-b72e4c00f624",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "8e4ba4b0-86d6-409e-bdca-2d4499026b8b",
+      "sourceAgentGraphNodeId__readable": "04-condition",
+      "targetAgentGraphNodeId": "02424666-0059-4ad5-9590-02ff77b0c755",
+      "targetAgentGraphNodeId__readable": "07-note-msg-wrong-contact"
+    },
+    {
+      "condition": "If reply_intent is payment_confirmed",
+      "conditionGroups": [],
+      "id": "22d13eaf-72d5-4bf0-b6ff-d239e96156e2",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "8e4ba4b0-86d6-409e-bdca-2d4499026b8b",
+      "sourceAgentGraphNodeId__readable": "04-condition",
+      "targetAgentGraphNodeId": "e0757084-fa82-4420-b393-d8ffa6390b36",
+      "targetAgentGraphNodeId__readable": "08-loop"
+    }
+  ],
+  "customId": "40e59b8e-b64b-4ff5-96f1-576aa8969662",
+  "customId__readable": "04-condition",
+  "enableAutoRetryDescription": false,
+  "enableAutoRetryWhenAccuracyIsLow": false,
+  "enableAutoRetryWhenFailure": false,
+  "evaluationCriteria": [],
+  "evaluationLlmModel": null,
+  "evaluationLlmThinkingLevels": null,
+  "id": "8e4ba4b0-86d6-409e-bdca-2d4499026b8b",
+  "isActiveNodeVersion": false,
+  "isAttachmentDataPulledIn": true,
+  "isEdited": false,
+  "isEntryNode": false,
+  "isEvaluationEnabled": false,
+  "isExitNode": false,
+  "markTaskAsFailedIfAccuracyLow": false,
+  "nodeConfigurations": {
+    "conditionType": "llm_based",
+    "llmModel": "GEMINI_3_FLASH"
+  },
+  "nodeType": "conditionNode",
+  "objective": "",
+  "onError": "STOP",
+  "parentEdges": [
+    {
+      "condition": null,
+      "conditionGroups": [],
+      "id": "88292f1b-fc24-46f1-8249-344e8dce9155",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "a1b7b7ff-fa67-4d80-9130-221c14932434",
+      "sourceAgentGraphNodeId__readable": "03-intent-classifier",
+      "targetAgentGraphNodeId": "8e4ba4b0-86d6-409e-bdca-2d4499026b8b",
+      "targetAgentGraphNodeId__readable": "04-condition"
+    }
+  ],
+  "parentNodeId": null,
+  "saveAsVersion": false,
+  "toolConfiguration": {},
+  "userId": null
+}

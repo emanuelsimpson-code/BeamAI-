@@ -1,0 +1,264 @@
+{
+  "_export": {
+    "executionOrder": 12,
+    "folder": "12-verify-complete-payment",
+    "rawDetail": "../../raw/nodes/d51f0ca6-552c-456b-ac71-1c8ef795edb7.json",
+    "rawGraph": "../../raw/graph.json"
+  },
+  "agentGraphId": "05a27cb0-a5d3-4f43-8c75-30c1dddaab09",
+  "agentToolConfigurationId": "d506892e-db24-46c6-a98d-b09c9bcc6883",
+  "agentToolConfigurationId__readable": "12-verify-complete-payment.tool",
+  "autoRetryCountWhenFailure": 1,
+  "autoRetryDescription": null,
+  "autoRetryLimitWhenAccuracyIsLow": 1,
+  "autoRetryWaitTimeWhenFailureInMs": 1000,
+  "autoRetryWhenAccuracyLessThan": 80,
+  "childEdges": [
+    {
+      "condition": null,
+      "conditionGroups": [],
+      "id": "07a88952-f8b5-4e05-99e1-f73545b2e90d",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "d51f0ca6-552c-456b-ac71-1c8ef795edb7",
+      "sourceAgentGraphNodeId__readable": "12-verify-complete-payment",
+      "targetAgentGraphNodeId": "b9f0de6a-d79c-4a11-b50a-2490d2b19e87",
+      "targetAgentGraphNodeId__readable": "16-condition"
+    }
+  ],
+  "customId": "64759f79-f80e-4df3-8fd9-b0b76621a001",
+  "customId__readable": "12-verify-complete-payment",
+  "enableAutoRetryDescription": false,
+  "enableAutoRetryWhenAccuracyIsLow": true,
+  "enableAutoRetryWhenFailure": true,
+  "evaluationCriteria": [],
+  "evaluationLlmModel": null,
+  "evaluationLlmThinkingLevels": null,
+  "id": "d51f0ca6-552c-456b-ac71-1c8ef795edb7",
+  "isActiveNodeVersion": false,
+  "isAttachmentDataPulledIn": true,
+  "isEdited": false,
+  "isEntryNode": false,
+  "isEvaluationEnabled": false,
+  "isExitNode": false,
+  "markTaskAsFailedIfAccuracyLow": false,
+  "nodeConfigurations": {},
+  "nodeType": "executionNode",
+  "objective": "verify if the invoices are paid",
+  "onError": "STOP",
+  "parentEdges": [
+    {
+      "condition": null,
+      "conditionGroups": [],
+      "id": "03eaeb41-58d8-4713-a8ad-54395c29215c",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "e0757084-fa82-4420-b393-d8ffa6390b36",
+      "sourceAgentGraphNodeId__readable": "08-loop",
+      "targetAgentGraphNodeId": "d51f0ca6-552c-456b-ac71-1c8ef795edb7",
+      "targetAgentGraphNodeId__readable": "12-verify-complete-payment"
+    }
+  ],
+  "parentNodeId": null,
+  "saveAsVersion": false,
+  "toolConfiguration": {
+    "accuracyScore": null,
+    "agentId": "ca09ff3c-4dc0-488d-9415-3b4666301e94",
+    "code": "",
+    "codeLanguage": "",
+    "description": "",
+    "dynamicPropsId": "",
+    "fallbackModels": "GEMINI_3_1_PRO,GPT4_1,CLAUDE_4_SONNET",
+    "iconSrc": null,
+    "id": "d506892e-db24-46c6-a98d-b09c9bcc6883",
+    "inputParams": [
+      {
+        "agentToolConfigurationId": "d506892e-db24-46c6-a98d-b09c9bcc6883",
+        "agentToolConfigurationId__readable": "12-verify-complete-payment.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "1dbca718-12de-4814-a384-261bbfddf207",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "5a332bc9-f5c9-497f-ae15-e57949263b6d",
+          "agentToolConfigurationId__readable": "08-loop.tool",
+          "dataType": "object",
+          "definedStructure": false,
+          "id": "70be072f-9ec7-46af-87af-455387872b2b",
+          "isArray": true,
+          "outputExample": "[{\"1\": {\"data\": {\"id\": \"<string>\", \"tax\": null, \"paid\": \"<boolean>\", \"lines\": {\"url\": \"<string>\", \"data\": [{\"id\": \"<string>\", \"plan\": null, \"type\": \"<string>\", \"price\": {\"id\": \"<string>\", \"type\": \"<string>\", \"active\": \"<boolean>\", \"object\": \"<string>\", \"created\": \"<number>\", \"product\": \"<string>\", \"currency\": \"<string>\", \"livemode\": \"<boolean>\", \"metadata\": {}, \"nickname\": null, \"recurring\": null, \"lookup_key\": null, \"tiers_mode\": null, \"unit_amount\": \"<number>\", \"tax_behavior\": \"<string>\", \"billing_scheme\": \"<string>\", \"custom_unit_amount\": null, \"transform_quantity\": null, \"unit_amount_decimal\": \"<string>\"}, \"taxes\": [], \"amount\": \"<number>\", \"object\": \"<string>\", \"parent\": {\"type\": \"<string>\", \"invoice_item_details\": {\"proration\": \"<boolean>\", \"invoice_item\": \"<string>\", \"subscription\": null, \"proration_details\": {\"credited_items\": null}}, \"subscription_item_details\": null, \"license_fee_subscription_details\": null}, \"period\": {\"end\": \"<number>\", \"start\": \"<number>\"}, \"invoice\": \"<string>\", \"pricing\": {\"type\": \"<string>\", \"price_details\": {\"price\": \"<string>\", \"product\": \"<string>\"}, \"unit_amount_decimal\": \"<string>\"}, \"currency\": \"<string>\", \"livemode\": \"<boolean>\", \"metadata\": {\"netsuite_service_sale_item_id\": \"<string>\", \"netsuite_service_sale_item_link\": \"<string>\"}, \"quantity\": \"<number>\", \"subtotal\": \"<number>\", \"discounts\": [], \"proration\": \"<boolean>\", \"tax_rates\": [], \"description\": \"<string>\", \"tax_amounts\": [], \"discountable\": \"<boolean>\", \"invoice_item\": \"<string>\", \"subscription\": null, \"discount_amounts\": [], \"quantity_decimal\": \"<string>\", \"proration_details\": {\"credited_items\": null}, \"amount_excluding_tax\": \"<number>\", \"pretax_credit_amounts\": [], \"unit_amount_excluding_tax\": \"<string>\"}], \"object\": \"<string>\", \"has_more\": \"<boolean>\", \"total_count\": \"<number>\"}, \"quote\": null, \"total\": \"<number>\", \"charge\": null, \"footer\": null, \"issuer\": {\"type\": \"<string>\"}, \"number\": \"<string>\", \"object\": \"<string>\", \"parent\": null, \"status\": \"<string>\", \"created\": \"<number>\", \"currency\": \"<string>\", \"customer\": \"<string>\", \"discount\": null, \"due_date\": \"<number>\", \"livemode\": \"<boolean>\", \"metadata\": {\"salesforce_bill_id\": \"<string>\", \"netsuite_invoice_id\": \"<string>\", \"salesforce_bill_link\": \"<string>\", \"netsuite_invoice_link\": \"<string>\"}, \"subtotal\": \"<number>\", \"attempted\": \"<boolean>\", \"discounts\": [], \"rendering\": {\"pdf\": {\"page_size\": \"<string>\"}, \"template\": null, \"template_version\": null, \"amount_tax_display\": null}, \"amount_due\": \"<number>\", \"period_end\": \"<number>\", \"test_clock\": null, \"amount_paid\": \"<number>\", \"application\": null, \"description\": \"<string>\", \"invoice_pdf\": \"<string>\", \"total_taxes\": [], \"account_name\": \"<string>\", \"auto_advance\": \"<boolean>\", \"effective_at\": \"<number>\", \"from_invoice\": null, \"on_behalf_of\": null, \"period_start\": \"<number>\", \"subscription\": null, \"attempt_count\": \"<number>\", \"automatic_tax\": {\"status\": null, \"enabled\": \"<boolean>\", \"provider\": null, \"liability\": null, \"disabled_reason\": null}, \"custom_fields\": null, \"customer_name\": \"<string>\", \"shipping_cost\": null, \"transfer_data\": null, \"billing_reason\": \"<string>\", \"customer_email\": \"<string>\", \"customer_phone\": null, \"default_source\": null, \"ending_balance\": \"<number>\", \"payment_intent\": \"<string>\", \"receipt_number\": null, \"account_country\": \"<string>\", \"account_tax_ids\": null, \"amount_overpaid\": \"<number>\", \"amount_shipping\": \"<number>\", \"latest_revision\": null, \"amount_remaining\": \"<number>\", \"customer_account\": null, \"customer_address\": null, \"customer_tax_ids\": [], \"paid_out_of_band\": \"<boolean>\", \"payment_settings\": {\"default_mandate\": null, \"payment_method_types\": null, \"payment_method_options\": null}, \"shipping_details\": null, \"starting_balance\": \"<number>\", \"collection_method\": \"<string>\", \"customer_shipping\": null, \"default_tax_rates\": [], \"rendering_options\": null, \"total_tax_amounts\": [], \"hosted_invoice_url\": \"<string>\", \"status_transitions\": {\"paid_at\": null, \"voided_at\": null, \"finalized_at\": \"<number>\", \"marked_uncollectible_at\": null}, \"customer_tax_exempt\": \"<string>\", \"total_excluding_tax\": \"<number>\", \"next_payment_attempt\": null, \"statement_descriptor\": null, \"subscription_details\": {\"metadata\": null}, \"webhooks_delivered_at\": \"<number>\", \"application_fee_amount\": null, \"default_payment_method\": null, \"subtotal_excluding_tax\": \"<number>\", \"total_discount_amounts\": [], \"last_finalization_error\": null, \"automatically_finalizes_at\": null, \"total_pretax_credit_amounts\": [], \"pre_payment_credit_notes_amount\": \"<number>\", \"post_payment_credit_notes_amount\": \"<number>\"}}}]",
+          "paramDescription": "-",
+          "paramName": "data",
+          "paramPath": "data",
+          "parentId": null,
+          "position": 0,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "e0757084-fa82-4420-b393-d8ffa6390b36"
+              }
+            ],
+            "id": "5a332bc9-f5c9-497f-ae15-e57949263b6d"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "70be072f-9ec7-46af-87af-455387872b2b",
+        "linkParamOutputId__readable": "08-loop.output.data",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "",
+        "paramName": "invoice_data",
+        "paramTip": null,
+        "position": 0,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      }
+    ],
+    "inputParamsData": null,
+    "integrationProviderId": null,
+    "isBackgroundTool": false,
+    "isBatchExecutionEnabled": false,
+    "isMemoryTool": false,
+    "llmThinkingLevels": null,
+    "memoryLookupInstruction": "",
+    "originalTool": {
+      "agentId": "ca09ff3c-4dc0-488d-9415-3b4666301e94",
+      "allowWaiting": false,
+      "apiKeyType": null,
+      "bodyParams": null,
+      "description": "",
+      "httpMethod": null,
+      "iconSrc": null,
+      "id": "4e7e1ae3-90c9-4709-b7ee-b6ca41ddb837",
+      "inputParams": [
+        {
+          "dataType": "string",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "9ee0d7de-d25f-463d-bbd9-147b18802a5c",
+          "options": null,
+          "paramDescription": "",
+          "paramName": "invoice_data",
+          "paramTip": null,
+          "position": 0,
+          "reloadProps": false,
+          "remoteOptions": false,
+          "required": true,
+          "staticValue": null
+        }
+      ],
+      "integration": null,
+      "integrationId": null,
+      "isActive": true,
+      "isAvailableToWorkspace": false,
+      "isBackgroundTool": false,
+      "isBatchExecutionEnabled": null,
+      "isIntegrationConnected": false,
+      "isIntegrationRequired": false,
+      "isMemoryTool": false,
+      "isSharable": false,
+      "isVisibleOnUi": true,
+      "memoryLookupInstruction": "",
+      "meta": {
+        "content": "",
+        "description": "",
+        "function_name": "GPTAction_Custom_VerifyCompletePayment",
+        "preferred_model": "GEMINI_3_FLASH",
+        "prompt": "Send a concise Slack notification about the completed Pricing Matrix Report.\nFormat the message as: ✅ *Pricing Matrix Report — [today's date]*\n📊 *Portfolio Summary* • [total units] units | [approved] approved | [pending] pending • Weekly uplift: $[amount] | Annual: $[amount] • Car park: [X]% occupied | Storage: [X]% occupied\n[If anomalies: ⚠️ [N] anomalies flagged — review report for details]\n_Report generated by Beam AI agent_\n",
+        "tool_name": "Verify Complete Payment",
+        "type": "custom_gpt_tool"
+      },
+      "outputId": null,
+      "outputParams": [
+        {
+          "dataType": "object",
+          "id": "224f07b4-5833-4e22-85a8-c38623e1f9f4",
+          "isArray": false,
+          "paramDescription": "Return ONLY this JSON — no markdown, no extra text:                                          \n  {                                                                                            \n    \"verification_status\": \"fully_paid\" | \"partial\" | \"not_paid\",                              \n    \"all_paid\": true | false,                                                                  \n    \"total_amount_due\": <sum of all amount_due in dollars>,                                    \n    \"total_amount_paid\": <sum of all amount_paid in dollars>,                                  \n    \"total_amount_remaining\": <sum of all amount_remaining in dollars>,                        \n    \"invoice_count\": <number>,                                         \n    \"invoices\": [                                                                              \n      {                                                                                        \n        \"id\": \"in_xxx\",\n        \"status\": \"paid\" | \"open\",                                                             \n        \"amount_due\": <dollars>,              \n        \"amount_paid\": <dollars>,                                                              \n        \"amount_remaining\": <dollars>\n      }                                                                                        \n    ]                                     \n  }",
+          "paramName": "verification_output",
+          "position": 0,
+          "typeOptions": {
+            "enumValues": null
+          }
+        },
+        {
+          "dataType": "string",
+          "id": "4ab0abfa-067d-4177-8ebd-f6e31bad6a56",
+          "isArray": false,
+          "paramDescription": "one sentence explaining the result",
+          "paramName": "resoning",
+          "position": 1,
+          "typeOptions": {
+            "enumValues": null
+          }
+        }
+      ],
+      "parameter": null,
+      "preferredModel": "GEMINI_3_FLASH",
+      "prompt": "Send a concise Slack notification about the completed Pricing Matrix Report.\nFormat the message as: ✅ *Pricing Matrix Report — [today's date]*\n📊 *Portfolio Summary* • [total units] units | [approved] approved | [pending] pending • Weekly uplift: $[amount] | Annual: $[amount] • Car park: [X]% occupied | Storage: [X]% occupied\n[If anomalies: ⚠️ [N] anomalies flagged — review report for details]\n_Report generated by Beam AI agent_\n",
+      "queryParams": null,
+      "requiresConsent": false,
+      "shortDescription": "",
+      "systemIntegrationIdentifier": null,
+      "toolFunctionName": "GPTAction_Custom_VerifyCompletePayment",
+      "toolName": "Verify Complete Payment",
+      "type": "custom_gpt_tool",
+      "url": null,
+      "urlParams": null,
+      "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+      "workspaceId": "{{SECRET:beam_workspace_id}}"
+    },
+    "outputParams": [
+      {
+        "agentToolConfigurationId": "d506892e-db24-46c6-a98d-b09c9bcc6883",
+        "agentToolConfigurationId__readable": "12-verify-complete-payment.tool",
+        "dataType": "object",
+        "definedStructure": false,
+        "id": "61c905fe-6ca4-484f-a2aa-137b3ec10bcf",
+        "isArray": false,
+        "outputExample": null,
+        "paramDescription": "Return ONLY this JSON — no markdown, no extra text:                                          \n  {                                                                                            \n    \"verification_status\": \"fully_paid\" | \"partial\" | \"not_paid\",                              \n    \"all_paid\": true | false,                                                                  \n    \"total_amount_due\": <sum of all amount_due in dollars>,                                    \n    \"total_amount_paid\": <sum of all amount_paid in dollars>,                                  \n    \"total_amount_remaining\": <sum of all amount_remaining in dollars>,                        \n    \"invoice_count\": <number>,                                         \n    \"invoices\": [                                                                              \n      {                                                                                        \n        \"id\": \"in_xxx\",\n        \"status\": \"paid\" | \"open\",                                                             \n        \"amount_due\": <dollars>,              \n        \"amount_paid\": <dollars>,                                                              \n        \"amount_remaining\": <dollars>\n      }                                                                                        \n    ]                                     \n  }",
+        "paramName": "verification_output",
+        "paramPath": null,
+        "parentId": null,
+        "position": 0,
+        "structure": null,
+        "typeOptions": {
+          "enumValues": null
+        }
+      },
+      {
+        "agentToolConfigurationId": "d506892e-db24-46c6-a98d-b09c9bcc6883",
+        "agentToolConfigurationId__readable": "12-verify-complete-payment.tool",
+        "dataType": "string",
+        "definedStructure": false,
+        "id": "3d73ed97-2161-4fec-a0a7-f1ab9101c481",
+        "isArray": false,
+        "outputExample": null,
+        "paramDescription": "one sentence explaining the result",
+        "paramName": "resoning",
+        "paramPath": null,
+        "parentId": null,
+        "position": 1,
+        "structure": null,
+        "typeOptions": {
+          "enumValues": null
+        }
+      }
+    ],
+    "outputParamsData": null,
+    "pipedreamConfiguredProps": null,
+    "preferredModel": "GEMINI_3_FLASH",
+    "prompt": "You are verifying whether all Stripe invoices for a Betterment AR customer have been fully   \n  paid.                                                                                        \n                                                                                               \n  Stripe invoice array:                                                                        \n  ```{invoice_data}```                                                                   \n                                                                                               \n  The structure is: array → [index][\"1\"][\"data\"] for each invoice.                             \n  All amount fields are in cents. Divide by 100 for dollars.                                   \n                                                                                               \n  Steps:                                                                                       \n  1. Loop through every item in the array                                                      \n  2. For each, extract: id, status, amount_due, amount_paid, amount_remaining (all ÷ 100)      \n  3. An invoice is fully paid when: status = \"paid\" AND amount_remaining = 0                   \n  4. Set all_paid = true only if EVERY invoice passes that check                             \n                                                                                               \n  Return ONLY this JSON — no markdown, no extra text:                                          \n  {                                                                                            \n    \"verification_status\": \"fully_paid\" | \"partial\" | \"not_paid\",                              \n    \"all_paid\": true | false,                                                                  \n    \"total_amount_due\": <sum of all amount_due in dollars>,                                    \n    \"total_amount_paid\": <sum of all amount_paid in dollars>,                                  \n    \"total_amount_remaining\": <sum of all amount_remaining in dollars>,                        \n    \"invoice_count\": <number>,                                         \n    \"invoices\": [                                                                              \n      {                                                                                        \n        \"id\": \"in_xxx\",\n        \"status\": \"paid\" | \"open\",                                                             \n        \"amount_due\": <dollars>,              \n        \"amount_paid\": <dollars>,                                                              \n        \"amount_remaining\": <dollars>\n      }                                                                                        \n    ],                                        \n    \"reasoning\": \"<one sentence explaining the result>\"                                        \n  }                                                    \n                                                                                               \n  Rules:\n  - \"fully_paid\" → all_paid = true, total_amount_remaining = 0                                 \n  - \"partial\" → some paid, some still open                    \n  - \"not_paid\" → no invoices paid at all",
+    "requiresConsent": false,
+    "testIntegrationProviderId": null,
+    "toolFunctionName": "GPTAction_Custom_VerifyCompletePayment",
+    "toolName": "Verify Complete Payment",
+    "userUploadedIcon": null
+  },
+  "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e"
+}

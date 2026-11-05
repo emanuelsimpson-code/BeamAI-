@@ -1,0 +1,614 @@
+{
+  "_export": {
+    "executionOrder": 31,
+    "folder": "31-slack-msg-not-paid",
+    "rawDetail": "../../raw/nodes/08e7a47c-c697-4c65-aae8-8989f130dbda.json",
+    "rawGraph": "../../raw/graph.json"
+  },
+  "agentGraphId": "73aecd7e-318f-4b0b-8a3b-139c373df0cb",
+  "agentToolConfigurationId": "ef19514e-c579-43f3-88d3-b81de28c0a05",
+  "agentToolConfigurationId__readable": "31-slack-msg-not-paid.tool",
+  "autoRetryCountWhenFailure": 1,
+  "autoRetryDescription": null,
+  "autoRetryLimitWhenAccuracyIsLow": 1,
+  "autoRetryWaitTimeWhenFailureInMs": 1000,
+  "autoRetryWhenAccuracyLessThan": 80,
+  "childEdges": [
+    {
+      "condition": "",
+      "conditionGroups": [],
+      "id": "ee499c04-cae9-41c3-b687-a4d5e406fc3b",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "08e7a47c-c697-4c65-aae8-8989f130dbda",
+      "sourceAgentGraphNodeId__readable": "31-slack-msg-not-paid",
+      "targetAgentGraphNodeId": "bcf9ea00-9f90-48b8-a049-3cb7009a9e39",
+      "targetAgentGraphNodeId__readable": "36-send-message"
+    }
+  ],
+  "customId": "319df7f9-0b3d-472c-b1f2-abdd7fb46c64",
+  "customId__readable": "31-slack-msg-not-paid",
+  "enableAutoRetryDescription": false,
+  "enableAutoRetryWhenAccuracyIsLow": false,
+  "enableAutoRetryWhenFailure": false,
+  "evaluationCriteria": [],
+  "evaluationLlmModel": null,
+  "evaluationLlmThinkingLevels": null,
+  "id": "08e7a47c-c697-4c65-aae8-8989f130dbda",
+  "isActiveNodeVersion": false,
+  "isAttachmentDataPulledIn": true,
+  "isEdited": false,
+  "isEntryNode": false,
+  "isEvaluationEnabled": false,
+  "isExitNode": false,
+  "markTaskAsFailedIfAccuracyLow": false,
+  "nodeConfigurations": {},
+  "nodeType": "executionNode",
+  "objective": "Create the Slack alert message — Payment claimed — NOT paid",
+  "onError": "STOP",
+  "parentEdges": [
+    {
+      "condition": "",
+      "conditionGroups": [],
+      "id": "14b9af48-3672-4b3b-a3af-c82f6e0943d7",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "47c69032-c0fb-4436-99bc-4a97e7b67bbc",
+      "sourceAgentGraphNodeId__readable": "25-add-internal-note",
+      "targetAgentGraphNodeId": "08e7a47c-c697-4c65-aae8-8989f130dbda",
+      "targetAgentGraphNodeId__readable": "31-slack-msg-not-paid"
+    }
+  ],
+  "parentNodeId": null,
+  "saveAsVersion": false,
+  "toolConfiguration": {
+    "accuracyScore": null,
+    "agentId": "56180518-a836-4998-b63b-fefc179cd0b6",
+    "code": null,
+    "codeLanguage": null,
+    "description": "",
+    "dynamicPropsId": "",
+    "fallbackModels": "GEMINI_3_1_PRO,GPT4_1,CLAUDE_4_SONNET",
+    "iconSrc": "",
+    "id": "ef19514e-c579-43f3-88d3-b81de28c0a05",
+    "inputParams": [
+      {
+        "agentToolConfigurationId": "ef19514e-c579-43f3-88d3-b81de28c0a05",
+        "agentToolConfigurationId__readable": "31-slack-msg-not-paid.tool",
+        "dataType": "object",
+        "fillType": "linked",
+        "id": "32a8301f-31ec-43c0-be12-4855fd1b32c5",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "41d9c7ab-d242-4555-aed1-3ec4fcf43779",
+          "agentToolConfigurationId__readable": "10-verify-complete-payment.tool",
+          "dataType": "object",
+          "definedStructure": false,
+          "id": "d85e2f99-41b5-44d8-ae6b-cd9fc32cc79e",
+          "isArray": false,
+          "outputExample": null,
+          "paramDescription": "Return ONLY this JSON — no markdown, no extra text:                                          \n  {                                                                                            \n    \"verification_status\": \"fully_paid\" | \"partial\" | \"not_paid\",                              \n    \"all_paid\": true | false,                                                                  \n    \"total_amount_due\": <sum of all amount_due in dollars>,                                    \n    \"total_amount_paid\": <sum of all amount_paid in dollars>,                                  \n    \"total_amount_remaining\": <sum of all amount_remaining in dollars>,                        \n    \"invoice_count\": <number>,                                         \n    \"invoices\": [                                                                              \n      {                                                                                        \n        \"id\": \"in_xxx\",\n        \"status\": \"paid\" | \"open\",                                                             \n        \"amount_due\": <dollars>,              \n        \"amount_paid\": <dollars>,                                                              \n        \"amount_remaining\": <dollars>\n      }                                                                                        \n    ]                                     \n  }",
+          "paramName": "verification_output",
+          "paramPath": null,
+          "parentId": null,
+          "position": 0,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "25f8929a-f0a2-461a-96f2-0c23ac975b78"
+              }
+            ],
+            "id": "41d9c7ab-d242-4555-aed1-3ec4fcf43779"
+          },
+          "typeOptions": {
+            "enumValues": null
+          }
+        },
+        "linkParamOutputId": "d85e2f99-41b5-44d8-ae6b-cd9fc32cc79e",
+        "linkParamOutputId__readable": "10-verify-complete-payment.output.verification_output",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "{\"all_paid\": \"<boolean>\", \"invoices\": [{\"id\": \"<string>\", \"status\": \"<string>\", \"amount_due\": \"<number>\", \"amount_paid\": \"<number>\", \"amount_remaining\": \"<number>\"}], \"invoice_count\": \"<number>\", \"total_amount_due\": \"<number>\", \"total_amount_paid\": \"<number>\", \"verification_status\": \"<string>\", \"total_amount_remaining\": \"<number>\"}",
+        "paramDescription": "Linked upstream output",
+        "paramName": "verification_output",
+        "paramTip": null,
+        "position": 6,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "ef19514e-c579-43f3-88d3-b81de28c0a05",
+        "agentToolConfigurationId__readable": "31-slack-msg-not-paid.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "712c1c70-41ec-4946-a13f-d59ad6b6dfff",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "fa11e2a8-f38f-4a6f-ad08-9219a159c91c",
+          "agentToolConfigurationId__readable": "01-trigger.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "81a274fd-0a33-475f-a967-48e405d693b1",
+          "isArray": false,
+          "outputExample": "<string>",
+          "paramDescription": "-",
+          "paramName": "requester_email",
+          "paramPath": "requester_email",
+          "parentId": null,
+          "position": 0,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "59b60a34-90b9-4368-af49-1ee13b0e21fe"
+              }
+            ],
+            "id": "fa11e2a8-f38f-4a6f-ad08-9219a159c91c"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "81a274fd-0a33-475f-a967-48e405d693b1",
+        "linkParamOutputId__readable": "01-trigger.output.requester_email",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "Linked upstream output",
+        "paramName": "requester_email",
+        "paramTip": null,
+        "position": 1,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "ef19514e-c579-43f3-88d3-b81de28c0a05",
+        "agentToolConfigurationId__readable": "31-slack-msg-not-paid.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "814304b5-05e2-48c9-8629-dfb21669f019",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "05a4a24f-cc44-4033-b67e-e426bf0230fa",
+          "agentToolConfigurationId__readable": "03-intent-classifier.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "7d2c43a3-977e-4168-8b58-2b7d90e4165b",
+          "isArray": false,
+          "outputExample": null,
+          "paramDescription": "intent from one of payment_confirmed, partial_payment, dispute, bankruptcy, wrong_contact, general_inquiry",
+          "paramName": "reply_intent",
+          "paramPath": null,
+          "parentId": null,
+          "position": 0,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "15e52e9d-d1a7-4040-a9a0-34597e7be8c0"
+              }
+            ],
+            "id": "05a4a24f-cc44-4033-b67e-e426bf0230fa"
+          },
+          "typeOptions": {
+            "enumValues": null
+          }
+        },
+        "linkParamOutputId": "7d2c43a3-977e-4168-8b58-2b7d90e4165b",
+        "linkParamOutputId__readable": "03-intent-classifier.output.reply_intent",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "Linked upstream output",
+        "paramName": "reply_intent",
+        "paramTip": null,
+        "position": 5,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "ef19514e-c579-43f3-88d3-b81de28c0a05",
+        "agentToolConfigurationId__readable": "31-slack-msg-not-paid.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "f59b684a-f5dd-430d-9952-3fdd02eeb725",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "cf4ecd5c-42c8-464e-ae69-ad937c974fd9",
+          "agentToolConfigurationId__readable": "02-extract-invoice-context.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "e2edd3c2-6437-4ca3-aa38-a3d06241e90b",
+          "isArray": false,
+          "outputExample": null,
+          "paramDescription": "The invoice amount extracted from the email",
+          "paramName": "invoice_amount",
+          "paramPath": null,
+          "parentId": null,
+          "position": 0,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "f797e381-f62f-40a8-87c9-ba0fa862dc7c"
+              }
+            ],
+            "id": "cf4ecd5c-42c8-464e-ae69-ad937c974fd9"
+          },
+          "typeOptions": {
+            "enumValues": null
+          }
+        },
+        "linkParamOutputId": "e2edd3c2-6437-4ca3-aa38-a3d06241e90b",
+        "linkParamOutputId__readable": "02-extract-invoice-context.output.invoice_amount",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "Linked upstream output",
+        "paramName": "invoice_amount",
+        "paramTip": null,
+        "position": 4,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "ef19514e-c579-43f3-88d3-b81de28c0a05",
+        "agentToolConfigurationId__readable": "31-slack-msg-not-paid.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "d04b8cf3-3599-4199-ab07-76b4667d14a3",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "fa11e2a8-f38f-4a6f-ad08-9219a159c91c",
+          "agentToolConfigurationId__readable": "01-trigger.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "cec5bc48-50ea-4e68-89ab-073682f22964",
+          "isArray": false,
+          "outputExample": "<string>",
+          "paramDescription": "-",
+          "paramName": "ticket_id",
+          "paramPath": "ticket_id",
+          "parentId": null,
+          "position": 0,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "59b60a34-90b9-4368-af49-1ee13b0e21fe"
+              }
+            ],
+            "id": "fa11e2a8-f38f-4a6f-ad08-9219a159c91c"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "cec5bc48-50ea-4e68-89ab-073682f22964",
+        "linkParamOutputId__readable": "01-trigger.output.ticket_id",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "Linked upstream output",
+        "paramName": "ticket_id",
+        "paramTip": null,
+        "position": 2,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "ef19514e-c579-43f3-88d3-b81de28c0a05",
+        "agentToolConfigurationId__readable": "31-slack-msg-not-paid.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "3526296f-ca35-41d0-9af2-0c7ca0c64c9b",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "cf4ecd5c-42c8-464e-ae69-ad937c974fd9",
+          "agentToolConfigurationId__readable": "02-extract-invoice-context.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "fa9553fb-d222-4709-9438-47371969eea6",
+          "isArray": true,
+          "outputExample": null,
+          "paramDescription": "the list of invoice ids extracted from the email",
+          "paramName": "invoice_ids",
+          "paramPath": null,
+          "parentId": null,
+          "position": 1,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "f797e381-f62f-40a8-87c9-ba0fa862dc7c"
+              }
+            ],
+            "id": "cf4ecd5c-42c8-464e-ae69-ad937c974fd9"
+          },
+          "typeOptions": {
+            "enumValues": null
+          }
+        },
+        "linkParamOutputId": "fa9553fb-d222-4709-9438-47371969eea6",
+        "linkParamOutputId__readable": "02-extract-invoice-context.output.invoice_ids",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "Linked upstream output",
+        "paramName": "invoice_ids",
+        "paramTip": null,
+        "position": 3,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      },
+      {
+        "agentToolConfigurationId": "ef19514e-c579-43f3-88d3-b81de28c0a05",
+        "agentToolConfigurationId__readable": "31-slack-msg-not-paid.tool",
+        "dataType": "string",
+        "fillType": "linked",
+        "id": "3082b865-e5b2-44b8-a5d6-5e5a6cebd85e",
+        "linkOutputParam": {
+          "agentToolConfigurationId": "fa11e2a8-f38f-4a6f-ad08-9219a159c91c",
+          "agentToolConfigurationId__readable": "01-trigger.tool",
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "19daded6-c834-41ea-9963-4997dcd3e2ac",
+          "isArray": false,
+          "outputExample": "<string>",
+          "paramDescription": "-",
+          "paramName": "all_comments",
+          "paramPath": "all_comments",
+          "parentId": null,
+          "position": 0,
+          "structure": null,
+          "tool": {
+            "agentGraphNodes": [
+              {
+                "id": "59b60a34-90b9-4368-af49-1ee13b0e21fe"
+              }
+            ],
+            "id": "fa11e2a8-f38f-4a6f-ad08-9219a159c91c"
+          },
+          "typeOptions": null
+        },
+        "linkParamOutputId": "19daded6-c834-41ea-9963-4997dcd3e2ac",
+        "linkParamOutputId__readable": "01-trigger.output.all_comments",
+        "linkedOutputParamRules": [],
+        "linkedParamRulePrompt": null,
+        "options": null,
+        "outputExample": "<string>",
+        "paramDescription": "Linked upstream output",
+        "paramName": "email_body",
+        "paramTip": null,
+        "position": 0,
+        "question": null,
+        "reloadProps": false,
+        "remoteOptions": false,
+        "required": true,
+        "ruleConditionConfig": null,
+        "staticValue": null
+      }
+    ],
+    "inputParamsData": null,
+    "integrationProviderId": null,
+    "isBackgroundTool": false,
+    "isBatchExecutionEnabled": false,
+    "isMemoryTool": false,
+    "llmThinkingLevels": null,
+    "memoryLookupInstruction": "",
+    "originalTool": {
+      "agentId": "ca09ff3c-4dc0-488d-9415-3b4666301e94",
+      "allowWaiting": false,
+      "apiKeyType": null,
+      "bodyParams": null,
+      "description": "",
+      "httpMethod": null,
+      "iconSrc": "",
+      "id": "f429f3b7-a6ba-4fe9-a9bd-5cefc95332aa",
+      "inputParams": [
+        {
+          "dataType": "string",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "bb803f88-a995-43f6-9403-7879e31c0618",
+          "options": null,
+          "paramDescription": "Linked upstream output",
+          "paramName": "email_body",
+          "paramTip": null,
+          "position": 0,
+          "reloadProps": false,
+          "remoteOptions": false,
+          "required": true,
+          "staticValue": null
+        },
+        {
+          "dataType": "string",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "5d682471-a806-490e-804d-1f99dbaee56f",
+          "options": null,
+          "paramDescription": "Linked upstream output",
+          "paramName": "requester_email",
+          "paramTip": null,
+          "position": 1,
+          "reloadProps": false,
+          "remoteOptions": false,
+          "required": true,
+          "staticValue": null
+        },
+        {
+          "dataType": "string",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "ad08954c-4f56-4685-97d8-fadcb2484b42",
+          "options": null,
+          "paramDescription": "Linked upstream output",
+          "paramName": "ticket_id",
+          "paramTip": null,
+          "position": 2,
+          "reloadProps": false,
+          "remoteOptions": false,
+          "required": true,
+          "staticValue": null
+        },
+        {
+          "dataType": "string",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "a2f52590-abe8-46e2-9abc-840f688eb468",
+          "options": null,
+          "paramDescription": "Linked upstream output",
+          "paramName": "invoice_ids",
+          "paramTip": null,
+          "position": 3,
+          "reloadProps": false,
+          "remoteOptions": false,
+          "required": true,
+          "staticValue": null
+        },
+        {
+          "dataType": "string",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "564fb3c9-0039-4f19-aef4-ec2973a733cf",
+          "options": null,
+          "paramDescription": "Linked upstream output",
+          "paramName": "invoice_amount",
+          "paramTip": null,
+          "position": 4,
+          "reloadProps": false,
+          "remoteOptions": false,
+          "required": true,
+          "staticValue": null
+        },
+        {
+          "dataType": "string",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "3280ec9c-bb83-484f-b670-32cf036db6ab",
+          "options": null,
+          "paramDescription": "Linked upstream output",
+          "paramName": "reply_intent",
+          "paramTip": null,
+          "position": 5,
+          "reloadProps": false,
+          "remoteOptions": false,
+          "required": true,
+          "staticValue": null
+        },
+        {
+          "dataType": "object",
+          "fillType": "linked",
+          "isArray": false,
+          "linkParamOutputId": "870b6766-dd5c-4ad8-a489-ce8dd4fbc569",
+          "options": null,
+          "paramDescription": "Linked upstream output",
+          "paramName": "verification_output",
+          "paramTip": null,
+          "position": 6,
+          "reloadProps": false,
+          "remoteOptions": false,
+          "required": true,
+          "staticValue": null
+        }
+      ],
+      "integration": null,
+      "integrationId": null,
+      "isActive": true,
+      "isAvailableToWorkspace": false,
+      "isBackgroundTool": false,
+      "isBatchExecutionEnabled": null,
+      "isIntegrationConnected": false,
+      "isIntegrationRequired": false,
+      "isMemoryTool": false,
+      "isSharable": false,
+      "isVisibleOnUi": true,
+      "memoryLookupInstruction": "",
+      "meta": {
+        "content": "",
+        "description": "",
+        "function_name": "GPTAction_Custom__ea5e",
+        "icon_src": null,
+        "preferred_model": "GEMINI_3_1_PRO",
+        "prompt": null,
+        "tool_name": "",
+        "type": "custom_gpt_tool"
+      },
+      "outputId": null,
+      "outputParams": [
+        {
+          "dataType": "string",
+          "definedStructure": false,
+          "id": "7708fb11-0d4c-441b-bfea-3edbcb04c6ed",
+          "isArray": false,
+          "paramDescription": "Formatted internal Slack alert text",
+          "paramName": "slack_message",
+          "position": 0,
+          "structure": null,
+          "typeOptions": null
+        }
+      ],
+      "parameter": null,
+      "preferredModel": "GEMINI_3_1_PRO",
+      "prompt": null,
+      "queryParams": null,
+      "requiresConsent": false,
+      "shortDescription": "",
+      "systemIntegrationIdentifier": null,
+      "toolFunctionName": "GPTAction_Custom__ea5e",
+      "toolName": "Slack Msg — not_paid",
+      "type": "custom_gpt_tool",
+      "url": null,
+      "urlParams": null,
+      "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+      "workspaceId": "{{SECRET:beam_workspace_id}}"
+    },
+    "outputParams": [
+      {
+        "agentToolConfigurationId": "ef19514e-c579-43f3-88d3-b81de28c0a05",
+        "agentToolConfigurationId__readable": "31-slack-msg-not-paid.tool",
+        "dataType": "string",
+        "definedStructure": false,
+        "id": "94742433-6b4b-4a50-a61d-ca2cf505d3f4",
+        "isArray": false,
+        "outputExample": null,
+        "paramDescription": "Formatted internal Slack alert text",
+        "paramName": "slack_message",
+        "paramPath": null,
+        "parentId": null,
+        "position": 0,
+        "structure": null,
+        "typeOptions": null
+      }
+    ],
+    "outputParamsData": null,
+    "pipedreamConfiguredProps": null,
+    "preferredModel": "GEMINI_3_1_PRO",
+    "prompt": "You are writing an INTERNAL Slack alert for the Betterment AR collections team about how\nan inbound customer email reply was handled. Scenario: Payment claimed — NOT paid.\n\nUse ONLY the data provided below. If a field is missing, write \"N/A\". Be concise.\n\n**Inputs:**\n- Customer email thread: ```{email_body}```\n- Requester:             ```{requester_email}```\n- Ticket ID:             ```{ticket_id}```\n- Invoice IDs:           ```{invoice_ids}```\n- Invoice amount:        ```{invoice_amount}```\n- Reply intent:          ```{reply_intent}```\n- Verification result:   ```{verification_output}```\n\n---\n\nOutput EXACTLY this format — each field on its own line, nothing before or after:\n\n🔔 *AR Inbound — Payment claimed — NOT paid*\n👤 Customer: <requester_email or N/A>\n🎫 Ticket: <ticket_id>\n🧾 Invoice(s): <invoice_ids> · $<invoice_amount>\n💬 Reply intent: <reply_intent>\n🗣️ Customer said: <one-sentence paraphrase of the customer's MOST RECENT reply, max ~25 words>\n⚠️ Customer claimed payment, but no payment was found on Stripe — flagged for review.\n📝 Action taken: Internal note added on Zendesk.\n\nRules:\n- \"Customer said\" must summarize ONLY the customer's latest message — paraphrase in your\n  own words; do not quote the thread or include quoted history.\n- Keep the labels and emoji exactly as shown above.\n- Render the Outcome line verbatim: \"⚠️ Customer claimed payment, but no payment was found on Stripe — flagged for review.\"\n- If invoice amount is a plain number, prefix it with $ and show two decimals.\n- Return ONLY the message text — no code fences, no commentary.",
+    "requiresConsent": false,
+    "testIntegrationProviderId": null,
+    "toolFunctionName": "GPTAction_Custom__ea5e",
+    "toolName": "Slack Msg — not_paid",
+    "userUploadedIcon": null
+  },
+  "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e"
+}
