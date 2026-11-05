@@ -1,0 +1,77 @@
+{
+  "_export": {
+    "executionOrder": 11,
+    "folder": "11-condition",
+    "rawDetail": "../../raw/nodes/02fb2eaf-f004-4606-873f-6f6c4409d921.json",
+    "rawGraph": "../../raw/graph.json"
+  },
+  "agentGraphId": "bbf94f07-77c8-44ee-8bcb-34d452ab62f3",
+  "agentToolConfigurationId": null,
+  "autoRetryCountWhenFailure": 1,
+  "autoRetryDescription": null,
+  "autoRetryLimitWhenAccuracyIsLow": 1,
+  "autoRetryWaitTimeWhenFailureInMs": 1000,
+  "autoRetryWhenAccuracyLessThan": 80,
+  "childEdges": [
+    {
+      "condition": "If value of invoice is less than 500 usd",
+      "conditionGroups": [],
+      "id": "3b3ebe9c-5501-4c5c-ace8-4fc71247deb4",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "02fb2eaf-f004-4606-873f-6f6c4409d921",
+      "sourceAgentGraphNodeId__readable": "11-condition",
+      "targetAgentGraphNodeId": "cb6af643-a3ac-49fa-881d-e4d36e47aa1f",
+      "targetAgentGraphNodeId__readable": "12-end"
+    },
+    {
+      "condition": "If value of invoice is greater than or equal to 500 usd",
+      "conditionGroups": [],
+      "id": "56a8bb0b-c134-4355-8335-79b92b6351b5",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "02fb2eaf-f004-4606-873f-6f6c4409d921",
+      "sourceAgentGraphNodeId__readable": "11-condition",
+      "targetAgentGraphNodeId": "cab5e608-b20c-4977-8d1e-7b00d1331b7f",
+      "targetAgentGraphNodeId__readable": "13-create-slack-ticket-message"
+    }
+  ],
+  "customId": "d0cff0e5-9fa2-4ddd-b59c-e16b0d8f918d",
+  "customId__readable": "11-condition",
+  "enableAutoRetryDescription": false,
+  "enableAutoRetryWhenAccuracyIsLow": false,
+  "enableAutoRetryWhenFailure": false,
+  "evaluationCriteria": [],
+  "evaluationLlmModel": null,
+  "evaluationLlmThinkingLevels": null,
+  "id": "02fb2eaf-f004-4606-873f-6f6c4409d921",
+  "isActiveNodeVersion": false,
+  "isAttachmentDataPulledIn": true,
+  "isEdited": false,
+  "isEntryNode": false,
+  "isEvaluationEnabled": false,
+  "isExitNode": false,
+  "markTaskAsFailedIfAccuracyLow": false,
+  "nodeConfigurations": {
+    "conditionType": "llm_based",
+    "fallbackModels": "GPT5",
+    "llmModel": "GEMINI_3_1_PRO"
+  },
+  "nodeType": "conditionNode",
+  "objective": "",
+  "onError": "STOP",
+  "parentEdges": [
+    {
+      "condition": "",
+      "conditionGroups": [],
+      "id": "c492ad7c-e20d-4e1b-9119-f1146c3d0f8a",
+      "isAttachmentDataPulledIn": true,
+      "sourceAgentGraphNodeId": "dff1aeff-924a-40dc-b2ba-8339539c2230",
+      "sourceAgentGraphNodeId__readable": "10-update-case-working-prod",
+      "targetAgentGraphNodeId": "02fb2eaf-f004-4606-873f-6f6c4409d921",
+      "targetAgentGraphNodeId__readable": "11-condition"
+    }
+  ],
+  "parentNodeId": null,
+  "saveAsVersion": false,
+  "toolConfiguration": {},
+  "userId": null
+}

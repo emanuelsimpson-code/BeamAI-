@@ -1,0 +1,49 @@
+{
+  "_generated": "by scripts/export.py from agents/*/raw/nodes/*.json; credentials are {{SECRET:...}} placeholders",
+  "actionsUsed": {
+    "StandAloneAction_CodeExecutor": {
+      "httpMethod": null,
+      "toolName": "Code Executor",
+      "url": null
+    }
+  },
+  "definition": {
+    "allowWaiting": false,
+    "attributes": {
+      "custom_auth_parameters": null,
+      "long_description": {
+        "en": "Standalone functions provided by beam tools to help with the automation flow"
+      },
+      "name": {
+        "en": "Beam tools"
+      },
+      "short_description": {
+        "en": "Beam provided functional tools"
+      },
+      "system_integration_identifier": null,
+      "system_integration_provider": null
+    },
+    "authType": null,
+    "authenticationMeta": null,
+    "category": "General",
+    "customAuthParameters": {},
+    "customHeaders": null,
+    "description": "Beam provided functional tools",
+    "iconSrc": "https://cdn.enterprise.beamstudio.ai/49da4626-3dba-4ee2-a6ca-0dc9ea6defee",
+    "id": "c0464340-0393-4261-8687-867234ca27de",
+    "integrationCategoryId": "4a112a33-b3b9-4150-bedf-e81145e21725",
+    "isPublished": true,
+    "longDescription": "Standalone functions provided by beam tools to help with the automation flow",
+    "name": "Beam Tools",
+    "privacyPolicyUrl": null,
+    "provider": null,
+    "shortDescription": "Beam provided functional tools",
+    "status": "Beta",
+    "syncModels": null,
+    "systemIntegrationIdentifier": null,
+    "systemIntegrationProvider": null,
+    "type": "integration",
+    "userId": null,
+    "workspaceId": null
+  }
+}

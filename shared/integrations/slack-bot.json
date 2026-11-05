@@ -1,0 +1,77 @@
+{
+  "_generated": "by scripts/export.py from agents/*/raw/nodes/*.json; credentials are {{SECRET:...}} placeholders",
+  "actionsUsed": {
+    "slack_bot-send-message": {
+      "httpMethod": null,
+      "toolName": "Send Message",
+      "url": null
+    }
+  },
+  "definition": {
+    "allowWaiting": false,
+    "attributes": {
+      "custom_auth_parameters": {
+        "fields": {
+          "credentials": {},
+          "params": {
+            "botToken": "{{SECRET:pipedream_bot_token}}"
+          }
+        }
+      },
+      "long_description": {
+        "en": "Interact with Slack with your own bot user"
+      },
+      "name": {
+        "en": "Slack Bot"
+      },
+      "short_description": {
+        "en": "Enable slack bot to streamline operations and improve productivity"
+      },
+      "system_integration_identifier": "slack_bot",
+      "system_integration_provider": "pipedream"
+    },
+    "authType": null,
+    "authenticationMeta": null,
+    "category": "Communication",
+    "customAuthParameters": {
+      "fields": {
+        "credentials": {},
+        "params": {
+          "botToken": "{{SECRET:pipedream_bot_token}}"
+        }
+      }
+    },
+    "customHeaders": null,
+    "description": "Enable slack bot to streamline operations and improve productivity",
+    "iconSrc": "https://cdn.beamstudio.ai/5dcca469-2280-4841-bc40-a52bda4517dd",
+    "id": "7ea1d904-7726-40c8-a63e-379b6ee24817",
+    "integrationCategoryId": "b684489a-837c-4578-b0d8-6bd444e4442b",
+    "isPublished": true,
+    "longDescription": "Interact with Slack with your own bot user",
+    "name": "Slack Bot",
+    "privacyPolicyUrl": null,
+    "provider": {
+      "connectionName": "SlackBot-connection",
+      "credentialId": "apn_KAhBbkK",
+      "credentials": null,
+      "id": "2b7ebff5-f95a-4cab-8e2c-02c5338d03c2",
+      "integration": "slack_bot",
+      "integrationId": "7ea1d904-7726-40c8-a63e-379b6ee24817",
+      "isDefault": true,
+      "isOAuth2": true,
+      "provider": "pipedream",
+      "status": "active",
+      "tokenExpiresIn": null,
+      "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+      "workspace": "{{SECRET:beam_workspace_id}}"
+    },
+    "shortDescription": "Enable slack bot to streamline operations and improve productivity",
+    "status": "Beta",
+    "syncModels": [],
+    "systemIntegrationIdentifier": "slack_bot",
+    "systemIntegrationProvider": "pipedream",
+    "type": "integration",
+    "userId": null,
+    "workspaceId": null
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "_generated": "by scripts/export.py from agents/*/raw/nodes/*.json; credentials are {{SECRET:...}} placeholders",
+  "actionsUsed": {
+    "CustomApiTool_CreateTicket_4JRVzsqI": {
+      "httpMethod": "post",
+      "toolName": "Create Ticket",
+      "url": "https://betterment.zendesk.com/api/v2/tickets"
+    },
+    "CustomApiTool_SolveTicket_iJjUtVlK": {
+      "httpMethod": "put",
+      "toolName": "Solve Ticket",
+      "url": "https://betterment.zendesk.com/api/v2/tickets/{{ticket_id}}"
+    },
+    "CustomApiTool_UpdateTicket_mpFI5a43": {
+      "httpMethod": "put",
+      "toolName": "Update Ticket",
+      "url": "https://betterment.zendesk.com/api/v2/tickets/{{ticket_id}}"
+    }
+  },
+  "definition": {
+    "allowWaiting": false,
+    "attributes": null,
+    "authType": "basic",
+    "authenticationMeta": {
+      "apiKeyType": "default",
+      "parameter": ""
+    },
+    "category": null,
+    "customAuthParameters": null,
+    "customHeaders": [],
+    "description": "Zendesk Production",
+    "iconSrc": "https://cdn.enterprise.beamstudio.ai/3cabec01-cf27-4dc8-996d-2734d2a69004_zendesk-logo.png",
+    "id": "9025a63a-92dd-4ca4-923a-1ccd0eeae885",
+    "integrationCategoryId": "503199fe-06d5-420d-87e0-b007a635dabd",
+    "isPublished": null,
+    "longDescription": null,
+    "name": "Zendesk Production",
+    "privacyPolicyUrl": null,
+    "provider": {
+      "connectionName": "ZendeskProduction-connection",
+      "credentialId": "223f2c00-4d4f-4bf9-8187-85f2224404f0",
+      "credentials": {
+        "password": "{{SECRET:custom_password}}",
+        "user": "f869515e93d63fed8ec06d61c93c7c512fe9fdbb8cfd6b64e558166f45c77934af7582d0751b37efd26202daa7c171e8"
+      },
+      "id": "ecb5ce5c-5850-46bb-adfc-51a19bf28a3a",
+      "integration": "httpBasicAuth",
+      "integrationId": "9025a63a-92dd-4ca4-923a-1ccd0eeae885",
+      "isDefault": true,
+      "isOAuth2": false,
+      "provider": "custom",
+      "status": "active",
+      "tokenExpiresIn": null,
+      "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+      "workspace": "{{SECRET:beam_workspace_id}}"
+    },
+    "shortDescription": null,
+    "status": null,
+    "syncModels": null,
+    "systemIntegrationIdentifier": "httpBasicAuth",
+    "systemIntegrationProvider": "CUSTOM",
+    "type": "custom_integration",
+    "userId": "1307dd28-8ab1-4760-a2fb-d6d6a0a0f43e",
+    "workspaceId": "{{SECRET:beam_workspace_id}}"
+  }
+}
